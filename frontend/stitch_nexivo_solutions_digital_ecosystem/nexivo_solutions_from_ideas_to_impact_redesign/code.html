@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexivo Solutions | From Ideas to Impact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fbf9f2",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#717972",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dcdad3",
+                    "on-tertiary-fixed-variant": "#6a383e",
+                    "on-surface": "#1b1c18",
+                    "border-muted": "rgba(26, 26, 26, 0.1)",
+                    "on-secondary-container": "#636262",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#234f35",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#c1c9c0",
+                    "on-background": "#1b1c18",
+                    "tertiary-container": "#9f646b",
+                    "inverse-primary": "#a1d2af",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#386549",
+                    "on-surface-variant": "#414942",
+                    "tertiary": "#834c53",
+                    "inverse-on-surface": "#f3f1ea",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f2",
+                    "surface-tint": "#3b684b",
+                    "surface-container-high": "#eae8e1",
+                    "primary-fixed": "#bdeeca",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "ink-black": "#1A1A1A",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-low": "#f6f4ed",
+                    "surface-container": "#f0eee7",
+                    "botanical-green": "#618F70",
+                    "surface-variant": "#e4e2dc",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#30312c",
+                    "surface-bright": "#fbf9f2",
+                    "tertiary-fixed-dim": "#fbb4bb",
+                    "on-primary-container": "#f6fff5",
+                    "primary-fixed-dim": "#a1d2af",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#517e60",
+                    "on-tertiary-fixed": "#360d15",
+                    "warm-bg": "#F7F5EE"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "mobile-margin": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "section-padding": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .scribble-accent {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .hero-scribble {
+            bottom: -20px;
+            right: 10%;
+            width: 150px;
+            opacity: 0.6;
+        }
+        .bento-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #618F70;
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-black font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar (Shared Component Execution) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-border-muted h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-mobile-margin h-full">
+<div class="font-headline-md text-headline-md font-bold text-ink-black dark:text-inverse-on-surface">
+                Nexivo Solutions
+            </div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-botanical-green font-bold border-b-2 border-botanical-green pb-1 font-body-md text-body-md" href="#">Technology</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">E-commerce</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Marketing</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Creative</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Video</a>
+</div>
+<button class="bg-botanical-green text-surface px-6 py-3 font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                Start Your Project
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-mobile-margin py-section-padding overflow-hidden">
+<div class="max-w-4xl relative z-10">
+<span class="inline-block px-4 py-1.5 mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-label-caps uppercase text-label-caps">
+                    Future-Ready Solutions
+                </span>
+<h1 class="font-headline-xl text-headline-xl md:text-[64px] mb-6 leading-tight tracking-tight">
+                    One Partner. Multiple <br/>
+<span class="relative">
+                        Digital Capabilities.
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30" preserveaspectratio="none" viewbox="0 0 100 10">
+<path d="M0,5 Q25,0 50,5 T100,5" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-10 max-w-2xl mx-auto">
+                    We build the AI systems you don't have time to figure out. Elevating businesses with premium web design and intelligent AI media assets. Expertly crafted for modern brands.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 relative">
+<button class="w-full sm:w-auto bg-botanical-green text-surface px-10 py-4 font-bold rounded-lg text-lg hover:translate-y-[-2px] transition-transform">
+                        [ Start Your Project ]
+                    </button>
+<a class="group flex items-center gap-2 font-bold text-ink-black hover:text-botanical-green transition-colors" href="#work">
+                        View Our Work
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+<!-- Hero Scribble Annotation -->
+<div class="hidden lg:block absolute -right-24 top-0 scribble-accent">
+<svg fill="none" height="60" stroke="#618F70" stroke-width="2" viewbox="0 0 120 60" width="120">
+<path d="M10,40 Q40,10 70,50 T110,20" fill="none" stroke-linecap="round"></path>
+<path d="M100,10 L110,20 L100,30" stroke-linecap="round"></path>
+</svg>
+<p class="text-botanical-green font-label-caps text-[10px] mt-2 ml-10">CLICK HERE!</p>
+</div>
+</div>
+</div>
+<!-- Background Atmosphere -->
+<div class="absolute inset-0 -z-10 opacity-20 pointer-events-none">
+
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="bg-surface-container py-section-padding px-mobile-margin border-t border-border-muted" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4 uppercase tracking-wider">Services</h2>
+<p class="font-body-md text-body-md text-secondary">
+                            A refined suite of digital capabilities designed to scale strategy, visual systems, and intelligent applications for ambitious businesses.
+                        </p>
+</div>
+<div class="text-right hidden md:block">
+<span class="text-botanical-green font-headline-md text-headline-md font-bold">05</span>
+<p class="font-label-caps text-label-caps opacity-50">CORE PILLARS</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Technology: Large Feature -->
+<div class="md:col-span-8 md:row-span-2 bento-card bg-surface p-10 flex flex-col justify-between border border-border-muted rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-lg bg-botanical-green/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-botanical-green" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Technology</h3>
+<p class="font-body-md text-body-md text-secondary max-w-md">
+                                Custom AI automation, intelligent workflows, and software ecosystems that eliminate manual friction. We don't just build code; we build leverage.
+                            </p>
+</div>
+<div class="mt-auto relative z-10">
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">AI Integration</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">Custom Web Apps</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-[10px] font-bold uppercase tracking-widest text-secondary">API Dev</span>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-full opacity-5 group-hover:opacity-10 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Abstract digital network visualization with clean geometric nodes and thin connecting lines in an organic architectural layout. Deep botanical greens on a warm off-white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSYmkAmR1gFQC0JTbbzWKk_YJdIzTa2ZN9xCQuTjnQB0oZRHPoSLzI0FMn1vPZdBV0lp7swoYYQqkyrVDTbsVOQ9BcpjV1eMWeCLRYzBudGQNgD_S9cM80NYi_cFg8WempGe3ZLLQBLpuoT_BJ-QuUYyTNKBDOGjvamZ2q6iI1zQSWKSHbF51vct1HgmCDmXEV4_fLEc0LT8ADkuEO969dyxSYGVsIoldvhw9lOkXfWdgpm0sJZBk"/>
+</div>
+</div>
+<!-- E-commerce -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-surface p-8 flex flex-col justify-between border border-border-muted rounded-xl">
+<div>
+<span class="material-symbols-outlined text-botanical-green mb-4">shopping_cart</span>
+<h3 class="font-headline-md text-headline-md mb-2">E-commerce</h3>
+<p class="font-body-md text-body-md text-secondary text-sm">
+                                Conversion-first online ordering systems and stores.
+                            </p>
+</div>
+<a class="text-botanical-green font-bold text-sm flex items-center gap-1 group" href="#">
+                            Explore <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<!-- Marketing -->
+<div class="md:col-span-4 md:row-span-1 bento-card bg-surface p-8 flex flex-col justify-between border border-border-muted rounded-xl">
+<div>
+<span class="material-symbols-outlined text-botanical-green mb-4">campaign</span>
+<h3 class="font-headline-md text-headline-md mb-2">Marketing</h3>
+<p class="font-body-md text-body-md text-secondary text-sm">
+                                Performance driven strategies for modern digital brands.
+                            </p>
+</div>
+<a class="text-botanical-green font-bold text-sm flex items-center gap-1 group" href="#">
+                            Explore <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<!-- Creative -->
+<div class="md:col-span-6 md:row-span-1 bento-card bg-surface p-8 flex flex-col justify-between border border-border-muted rounded-xl">
+<div class="flex gap-6">
+<div class="flex-1">
+<span class="material-symbols-outlined text-botanical-green mb-4">draw</span>
+<h3 class="font-headline-md text-headline-md mb-2">Creative</h3>
+<p class="font-body-md text-body-md text-secondary text-sm">
+                                    Brand identity systems, logos, typography, and premium web design aesthetics.
+                                </p>
+</div>
+<div class="w-32 h-32 hidden sm:block">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Minimalist design sketchbook with organic charcoal strokes and splashes of botanical green watercolor. High-key lighting, professional editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoz7hYk4uBFPwiDHgTuFw2rnD2hndffZZrv1zDHP4OtxD50ZSjGrMoUylQPinPth1bbz0vewxM8S40oE5GLwxeJc8atBZebK44eqL1UPMOxIkCI1OaAIXMviD7CLUP-e29mldULk6jvWYvcefMiqlp0HZw24WAzgwlQADl8FeMUuZ8PSK7pUHQQFqlXVPgT8bSlLH-P_zlGNvdktVLDBgRpcvPBfwkoyr0pITBi2X1L2hYlwcEBBs"/>
+</div>
+</div>
+</div>
+<!-- Video -->
+<div class="md:col-span-6 md:row-span-1 bento-card bg-ink-black text-surface p-8 flex flex-col justify-between border border-ink-black rounded-xl">
+<div>
+<span class="material-symbols-outlined text-botanical-green mb-4">movie</span>
+<h3 class="font-headline-md text-headline-md mb-2">Video</h3>
+<p class="font-surface-container text-body-md opacity-70 text-sm">
+                                Intelligent AI media assets and high-end video production for storytelling.
+                            </p>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-botanical-green px-4 py-2 rounded text-xs font-bold uppercase tracking-widest">Watch Showreel</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Previous Work Section (Asymmetric Editorial Layout) -->
+<section class="py-section-padding px-mobile-margin" id="work">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-xl text-headline-xl text-center mb-20 uppercase tracking-[0.2em] opacity-80">Previous Work</h2>
+<!-- Project 01 -->
+<div class="grid md:grid-cols-2 gap-16 mb-32 items-center">
+<div class="order-2 md:order-1">
+<div class="flex items-center gap-4 mb-6">
+<span class="text-headline-xl font-bold opacity-10">01</span>
+<div class="h-[1px] flex-1 bg-border-muted"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Velora Property Care</h3>
+<p class="font-label-caps text-label-caps text-botanical-green mb-6 uppercase">PROPERTY CARE &amp; MAINTENANCE</p>
+<p class="font-body-lg text-body-lg text-secondary mb-8 leading-relaxed">
+                            Built a professional lead-generation website for a Canadian property care company focused on trust, credibility, and conversions. We implemented a custom scheduling engine that reduced admin overhead by 40%.
+                        </p>
+<div class="flex gap-3 mb-8">
+<span class="px-4 py-2 border border-border-muted rounded-full text-xs font-bold">WEBSITE DESIGN</span>
+<span class="px-4 py-2 border border-border-muted rounded-full text-xs font-bold">BRANDING</span>
+<span class="px-4 py-2 border border-border-muted rounded-full text-xs font-bold">SEO</span>
+</div>
+<button class="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all">
+                            View Website <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="order-1 md:order-2">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Sophisticated website mockup for a premium property care service. Clean white interface, sharp typography, high-resolution photography of manicured landscapes. Minimalist botanical color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcmW54nnX3SRD66aGwFAaup2K__hEbTTvXpcaKf9qDbvUlmIuBqRVvagsY1uSgQz94Z0kaaCSR5ObouD_IRT2gfMJMU70jXhK7Zt7r2TnwKPx9yAUEymRuEU9hZuNx9q_Dbh3fy98W2eaHIlcYL-f4V5z49iVWAK3oVstVIzt2AemD5a5ikQm02i3jC3M6Pt_4ql3IapD3XNj-3m-ZhieVUyvmvwex7U0RejSvyUL7LATniZIPAM"/>
+</div>
+</div>
+</div>
+<!-- Project 02 -->
+<div class="grid md:grid-cols-2 gap-16 mb-32 items-center">
+<div class="order-1">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Vibrant and inviting e-commerce landing page for a custom cake boutique. Soft warm tones, professional product photography of artistic cakes, playful yet refined typography. Minimalist layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmgekBBud8xxj7AyLRSa1u8sIKRTS-uiIPS0RXlkzQkcTJwIPrpwt2zxvWXbA1xSuFE9rSl8kWQ6cs1Yne6hmGQ1nAWTeV14YG8G3zVxlvkeBDKcpwP9cOU5ENolC3Ise0LHKh5cuk8WT3PFaGLYQu1igHUMJa37tEURtjXjHUNv_rkyksNe4ZR0L0uuTkyLyj2IfXs5Cxsb5QlVFsKNAz2Fm9ToWRw_8ALoflQD77jsINoFzqyU"/>
+</div>
+</div>
+<div class="order-2">
+<div class="flex items-center gap-4 mb-6">
+<span class="text-headline-xl font-bold opacity-10">02</span>
+<div class="h-[1px] flex-1 bg-border-muted"></div>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Reddy Made Cakes</h3>
+<p class="font-label-caps text-label-caps text-botanical-green mb-6 uppercase">BAKERY &amp; CUSTOM CAKES</p>
+<p class="font-body-lg text-body-lg text-secondary mb-8 leading-relaxed">
+                            Created an online cake ordering experience with a streamlined customer journey and product showcase. Integrated a complex tiered pricing model based on custom decorative requests.
+                        </p>
+<div class="flex gap-3 mb-8">
+<span class="px-4 py-2 border border-border-muted rounded-full text-xs font-bold">WEBSITE DESIGN</span>
+<span class="px-4 py-2 border border-border-muted rounded-full text-xs font-bold">ONLINE ORDERING</span>
+</div>
+<button class="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all">
+                            View Website <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-high py-section-padding px-mobile-margin border-y border-border-muted overflow-hidden">
+<div class="max-w-container-max mx-auto relative">
+<div class="text-center relative z-10">
+<h2 class="font-headline-xl text-headline-xl mb-6">LET'S BUILD TOGETHER.</h2>
+<p class="font-body-lg text-body-lg text-secondary mb-12 max-w-2xl mx-auto">
+                        Have an idea, business, or project in mind? Let's turn it into something exceptional with AI, automation, and modern web experiences.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+<!-- Contact Card 1 -->
+<div class="bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-botanical-green">link</span>
+</div>
+<h4 class="font-bold mb-2">LinkedIn</h4>
+<p class="text-sm text-secondary mb-6">Professional updates &amp; networking</p>
+<button class="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors">Visit LinkedIn</button>
+</div>
+<!-- Contact Card 2 -->
+<div class="bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-botanical-green">photo_camera</span>
+</div>
+<h4 class="font-bold mb-2">Instagram</h4>
+<p class="text-sm text-secondary mb-6">Creative process &amp; portfolio</p>
+<button class="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors">Visit Instagram</button>
+</div>
+<!-- Contact Card 3 -->
+<div class="bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-botanical-green">mail</span>
+</div>
+<h4 class="font-bold mb-2">Email</h4>
+<p class="text-sm text-secondary mb-6">Direct inquiries &amp; partnerships</p>
+<button class="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors">Send Email</button>
+</div>
+</div>
+<div class="bg-surface p-12 rounded-2xl border-2 border-botanical-green relative max-w-3xl mx-auto shadow-xl">
+<h3 class="font-headline-lg text-headline-lg mb-4">Ready To Build Something Amazing?</h3>
+<p class="font-body-md text-body-md text-secondary mb-8">From websites and branding to AI-powered solutions, DM us on Instagram to start your next project.</p>
+<button class="bg-botanical-green text-surface px-12 py-4 font-bold rounded-lg text-lg hover:translate-y-[-2px] transition-transform">
+                            Start Your Project +
+                        </button>
+<!-- Floating Scribble -->
+<div class="absolute -bottom-8 -right-8 opacity-40">
+<svg height="100" viewbox="0 0 100 100" width="100">
+<path d="M20,80 Q50,20 80,80" fill="none" stroke="#618F70" stroke-width="2"></path>
+<circle cx="80" cy="80" fill="#618F70" r="4"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component Execution) -->
+<footer class="w-full py-section-padding bg-surface-container dark:bg-inverse-surface border-t border-border-muted">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-mobile-margin">
+<div class="font-headline-md text-headline-md font-bold text-ink-black dark:text-inverse-on-surface mb-6 md:mb-0">
+                Nexivo Solutions
+            </div>
+<div class="flex gap-8 mb-6 md:mb-0">
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Contact</a>
+</div>
+<p class="font-body-md text-body-md text-secondary-fixed-variant">
+                © 2024 Nexivo Solutions. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for scroll reveal animations
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.bento-card, .project-row').forEach((el) => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body></html>

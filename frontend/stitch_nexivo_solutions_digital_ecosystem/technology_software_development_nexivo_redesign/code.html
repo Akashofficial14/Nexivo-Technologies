@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Technology &amp; Software Development | Nexivo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fbf9f2",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#717972",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dcdad3",
+                    "on-tertiary-fixed-variant": "#6a383e",
+                    "on-surface": "#1b1c18",
+                    "border-muted": "rgba(26, 26, 26, 0.1)",
+                    "on-secondary-container": "#636262",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#234f35",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#c1c9c0",
+                    "on-background": "#1b1c18",
+                    "tertiary-container": "#9f646b",
+                    "inverse-primary": "#a1d2af",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#386549",
+                    "on-surface-variant": "#414942",
+                    "tertiary": "#834c53",
+                    "inverse-on-surface": "#f3f1ea",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f2",
+                    "surface-tint": "#3b684b",
+                    "surface-container-high": "#eae8e1",
+                    "primary-fixed": "#bdeeca",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "ink-black": "#1A1A1A",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-low": "#f6f4ed",
+                    "surface-container": "#f0eee7",
+                    "botanical-green": "#618F70",
+                    "surface-variant": "#e4e2dc",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#30312c",
+                    "surface-bright": "#fbf9f2",
+                    "tertiary-fixed-dim": "#fbb4bb",
+                    "on-primary-container": "#f6fff5",
+                    "primary-fixed-dim": "#a1d2af",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#517e60",
+                    "on-tertiary-fixed": "#360d15",
+                    "warm-bg": "#F7F5EE"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "mobile-margin": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "section-padding": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scribble-accent {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .editorial-input {
+            border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+        .editorial-input:focus {
+            border-bottom-color: #618F70;
+            outline: none;
+        }
+        .card-hover:hover {
+            border-color: #618F70;
+            transform: translateY(-4px);
+        }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 32px !important; line-height: 1.2 !important; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-black font-body-md selection:bg-botanical-green selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border-muted h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-mobile-margin h-full">
+<div class="font-headline-md text-headline-md font-bold text-ink-black flex items-center gap-2">
+                Nexivo Solutions
+            </div>
+<div class="hidden md:flex items-center gap-8 font-body-md text-body-md">
+<a class="text-botanical-green font-bold border-b-2 border-botanical-green pb-1" href="#">Technology</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">E-commerce</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Marketing</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Creative</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Video</a>
+</div>
+<button class="bg-botanical-green text-surface px-6 py-3 font-bold hover:opacity-90 active:scale-95 transition-all">
+                Start Your Project
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-40 pb-20 px-mobile-margin relative overflow-hidden">
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<div class="inline-block mb-6 px-4 py-1 bg-ink-black/5 rounded-full">
+<span class="font-label-caps text-label-caps uppercase tracking-widest text-botanical-green">Engineering Excellence</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl md:text-7xl mb-6 max-w-4xl mx-auto">
+                Technology &amp; Software <span class="text-botanical-green italic">Development</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-10">
+                We build the digital foundations that power modern enterprises. From scalable SaaS architectures to intelligent AI integrations, we translate complex requirements into elegant code.
+            </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-surface-container overflow-hidden" data-alt="Close up portrait of a senior software architect with a warm, professional expression, shot in a minimalist studio with soft botanical green lighting in the background to match the brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDF-z13cvPAI370sCrXoe1SHnm8UxxhnmT8utI0LxtQDiPR9I6wYsEjzj-g96eOhP3o88_frUE164Huk_2PZYxDmp2Utalv0N02R3HGPokWn1w8dxW_qyMeHYJ6qd5CdPZzevM_y5J8gLTQ3l0Q0sLY09kgHr_CSPhLap0360AC6jmujfXW5wbyTH2quhcaSOZjB6yirCjpO_NEqrklRuRgAoTQt71LJRLFmoEs-xRcsJR_NYzD4z8')"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-surface-container overflow-hidden" data-alt="Portrait of a female technical lead in a bright, modern office space with minimalist charcoal and white decor. She is smiling confidently, reflecting the brand's sophisticated yet approachable software development persona." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCo4NLY19UC4X7Eb-tizXo2igq6i4BII-LfpJjHyrHqYElwQsGbloziWVjNHPFsOkn5mHdUJsO1os6Oycf6pNA8wgUdhRO8N5jiOP4ToL--6WlYF8fQRR-jAezdJBbZ34wrzUvbmlpGs936Oif-mYpPv7i3wwA4gEEpzKbjiLmrtivrO-5lowCl8YWyHiV9mI7vcj-pEWO9ew7gCa7z7b7uHhtyHuwNh5Uk5riWeZzE9Dl19UffiNs')"></div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-surface-container overflow-hidden" data-alt="A focused digital nomad developer working in a clean, minimalist workspace with a large window showing lush greenery. The lighting is natural and airy, emphasizing the humanist technicality of the design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUMCQvtyWP7Dy9EO0MOSXQSDCCn0EEVny1jFfsf9R5NNW7iPceitDBVMi9ElfKzttuhnN4NfcBcWhdo35uAScCMokPm8sHBf4jTL5IM6oP9DEoWqDHJik6HtPNEfH1gVhzN5oK7zrUwc-ER2--LQzPJBSlD4HfCaVQzmDa7f6JILjvniZS6_Z1VWED0wK6iMJdTEC-zpisOaYUgeFhX1hdHbdIdm3meIX3eckWD8p6Ear26OIAs_A')"></div>
+</div>
+<span class="text-secondary font-body-md italic">Trusted by 200+ high-growth tech companies</span>
+</div>
+</div>
+<!-- Abstract Scribble Accent -->
+<div class="absolute top-1/2 left-1/4 scribble-accent opacity-20">
+<svg fill="none" height="200" viewbox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 100C30 80 50 120 70 100C90 80 110 120 130 100C150 80 170 120 190 100" stroke="#618F70" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+</header>
+<!-- Core Services Grid -->
+<section class="py-section-padding bg-white/50">
+<div class="max-w-container-max mx-auto px-mobile-margin">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">Specialized Engineering Services</h2>
+<p class="text-secondary font-body-lg">Fourteen core disciplines designed to cover the entire software lifecycle, ensuring your product is performant, secure, and future-proof.</p>
+</div>
+<div class="font-label-caps text-label-caps text-botanical-green border-b-2 border-botanical-green pb-2">
+                    01 — 14 SERVICES
+                </div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- 1. Custom Software -->
+<div class="md:col-span-8 group p-8 bg-surface border border-border-muted card-hover transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-botanical-green">terminal</span>
+<span class="font-label-caps text-secondary">01</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Custom Software Development</h3>
+<p class="text-secondary mb-6 max-w-lg">Bespoke solutions engineered from the ground up to solve your unique business challenges. We don't believe in one-size-fits-all software.</p>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-ink-black/5 rounded font-label-caps text-[10px]">C++ / PYTHON</span>
+<span class="px-3 py-1 bg-ink-black/5 rounded font-label-caps text-[10px]">ENTERPRISE ARCHITECTURE</span>
+</div>
+</div>
+<!-- 2. SaaS Platforms -->
+<div class="md:col-span-4 group p-8 bg-surface border border-border-muted card-hover transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-botanical-green">cloud_done</span>
+<span class="font-label-caps text-secondary">02</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">SaaS Platforms</h3>
+<p class="text-secondary mb-6">Scalable multi-tenant architectures built for the cloud.</p>
+<div class="w-full h-32 rounded-lg bg-surface-container-high overflow-hidden" data-alt="A clean, minimalist abstract visualization of a cloud software architecture dashboard. Soft grey tones with botanical green data points, emphasizing clarity and sophistication in a modern tech-oriented aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAS07NfmWNE7QUNOZwGgLnuUP56QXyxIhXicFGaTZtByhTIKlO_WmmzjHkjJv2e3CaRvi7PSHt1XMMXdfsgMIxf-UtqliFBjb6uqC_f5JhjzjRwBjta5DYlAuT_d_4WD_8ZjL44_qVVTU6mQHCNIhgvQpIGkHWcDuhjAKmYSRXOzBdK8lqy-lRZDbqWQu_ImPLlEfmqeD6x4zhX16MXxd5FB1_rVMmqiW5m_zL3xuslcbUKNJP1E_c')"></div>
+</div>
+<!-- 3. Web Design (Editorial Style) -->
+<div class="md:col-span-4 group p-8 bg-surface border border-border-muted card-hover transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-botanical-green">web_asset</span>
+<span class="font-label-caps text-secondary">03</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">UI/UX &amp; Web Design</h3>
+<p class="text-secondary mb-6">Interface designs that balance aesthetic beauty with conversion-focused UX.</p>
+</div>
+<!-- 4. AI/ML Integration -->
+<div class="md:col-span-4 group p-8 bg-primary text-surface border border-transparent card-hover transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-white">psychology</span>
+<span class="font-label-caps text-white/60">04</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">AI &amp; Machine Learning</h3>
+<p class="text-surface/80 mb-6">Leveraging LLMs and predictive analytics to automate complex workflows.</p>
+</div>
+<!-- 5. Cloud Infrastructure -->
+<div class="md:col-span-4 group p-8 bg-surface border border-border-muted card-hover transition-all duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-4xl text-botanical-green">storage</span>
+<span class="font-label-caps text-secondary">05</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Cloud &amp; DevOps</h3>
+<p class="text-secondary mb-6">AWS, GCP, and Azure management with automated CI/CD pipelines.</p>
+</div>
+<!-- 6-14 Quick Grid -->
+<div class="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter mt-8">
+<!-- 6. API -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">api</span>
+<div>
+<h4 class="font-bold mb-1">API Development</h4>
+<p class="text-sm text-secondary">Robust RESTful and GraphQL interfaces.</p>
+</div>
+</div>
+<!-- 7. Mobile -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">smartphone</span>
+<div>
+<h4 class="font-bold mb-1">Mobile Apps</h4>
+<p class="text-sm text-secondary">Cross-platform React Native &amp; Flutter.</p>
+</div>
+</div>
+<!-- 8. QA -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">check_circle</span>
+<div>
+<h4 class="font-bold mb-1">QA &amp; Testing</h4>
+<p class="text-sm text-secondary">Automated and manual rigorous testing.</p>
+</div>
+</div>
+<!-- 9. Security -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">security</span>
+<div>
+<h4 class="font-bold mb-1">Cybersecurity</h4>
+<p class="text-sm text-secondary">End-to-end encryption and audits.</p>
+</div>
+</div>
+<!-- 10. Data -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">database</span>
+<div>
+<h4 class="font-bold mb-1">Data Engineering</h4>
+<p class="text-sm text-secondary">Pipelines and warehouse management.</p>
+</div>
+</div>
+<!-- 11. Legacy -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">history</span>
+<div>
+<h4 class="font-bold mb-1">Modernization</h4>
+<p class="text-sm text-secondary">Upgrading legacy systems to modern tech.</p>
+</div>
+</div>
+<!-- 12. IoT -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">router</span>
+<div>
+<h4 class="font-bold mb-1">IoT Solutions</h4>
+<p class="text-sm text-secondary">Hardware-software ecosystem sync.</p>
+</div>
+</div>
+<!-- 13. Blockchain -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">link</span>
+<div>
+<h4 class="font-bold mb-1">Web3 &amp; Blockchain</h4>
+<p class="text-sm text-secondary">Smart contracts and decentralized apps.</p>
+</div>
+</div>
+<!-- 14. Support -->
+<div class="p-6 border border-border-muted flex gap-4 items-start card-hover transition-all duration-300">
+<span class="material-symbols-outlined text-botanical-green">support_agent</span>
+<div>
+<h4 class="font-bold mb-1">24/7 Support</h4>
+<p class="text-sm text-secondary">Ongoing maintenance and monitoring.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study Preview (Editorial Layout) -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-mobile-margin">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Selected Technical Work</h2>
+<div class="space-y-32">
+<!-- Case 01 -->
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 order-2 md:order-1">
+<span class="font-headline-xl text-ink-black/10 block mb-2">01</span>
+<h3 class="font-headline-md text-headline-md mb-4">FinTech Neo-Bank Infrastructure</h3>
+<p class="text-secondary font-body-lg mb-8">Building a secure, low-latency transaction engine capable of processing 10,000+ operations per second with zero downtime.</p>
+<div class="grid grid-cols-2 gap-6 mb-8 border-t border-border-muted pt-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-2 uppercase">Challenge</h4>
+<p class="text-sm">High-frequency trading with stringent security.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-2 uppercase">Outcome</h4>
+<p class="text-sm">99.999% uptime and SOC2 compliance.</p>
+</div>
+</div>
+<button class="flex items-center gap-2 group font-bold">
+                            View Case Study
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</button>
+</div>
+<div class="w-full md:w-1/2 order-1 md:order-2 bg-surface-container h-[500px] overflow-hidden" data-alt="A macro photograph of high-tech circuitry glowing with subtle botanical green LEDs. The image is clean and organized, echoing the precision and humanist technicality of the Nexivo Solutions brand identity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAOSDXUv9h6M-oQljweW50oB0I23jsQzprp0ofTrUGW1iQn2gLlU1-5jxzss88D1SFXsOgE_S1xAvAqYfiVBcDFX7ySURIFBOhs42SsuN64t73FlallD7FiExa94u6JC-0Pe3Q7Itrdsl0GAnq7wmtIhUXNNTG570QOkuQTlB_EacuGevmV3ZmYidEcVV5VZOaVHKr0QyO_dEbMRW1PL2jwAzQBCkyuzQCnz2Ac7DcD9Kyf1sf-Zg')"></div>
+</div>
+<!-- Case 02 -->
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 bg-surface-container h-[500px] overflow-hidden" data-alt="A high-end minimal visualization of a digital neural network. The design uses charcoal lines and botanical green nodes against a warm off-white background, suggesting sophisticated AI technology without being overly cold or clinical." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPRyeW7gvID2kfH9Ed1iY0Lo93Yn6xuDvAot-AavVq3COxDTV5qZPdyodxw6NrhlSjsEnRbyutKdUT5uv9BaiSv1uRdnUMuwrAucAyG_g45aTpAAxUtcPCxJs9J6hgKXoxY8z1xWnrBvk7hmZdfR-E3gnFsV1VSKUJCwbv0qOS6CKlm4e6ap8PxICPr-XxJtY2agMALgrR7Dx8CRGCjHivwgclg8REAec1UMJtREOmUDOzQe6KBI8')"></div>
+<div class="w-full md:w-1/2">
+<span class="font-headline-xl text-ink-black/10 block mb-2">02</span>
+<h3 class="font-headline-md text-headline-md mb-4">HealthTech AI Diagnostic Tool</h3>
+<p class="text-secondary font-body-lg mb-8">An intelligent imaging platform using computer vision to assist radiologists in early-stage detection.</p>
+<div class="grid grid-cols-2 gap-6 mb-8 border-t border-border-muted pt-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-2 uppercase">Challenge</h4>
+<p class="text-sm">Processing massive DICOM datasets in real-time.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-2 uppercase">Outcome</h4>
+<p class="text-sm">35% increase in diagnostic accuracy.</p>
+</div>
+</div>
+<button class="flex items-center gap-2 group font-bold">
+                            View Case Study
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Consultation Section -->
+<section class="py-section-padding bg-surface-container">
+<div class="max-w-container-max mx-auto px-mobile-margin text-center">
+<h2 class="font-headline-lg text-headline-lg mb-6">Ready to Build Something Amazing?</h2>
+<p class="text-secondary font-body-lg max-w-2xl mx-auto mb-12">From websites and branding to AI-powered solutions, DM us on Instagram to start your next project.</p>
+<div class="max-w-xl mx-auto bg-surface p-12 relative">
+<div class="absolute -top-6 -right-6 scribble-accent">
+<svg fill="none" height="80" viewbox="0 0 80 80" width="80">
+<path d="M10 70C20 40 60 40 70 10" stroke="#618F70" stroke-dasharray="4 4" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="font-headline-md mb-8">Start Your Project</h3>
+<div class="space-y-8">
+<input class="w-full editorial-input py-3 px-1" placeholder="Full Name" type="text"/>
+<input class="w-full editorial-input py-3 px-1" placeholder="Email Address" type="email"/>
+<select class="w-full editorial-input py-3 px-1">
+<option value="">Interested Service</option>
+<option>Custom Software</option>
+<option>AI/ML Integration</option>
+<option>SaaS Platform</option>
+<option>Web Development</option>
+</select>
+<button class="w-full bg-botanical-green text-surface py-4 font-bold active:scale-95 transition-transform">
+                        Send Project Inquiry
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container border-t border-border-muted">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-mobile-margin">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-ink-black mb-2">Nexivo Solutions</div>
+<p class="text-secondary-fixed-variant text-sm">© 2024 Nexivo Solutions. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-body-md text-body-md">
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Contact</a>
+</div>
+<div class="mt-8 md:mt-0 flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center bg-ink-black/5 rounded-full hover:bg-botanical-green hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">language</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center bg-ink-black/5 rounded-full hover:bg-botanical-green hover:text-white transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Subtle scroll reveal effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

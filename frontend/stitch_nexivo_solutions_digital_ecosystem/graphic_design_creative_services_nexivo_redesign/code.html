@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Graphic Design &amp; Creative Services | Nexivo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fbf9f2",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#717972",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dcdad3",
+                    "on-tertiary-fixed-variant": "#6a383e",
+                    "on-surface": "#1b1c18",
+                    "border-muted": "rgba(26, 26, 26, 0.1)",
+                    "on-secondary-container": "#636262",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#234f35",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#c1c9c0",
+                    "on-background": "#1b1c18",
+                    "tertiary-container": "#9f646b",
+                    "inverse-primary": "#a1d2af",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#386549",
+                    "on-surface-variant": "#414942",
+                    "tertiary": "#834c53",
+                    "inverse-on-surface": "#f3f1ea",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f2",
+                    "surface-tint": "#3b684b",
+                    "surface-container-high": "#eae8e1",
+                    "primary-fixed": "#bdeeca",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "ink-black": "#1A1A1A",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-low": "#f6f4ed",
+                    "surface-container": "#f0eee7",
+                    "botanical-green": "#618F70",
+                    "surface-variant": "#e4e2dc",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#30312c",
+                    "surface-bright": "#fbf9f2",
+                    "tertiary-fixed-dim": "#fbb4bb",
+                    "on-primary-container": "#f6fff5",
+                    "primary-fixed-dim": "#a1d2af",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#517e60",
+                    "on-tertiary-fixed": "#360d15",
+                    "warm-bg": "#F7F5EE"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "mobile-margin": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "section-padding": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scribble-accent {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .scribble-animation {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s linear forwards;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: 0; }
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            border-color: #618F70;
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-black font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-border-muted h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-mobile-margin h-full">
+<div class="font-headline-md text-headline-md font-bold text-ink-black dark:text-inverse-on-surface">
+                Nexivo Solutions
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Technology</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">E-commerce</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Marketing</a>
+<a class="text-botanical-green font-bold border-b-2 border-botanical-green pb-1 font-body-md text-body-md" href="#">Creative</a>
+<a class="text-secondary hover:text-ink-black transition-colors font-body-md text-body-md" href="#">Video</a>
+</div>
+<button class="bg-botanical-green text-surface px-6 py-3 font-bold hover:scale-95 transition-transform">
+                Start Your Project
+            </button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-section-padding overflow-hidden">
+<div class="max-w-container-max mx-auto px-mobile-margin text-center relative">
+<!-- Scribble SVG -->
+<div class="scribble-accent top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl opacity-20">
+<svg class="w-full" fill="none" viewbox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+<path class="scribble-animation" d="M10 80C50 20 150 20 200 80C250 140 350 140 450 80" stroke="#618F70" stroke-width="2"></path>
+</svg>
+</div>
+<div class="mb-6 inline-flex items-center gap-2 px-4 py-1 bg-ink-black/5 rounded-full">
+<span class="material-symbols-outlined text-[14px] text-botanical-green">auto_awesome</span>
+<span class="font-label-caps text-label-caps uppercase tracking-widest">Brand Elevation</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl max-w-4xl mx-auto mb-8 leading-tight">
+                    We craft <span class="relative">visual identities
+                        <svg class="absolute -bottom-2 left-0 w-full h-2 text-botanical-green/30" preserveaspectratio="none" viewbox="0 0 100 10"><path d="M0 5 Q 25 0 50 5 T 100 5" fill="transparent" stroke="currentColor" stroke-width="2"></path></svg>
+</span> that define industry leaders.
+                </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mb-12">
+                    Human-centric design meets technical precision. We build cohesive brand systems that resonate with your audience and scale with your ambition.
+                </p>
+<div class="flex flex-col md:flex-row justify-center gap-4">
+<button class="bg-botanical-green text-surface px-8 py-4 font-bold flex items-center justify-center gap-2 hover:translate-y-[-2px] transition-all">
+                        View Our Portfolio
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-ink-black/30 px-8 py-4 font-bold flex items-center justify-center hover:bg-ink-black/5 transition-all">
+                        Service Guide
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-container-max mx-auto px-mobile-margin">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Creative Ecosystem</h2>
+<p class="text-secondary max-w-xl">From initial discovery to final launch, we provide a full spectrum of design services that unify your brand across every touchpoint.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Service Card 1 -->
+<div class="md:col-span-8 bg-surface border border-border-muted p-10 hover-lift flex flex-col justify-between group">
+<div>
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-6" style="font-variation-settings: 'FILL' 1;">palette</span>
+<h3 class="font-headline-md text-headline-md mb-4">Visual Identity &amp; Branding</h3>
+<p class="text-secondary mb-8 max-w-md">Comprehensive brand systems including logo design, typography, color palettes, and extensive brand guidelines to ensure consistency everywhere.</p>
+</div>
+<ul class="flex flex-wrap gap-4">
+<li class="bg-ink-black/5 px-4 py-2 font-label-caps text-[10px] rounded">LOGO DESIGN</li>
+<li class="bg-ink-black/5 px-4 py-2 font-label-caps text-[10px] rounded">COLOR THEORY</li>
+<li class="bg-ink-black/5 px-4 py-2 font-label-caps text-[10px] rounded">TYPE SYSTEMS</li>
+<li class="bg-ink-black/5 px-4 py-2 font-label-caps text-[10px] rounded">BRAND VOICE</li>
+</ul>
+</div>
+<!-- Service Card 2 -->
+<div class="md:col-span-4 bg-surface border border-border-muted p-10 hover-lift group">
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-6">draw</span>
+<h3 class="font-headline-md text-headline-md mb-4">Custom Illustrations</h3>
+<p class="text-secondary">Bespoke digital artwork and icon sets that give your brand a unique, hand-crafted edge in a sea of stock assets.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="md:col-span-4 bg-surface border border-border-muted p-10 hover-lift group">
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-6">dashboard_customize</span>
+<h3 class="font-headline-md text-headline-md mb-4">UI/UX Design</h3>
+<p class="text-secondary">Intuitive digital interfaces that prioritize user journey while maintaining high-end aesthetic standards.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="md:col-span-8 bg-botanical-green p-10 hover-lift text-surface relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-4">Marketing Collateral</h3>
+<p class="text-on-primary-container/80 mb-8 max-w-md">High-impact pitch decks, annual reports, social media assets, and advertising materials designed to convert.</p>
+<button class="flex items-center gap-2 font-bold group">
+                                Explore Collateral
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+<!-- Background Pattern -->
+<div class="absolute right-[-10%] bottom-[-20%] opacity-10 rotate-12 scale-150">
+<span class="material-symbols-outlined text-[300px]">auto_graph</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies - Asymmetric Layout -->
+<section class="py-section-padding">
+<div class="max-w-container-max mx-auto px-mobile-margin">
+<div class="flex justify-between items-end mb-20">
+<div>
+<span class="font-label-caps text-botanical-green mb-4 block">PREVIOUS WORK</span>
+<h2 class="font-headline-lg text-headline-lg">Selected Projects</h2>
+</div>
+<p class="text-secondary max-w-xs text-right hidden md:block">A curated look at how we've helped brands find their voice through strategic design.</p>
+</div>
+<!-- Project 04 (Aumya) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-section-padding">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="text-headline-xl font-bold text-ink-black/10 block mb-4">04</span>
+<h3 class="font-headline-lg text-headline-lg mb-2">AUMYA</h3>
+<p class="font-label-caps text-secondary mb-6">LUXURY SPIRITUAL JEWELRY</p>
+<p class="text-secondary mb-8">A premium identity system that blends luxury and spirituality into a refined brand presence. Our approach focused on timeless elegance and tactile sophistication.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="border-l border-ink-black/20 pl-4">
+<span class="font-label-caps text-[10px] text-ink-black/40 block mb-1">CHALLENGE</span>
+<p class="text-body-md font-medium">Luxury and spirituality parity.</p>
+</div>
+<div class="border-l border-ink-black/20 pl-4">
+<span class="font-label-caps text-[10px] text-ink-black/40 block mb-1">OUTCOME</span>
+<p class="text-body-md font-medium">Elevated market positioning.</p>
+</div>
+</div>
+<div class="flex gap-2">
+<span class="border border-ink-black/10 px-3 py-1 text-[11px] font-label-caps">Logo Design</span>
+<span class="border border-ink-black/10 px-3 py-1 text-[11px] font-label-caps">Packaging</span>
+<span class="border border-ink-black/10 px-3 py-1 text-[11px] font-label-caps">Typography</span>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="bg-surface-container border border-border-muted overflow-hidden group">
+<img class="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="A high-end brand presentation for Aumya jewelry featuring luxury packaging mockups, a sophisticated deep plum and gold color palette, elegant serif typography, and lifestyle product photography. The aesthetic is clean, modern, and light-mode compatible, showcasing minimalist design principles with a focus on editorial-style layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-4lCfPDEklKVOQrw_ud4PotSMIjgBgpSd-yoEK_FqLNc95xwreXaaxBkXFD8cgVIAFvcjFFCqiCFROHocov_AyarZ9VqofDmOFTLWrN68soSLsogycZpRkqc4rsa_PitgqP07Hh2uedRQuwi9wVpepff0mbAK36vd1kWc8EtP1Ir856ZmyPtI2EMwD0KrfQG7mg-iT_WTuxBoLP_Bmyi9Cn3sfvY7J2cNS1VAmfRHGxrLn5waq8A"/>
+</div>
+</div>
+</div>
+<!-- Project 05 (AI JUGAAD) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-section-padding">
+<div class="md:col-span-7">
+<div class="bg-surface-container border border-border-muted overflow-hidden group">
+<img class="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="A comprehensive brand identity showcase for AI Jugaad, a creative agency. The image displays a vibrant mix of botanical greens, charcoal, and warm off-white tones. It includes logo variations, business card designs, social media templates, and custom iconography. The style is professional and technical, balancing organic shapes with a structured grid layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7TT2lRjM3xsJq2S4uWtVjI9G6NXH047jXl4A2PkFC8qMfCeHaWrgCz9pNTpjWt5QWKL2Qv7Bgcd9CPY5JcQ-ikGANP6o-UP1ENyVdNgatHzXVpPZ2cXC4JKZIzMa86ffwwDZiVH7iaBs4_VT7szKcoBnRZeORGwEpAwC2WHziWYqOJ_qHoqX1IiR1KqMghJVY256D91i-INOO4-ATxbsRD8D9xLYAIH5tn-tLoqDUpqP_IGkI-0"/>
+</div>
+</div>
+<div class="md:col-span-5">
+<span class="text-headline-xl font-bold text-ink-black/10 block mb-4">05</span>
+<h3 class="font-headline-lg text-headline-lg mb-2">AI JUGAAD</h3>
+<p class="font-label-caps text-secondary mb-6">AGENCY BRANDING</p>
+<p class="text-secondary mb-8">A polished agency identity system designed to elevate AI Jugaad’s visual authority across digital and print touchpoints.</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="border-l border-ink-black/20 pl-4">
+<span class="font-label-caps text-[10px] text-ink-black/40 block mb-1">STRATEGY</span>
+<p class="text-body-md font-medium">Flexible &amp; Scalable.</p>
+</div>
+<div class="border-l border-ink-black/20 pl-4">
+<span class="font-label-caps text-[10px] text-ink-black/40 block mb-1">DELIVERABLES</span>
+<p class="text-body-md font-medium">Social Kit &amp; Identity.</p>
+</div>
+</div>
+<button class="text-botanical-green font-bold flex items-center gap-2 group border-b-2 border-transparent hover:border-botanical-green pb-1 transition-all">
+                            View Case Study
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Project 06 (TASTY BITE) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-5 order-2 md:order-1">
+<span class="text-headline-xl font-bold text-ink-black/10 block mb-4">06</span>
+<h3 class="font-headline-lg text-headline-lg mb-2">TASTY BITE</h3>
+<p class="font-label-caps text-secondary mb-6">RESTAURANT BRANDING</p>
+<p class="text-secondary mb-8">A bold restaurant identity system crafted to bring flavor, warmth, and premium hospitality to every touchpoint.</p>
+<div class="p-6 bg-surface-container border border-border-muted mb-8">
+<p class="italic text-secondary font-body-md">"Nexivo transformed our brand into something that truly represents our passion for food. The attention to detail in the packaging design was unmatched."</p>
+<span class="block mt-4 font-bold text-body-md">— Founder, Tasty Bite</span>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2">
+<div class="bg-surface-container border border-border-muted overflow-hidden group">
+<img class="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" data-alt="A vibrant brand identity board for Tasty Bite restaurant featuring warm earth tones like terracotta, mustard, and deep forest green. The design includes premium packaging mockups for takeout boxes, detailed menu layouts with modern typography, and a set of custom hand-drawn food icons. The overall feel is inviting, professional, and artisanal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnGCMd0jly0e0cXZrKEaG7A9qf2Rkw3Zn3_9GahT-LkgbzwJATTfsYHum3WNkylTiqEAR27_I8vPe23-KOrffU05nTGbHzZakiwplqv4vTSqDclSvxTrKWy2Uq171IvsoHbvlPpulh5GmUVTwhav-bj0EMM6GFMFM1iRsHMFe2c1DrjfkO21YGUJas4UD9-4ZUOK9B22XDPUNztgkYwlZpUCyxZPVNW-Ooj_1r36VjLYrbtZ5UWDo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding bg-ink-black text-surface relative overflow-hidden">
+<!-- Animated Scribble Circle -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 opacity-20 border-4 border-botanical-green rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
+<div class="max-w-container-max mx-auto px-mobile-margin text-center relative z-10">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6">Ready to build something amazing?</h2>
+<p class="text-surface/70 max-w-2xl mx-auto mb-10 text-body-lg">From visual identities to AI-powered digital experiences, let's turn your vision into a premium reality.</p>
+<div class="inline-flex flex-col items-center">
+<button class="bg-botanical-green text-surface px-10 py-5 font-bold hover:scale-105 transition-all shadow-xl mb-4">
+                        Start Your Project
+                    </button>
+<div class="flex items-center gap-4 mt-8 opacity-60">
+<span class="font-label-caps">TRUSTED BY 50+ GLOBAL BRANDS</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-section-padding border-t border-border-muted">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-mobile-margin">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-ink-black dark:text-inverse-on-surface mb-2">
+                    Nexivo Solutions
+                </div>
+<p class="text-secondary text-body-md max-w-xs">Building the AI systems you don't have time to figure out.</p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-8">
+<div class="flex gap-6">
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all font-body-md text-body-md" href="#">Contact</a>
+</div>
+<div class="text-secondary-fixed-variant font-body-md text-body-md">
+                    © 2024 Nexivo Solutions. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Simple scroll reveal for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

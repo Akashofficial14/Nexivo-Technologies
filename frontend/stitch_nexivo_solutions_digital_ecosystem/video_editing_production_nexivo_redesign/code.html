@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Editing &amp; Production | Nexivo Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#fbf9f2",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#717972",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dcdad3",
+                    "on-tertiary-fixed-variant": "#6a383e",
+                    "on-surface": "#1b1c18",
+                    "border-muted": "rgba(26, 26, 26, 0.1)",
+                    "on-secondary-container": "#636262",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#234f35",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline-variant": "#c1c9c0",
+                    "on-background": "#1b1c18",
+                    "tertiary-container": "#9f646b",
+                    "inverse-primary": "#a1d2af",
+                    "on-primary-fixed": "#002110",
+                    "primary": "#386549",
+                    "on-surface-variant": "#414942",
+                    "tertiary": "#834c53",
+                    "inverse-on-surface": "#f3f1ea",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffd9dc",
+                    "on-primary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fbf9f2",
+                    "surface-tint": "#3b684b",
+                    "surface-container-high": "#eae8e1",
+                    "primary-fixed": "#bdeeca",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "ink-black": "#1A1A1A",
+                    "surface-container-highest": "#e4e2dc",
+                    "on-tertiary-container": "#fffbff",
+                    "surface-container-low": "#f6f4ed",
+                    "surface-container": "#f0eee7",
+                    "botanical-green": "#618F70",
+                    "surface-variant": "#e4e2dc",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#30312c",
+                    "surface-bright": "#fbf9f2",
+                    "tertiary-fixed-dim": "#fbb4bb",
+                    "on-primary-container": "#f6fff5",
+                    "primary-fixed-dim": "#a1d2af",
+                    "secondary-fixed": "#e5e2e1",
+                    "primary-container": "#517e60",
+                    "on-tertiary-fixed": "#360d15",
+                    "warm-bg": "#F7F5EE"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "mobile-margin": "20px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "section-padding": "80px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "label-caps": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .scribble-accent {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bento-card:hover {
+            border-color: #618F70;
+            transform: translateY(-4px);
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: #618F70;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-black font-body-md selection:bg-botanical-green/30">
+<!-- Navigation (TopNavBar Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-border-muted h-20">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-mobile-margin h-full">
+<div class="font-headline-md text-headline-md font-bold text-ink-black dark:text-inverse-on-surface">
+                Nexivo Solutions
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-body-md text-body-md">
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Technology</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">E-commerce</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Marketing</a>
+<a class="text-secondary hover:text-ink-black transition-colors" href="#">Creative</a>
+<a class="text-botanical-green font-bold border-b-2 border-botanical-green pb-1" href="#">Video</a>
+</div>
+<button class="bg-botanical-green text-surface px-6 py-3 font-bold hover:scale-95 transition-transform">
+                Start Your Project
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-mobile-margin mb-section-padding relative">
+<div class="md:w-3/4 mb-12 relative">
+<span class="font-label-caps text-label-caps text-botanical-green mb-4 block">SERVICES</span>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-6 leading-tight">
+                    Cinematic Video Editing <br/> &amp; Production for <span class="underline decoration-botanical-green/30">Digital-First Brands.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                    We transform raw footage into high-impact visual stories. From dynamic highlight reels to bespoke motion graphics, we help modern brands dominate the social landscape.
+                </p>
+<!-- Hand-drawn Scribble Accent -->
+<div class="hidden md:block absolute -right-20 top-0">
+<svg class="text-botanical-green fill-none stroke-current stroke-2" height="120" viewbox="0 0 120 120" width="120">
+<path d="M10 50 Q 30 10 70 30 T 110 50" stroke-dasharray="4 4"></path>
+<path d="M90 30 L 110 50 L 90 70"></path>
+</svg>
+<span class="text-botanical-green font-label-caps text-[10px] absolute top-14 left-10">THE MAGIC HAPPENS HERE</span>
+</div>
+</div>
+<!-- Bento Grid of Services -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Highlight Reels -->
+<div class="md:col-span-8 bg-surface-container-low border border-border-muted p-base md:p-8 flex flex-col justify-between group transition-all duration-300 hover:border-botanical-green">
+<div class="mb-12">
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-4">movie_edit</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">Highlight Reels</h3>
+<p class="text-secondary max-w-md">Distilling long-form content into punchy, high-energy summaries that capture the essence of your events or brand milestones.</p>
+</div>
+<div class="relative overflow-hidden aspect-video w-full rounded-lg">
+<img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="A professional high-energy cinematic video editing setup with multi-monitor display showing a color grading interface. The room is a minimalist, modern production studio with soft botanical-green lighting accents. High-end equipment and a clean, organized workspace that emphasizes technical precision and creative warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSJ21GWJkZ9-GSkGhD2VfhvLT5UVkl9HlYeepystlZyi7oW87BUeGC4R8egpPcsLGmK6Kvf1b77oNdnLQ1dJjhKpS-qH6YzwToMH2c0ghIP4KT2U1KrkiIS2mNTOxRcmgJW2c0fptcDVE-TlsxuXs3C6cL6a0hgCMmi59WruE9vULvJUvhpcEc4_ooQSPNTc5qMMcGWndB6wK4HABYWwcfNUj0G9EMrnSJ71d8tLrSfs7WlN3QNx0"/>
+</div>
+</div>
+<!-- Social Video -->
+<div class="md:col-span-4 space-y-gutter">
+<div class="bg-surface-container border border-border-muted p-8 transition-all duration-300 hover:border-botanical-green h-full">
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-4">smartphone</span>
+<h3 class="font-headline-md text-headline-md mb-2">Social-First Content</h3>
+<p class="text-secondary text-body-md">9:16 optimized edits for TikTok, Reels, and Shorts designed for maximum retention.</p>
+</div>
+<div class="bg-surface-container border border-border-muted p-8 transition-all duration-300 hover:border-botanical-green h-full">
+<span class="material-symbols-outlined text-4xl text-botanical-green mb-4">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md mb-2">Motion Graphics</h3>
+<p class="text-secondary text-body-md">Bespoke 2D/3D typography and visual accents that bring your data and brand to life.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Previous Work Section -->
+<section class="bg-surface-container-high py-section-padding">
+<div class="max-w-container-max mx-auto px-mobile-margin">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-4">Selected Productions</h2>
+<p class="text-secondary max-w-lg">A showcase of recent visual storytelling projects for industry leaders and creative pioneers.</p>
+</div>
+<button class="border border-ink-black/30 px-8 py-3 font-bold hover:bg-ink-black hover:text-surface transition-colors flex items-center gap-2">
+                        View Showreel <span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+<div class="space-y-16">
+<!-- Case Study 01 -->
+<div class="reveal-on-scroll flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2">
+<div class="relative overflow-hidden group">
+<img class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist cinematic screen grab of a high-end luxury property tour video. The lighting is golden-hour soft, highlighting natural wood textures and botanical-green foliage in a modern living space. The composition is editorial and perfectly balanced, reflecting premium production quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB18kNc0UK0lafLCNm7SKhUZBmb1nUcuml7APRccCUHod13Ji3oEjakudWQLY84fULPtgca6LBy5bURgFBmzFAVx1ZE4HsqRvkhKO6mchiT_RMnjD-GB_8wIEHYjMznilAhsGRHH4MmU1kLyEu50pP-QhpCly44Mk8zK9xhFgIHCFqw6T6rUWQv0VUPa55ZzXEhPlq8zm6lCrSKE515xOis93LYIUOmtXNe7uO0VukWOtLxxBiFl-4"/>
+<div class="absolute inset-0 bg-ink-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-surface rounded-full p-6 material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-botanical-green font-headline-xl opacity-20 block mb-2">01</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">The Artisan Collection</h3>
+<div class="flex gap-2 mb-6">
+<span class="bg-ink-black/5 text-ink-black/60 px-3 py-1 font-label-caps text-[10px] rounded">DOCUMENTARY</span>
+<span class="bg-ink-black/5 text-ink-black/60 px-3 py-1 font-label-caps text-[10px] rounded">COLOR GRADING</span>
+</div>
+<p class="text-secondary mb-8 font-body-lg">A cinematic exploration of hand-crafted ceramics. We used slow, sweeping movements and tactile close-ups to emphasize the human touch behind the craft.</p>
+<a class="inline-flex items-center gap-2 border-b-2 border-botanical-green pb-1 font-bold hover:text-botanical-green transition-colors" href="#">
+                                View Full Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case Study 02 -->
+<div class="reveal-on-scroll flex flex-col md:flex-row-reverse gap-12 items-center">
+<div class="w-full md:w-1/2">
+<div class="relative overflow-hidden group">
+<img class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A vibrant, fast-paced edit montage showing abstract tech hardware and glowing neon circuits. The style is highly technical yet warm, with a restricted color palette of charcoal and botanical-green. Dynamic motion blur and glitch transitions add a sense of high-tech urgency and professional precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs_1kmP5NuIm3CaCoMTdQArDluA4ERbO7D_D7pBwwLne7HaDE7bRDBpECUAA5BXhfNvxKh-SZBRl_4GIv1C5ryuPkGfwtMW2Ei3Pc_649qelMvMfRDpWIj50M2zkuzFSiinNHYKdfiEL8UK690bvnHdLkMTVf3FCx-IS7yKGDrTNBK_zUD94X0MD3KSp3bkuN0ZMrw-y38NcFw7wZR42Sk-_VwccfUD5fDpCDSQDZYHh1JB7aaD7o"/>
+<div class="absolute inset-0 bg-ink-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="bg-surface rounded-full p-6 material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-botanical-green font-headline-xl opacity-20 block mb-2">02</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">TechPulse Global Summit</h3>
+<div class="flex gap-2 mb-6">
+<span class="bg-ink-black/5 text-ink-black/60 px-3 py-1 font-label-caps text-[10px] rounded">EVENT REEL</span>
+<span class="bg-ink-black/5 text-ink-black/60 px-3 py-1 font-label-caps text-[10px] rounded">MOTION GRAPHICS</span>
+</div>
+<p class="text-secondary mb-8 font-body-lg">High-energy highlight reel for an AI technology summit. Dynamic transitions and overlayed data visualizations were used to maintain an aggressive pace.</p>
+<a class="inline-flex items-center gap-2 border-b-2 border-botanical-green pb-1 font-bold hover:text-botanical-green transition-colors" href="#">
+                                View Full Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-section-padding overflow-hidden">
+<div class="max-w-container-max mx-auto px-mobile-margin text-center mb-20">
+<h2 class="font-headline-xl text-headline-xl mb-4">The Workflow</h2>
+<p class="text-secondary max-w-xl mx-auto">We follow a structured editorial process to ensure every frame aligns with your brand's strategic goals.</p>
+</div>
+<div class="max-w-container-max mx-auto px-mobile-margin">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Dotted line decoration (Desktop Only) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] border-t border-dashed border-botanical-green/30 -z-10"></div>
+<!-- Steps -->
+<div class="bg-surface p-8 border border-border-muted text-center relative group">
+<div class="w-12 h-12 bg-botanical-green text-surface rounded-full flex items-center justify-center mx-auto mb-6 font-bold group-hover:scale-110 transition-transform">1</div>
+<h4 class="font-bold mb-2">Discovery</h4>
+<p class="text-body-md text-secondary">Defining the hook, the narrative arc, and the target platform specs.</p>
+</div>
+<div class="bg-surface p-8 border border-border-muted text-center relative group">
+<div class="w-12 h-12 bg-botanical-green text-surface rounded-full flex items-center justify-center mx-auto mb-6 font-bold group-hover:scale-110 transition-transform">2</div>
+<h4 class="font-bold mb-2">The Cut</h4>
+<p class="text-body-md text-secondary">Assembly and rough cut focusing on pacing, rhythm, and story logic.</p>
+</div>
+<div class="bg-surface p-8 border border-border-muted text-center relative group">
+<div class="w-12 h-12 bg-botanical-green text-surface rounded-full flex items-center justify-center mx-auto mb-6 font-bold group-hover:scale-110 transition-transform">3</div>
+<h4 class="font-bold mb-2">Polish</h4>
+<p class="text-body-md text-secondary">Color grading, sound design, and integrated motion graphics.</p>
+</div>
+<div class="bg-surface p-8 border border-border-muted text-center relative group">
+<div class="w-12 h-12 bg-botanical-green text-surface rounded-full flex items-center justify-center mx-auto mb-6 font-bold group-hover:scale-110 transition-transform">4</div>
+<h4 class="font-bold mb-2">Mastering</h4>
+<p class="text-body-md text-secondary">Exporting optimized versions for web, mobile, and social channels.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding">
+<div class="max-w-[1000px] mx-auto px-mobile-margin">
+<div class="bg-botanical-green text-surface p-12 md:p-20 text-center relative overflow-hidden group">
+
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl mb-8">Ready to bring your story <br class="hidden md:block"/> to life?</h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-surface text-botanical-green px-10 py-4 font-bold text-lg hover:scale-105 transition-transform">Start Your Project</button>
+<button class="border border-surface/30 text-surface px-10 py-4 font-bold text-lg hover:bg-surface/10 transition-colors">Book a Consultation</button>
+</div>
+</div>
+<!-- Scribble Accent -->
+<div class="absolute -bottom-10 -right-10 opacity-30 transform -rotate-12 group-hover:rotate-0 transition-transform duration-1000">
+<svg fill="none" height="200" stroke="currentColor" stroke-width="2" viewbox="0 0 200 200" width="200">
+<circle cx="100" cy="100" r="80" stroke-dasharray="10 10"></circle>
+<path d="M60 100 L 140 100 M 100 60 L 100 140" stroke-linecap="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container border-t border-border-muted py-section-padding">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto px-mobile-margin gap-8">
+<div class="font-headline-md text-headline-md font-bold text-ink-black">
+                Nexivo Solutions
+            </div>
+<div class="flex gap-8 font-body-md">
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Privacy Policy</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Terms of Service</a>
+<a class="text-secondary-fixed-variant hover:text-botanical-green underline underline-offset-4 transition-all" href="#">Contact</a>
+</div>
+<div class="text-secondary-fixed-variant font-body-md">
+                © 2024 Nexivo Solutions. All rights reserved.
+            </div>
+</div>
+</footer>
+<div class="custom-cursor hidden md:block" id="cursor"></div>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2.5)');
+            el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
+        });
+
+        // Intersection Observer for Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body></html>
