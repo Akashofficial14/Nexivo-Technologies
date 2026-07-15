@@ -1,26 +1,49 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState, useEffect } from "react";
 import { Link } from "react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Loader from "../pages/LoaderPage/Loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
   const containerRef = useRef(null);
+  const [isLoaderComplete, setIsLoaderComplete] = useState(false);
+
+  // Disable scroll when preloader is active
+  useEffect(() => {
+    if (!isLoaderComplete) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isLoaderComplete]);
 
   useLayoutEffect(() => {
+    if (!isLoaderComplete) return;
+
     const ctx = gsap.context(() => {
       // ── Hero entrance (immediate, no scroll) ───────────────────────
       gsap.from(".hero-content > *", {
-        opacity: 0, y: 40, stagger: 0.13, duration: 1.0,
-        ease: "power4.out", delay: 0.1,
+        opacity: 0,
+        y: 40,
+        stagger: 0.13,
+        duration: 1.0,
+        ease: "power4.out",
+        delay: 0.1,
       });
 
       // ── Bento cards — each element is its own trigger ───────────────
       containerRef.current.querySelectorAll(".bento-card").forEach((card) => {
         gsap.from(card, {
-          opacity: 0, y: 50, duration: 0.85, ease: "power3.out",
+          opacity: 0,
+          y: 50,
+          duration: 0.85,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: card,
             start: "top 92%",
@@ -33,7 +56,11 @@ const Home = () => {
       // ── Project rows ───────────────────────────────────────────────
       containerRef.current.querySelectorAll(".project-row").forEach((row) => {
         gsap.from(row.querySelectorAll(".order-1, .order-2"), {
-          opacity: 0, y: 60, stagger: 0.18, duration: 1.0, ease: "power3.out",
+          opacity: 0,
+          y: 60,
+          stagger: 0.18,
+          duration: 1.0,
+          ease: "power3.out",
           scrollTrigger: {
             trigger: row,
             start: "top 90%",
@@ -46,7 +73,11 @@ const Home = () => {
       // ── CTA cards ──────────────────────────────────────────────────
       containerRef.current.querySelectorAll(".cta-card").forEach((card, i) => {
         gsap.from(card, {
-          opacity: 0, y: 40, duration: 0.8, delay: i * 0.1, ease: "power2.out",
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          delay: i * 0.1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: card,
             start: "top 92%",
@@ -58,31 +89,42 @@ const Home = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isLoaderComplete]);
 
   return (
-    <div ref={containerRef} className="pt-20">
+    <>
+      {!isLoaderComplete && (
+        <Loader onComplete={() => setIsLoaderComplete(true)} />
+      )}
+      <div ref={containerRef} className="pt-10">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-mobile-margin py-section-padding overflow-hidden">
         <div className="max-w-4xl relative z-10 hero-content">
-          <span className="inline-block px-4 py-1.5 mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-headline text-[12px] font-bold uppercase tracking-widest">
+          <span className="inline-block px-4 py-1.5 mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-headline text-[16px] font-bold uppercase tracking-widest">
             Future-Ready Solutions
           </span>
           <h1 className="font-headline text-headline-xl md:text-[64px] mb-6 leading-tight tracking-tight text-ink-black">
-            One Partner. Multiple <br />
+            Turning Ideas Into
+            <br />
             <span className="relative">
-              Digital Capabilities.
+              Digital Impact.
               <svg
                 className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
                 preserveAspectRatio="none"
                 viewBox="0 0 100 10"
               >
-                <path d="M0,5 Q25,0 50,5 T100,5" fill="none" stroke="currentColor" strokeWidth="2" />
+                <path
+                  d="M0,5 Q25,0 50,5 T100,5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
             </span>
           </h1>
-          <p className="font-body text-body-lg text-secondary mb-10 max-w-2xl mx-auto">
-            We build the AI systems you don't have time to figure out. Elevating businesses with premium web design and intelligent AI media assets. Expertly crafted for modern brands.
+          <p className="font-body text-body-2xl text-secondary mb-10 max-w-2xl mx-auto">
+            We helps businesses build, grow, and scale through technology, e-commerce, digital
+marketing, creative design, and video solutions — all under one root.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative">
             <Link to="/technology" className="w-full sm:w-auto">
@@ -94,34 +136,58 @@ const Home = () => {
               href="#services"
               className="group flex items-center gap-2 font-bold text-ink-black hover:text-botanical-green transition-colors"
             >
-              View Our Work
+              Explore Our Service
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
             {/* Hero Scribble Annotation */}
             <div className="hidden lg:block absolute -right-24 top-0 scribble-accent">
-              <svg fill="none" height="60" stroke="#618F70" strokeWidth="2" viewBox="0 0 120 60" width="120">
-                <path d="M10,40 Q40,10 70,50 T110,20" fill="none" strokeLinecap="round" />
+              <svg
+                fill="none"
+                height="60"
+                stroke="#618F70"
+                strokeWidth="2"
+                viewBox="0 0 120 60"
+                width="120"
+              >
+                <path
+                  d="M10,40 Q40,10 70,50 T110,20"
+                  fill="none"
+                  strokeLinecap="round"
+                />
                 <path d="M100,10 L110,20 L100,30" strokeLinecap="round" />
               </svg>
-              <p className="text-botanical-green font-headline text-[10px] font-bold tracking-widest mt-2 ml-10">CLICK HERE!</p>
+              <p className="text-botanical-green font-headline text-[10px] font-bold tracking-widest mt-2 ml-10">
+                CLICK HERE!
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Bento Grid */}
-      <section className="bg-surface-container py-20 px-mobile-margin border-t border-border-muted" id="services">
+      <section
+        className="bg-surface-container py-20 px-mobile-margin border-t border-border-muted"
+        id="services"
+      >
         <div className="max-w-container-max mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-xl text-left">
-              <h2 className="font-headline text-headline-lg mb-4 uppercase tracking-wider text-ink-black">Services</h2>
+              <h2 className="font-headline text-headline-lg mb-4 uppercase tracking-wider text-ink-black">
+                Services
+              </h2>
               <p className="font-body text-body-md text-secondary">
-                A refined suite of digital capabilities designed to scale strategy, visual systems, and intelligent applications for ambitious businesses.
+                A refined suite of digital capabilities designed to scale
+                strategy, visual systems, and intelligent applications for
+                ambitious businesses.
               </p>
             </div>
             <div className="text-right hidden md:block">
-              <span className="text-botanical-green font-headline text-headline-md font-bold">05</span>
-              <p className="font-headline text-[12px] font-bold tracking-widest opacity-50 text-ink-black uppercase">CORE PILLARS</p>
+              <span className="text-botanical-green font-headline text-headline-md font-bold">
+                05
+              </span>
+              <p className="font-headline text-[12px] font-bold tracking-widest opacity-50 text-ink-black uppercase">
+                CORE PILLARS
+              </p>
             </div>
           </div>
 
@@ -130,13 +196,20 @@ const Home = () => {
             <div className="md:col-span-8 md:row-span-2 bento-card bg-surface p-10 flex flex-col justify-between border border-border-muted rounded-xl relative overflow-hidden group text-left">
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-lg bg-botanical-green/10 flex items-center justify-center mb-6">
-                  <span className="material-symbols-outlined text-botanical-green" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span
+                    className="material-symbols-outlined text-botanical-green"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
                     terminal
                   </span>
                 </div>
-                <h3 className="font-headline text-headline-lg mb-4 text-ink-black">Technology</h3>
+                <h3 className="font-headline text-headline-lg mb-4 text-ink-black">
+                  Technology
+                </h3>
                 <p className="font-body text-body-md text-secondary max-w-md">
-                  Custom AI automation, intelligent workflows, and software ecosystems that eliminate manual friction. We don't just build code; we build leverage.
+                  Custom AI automation, intelligent workflows, and software
+                  ecosystems that eliminate manual friction. We don't just build
+                  code; we build leverage.
                 </p>
               </div>
               <div className="mt-auto relative z-10 flex flex-wrap gap-2">
@@ -157,37 +230,59 @@ const Home = () => {
                   alt="Abstract network graphic"
                 />
               </div>
-              <Link to="/technology" className="absolute inset-0 z-30" aria-label="Go to Technology page" />
+              <Link
+                to="/technology"
+                className="absolute inset-0 z-30"
+                aria-label="Go to Technology page"
+              />
             </div>
 
             {/* E-commerce */}
             <div className="md:col-span-4 md:row-span-1 bento-card bg-surface p-8 flex flex-col justify-between border border-border-muted rounded-xl relative group text-left">
               <div>
-                <span className="material-symbols-outlined text-botanical-green mb-4">shopping_cart</span>
-                <h3 className="font-headline text-headline-md mb-2 text-ink-black">E-commerce</h3>
+                <span className="material-symbols-outlined text-botanical-green mb-4">
+                  shopping_cart
+                </span>
+                <h3 className="font-headline text-headline-md mb-2 text-ink-black">
+                  E-commerce
+                </h3>
                 <p className="font-body text-body-md text-secondary text-sm">
                   Conversion-first online ordering systems and stores.
                 </p>
               </div>
               <div className="text-botanical-green font-bold text-sm flex items-center gap-1">
-                Explore <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                Explore{" "}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
-              <Link to="/ecommerce" className="absolute inset-0 z-35" aria-label="Go to E-commerce page" />
+              <Link
+                to="/ecommerce"
+                className="absolute inset-0 z-35"
+                aria-label="Go to E-commerce page"
+              />
             </div>
 
             {/* Marketing */}
             <div className="md:col-span-4 md:row-span-1 bento-card bg-surface p-8 flex flex-col justify-between border border-border-muted rounded-xl relative group text-left">
               <div>
-                <span className="material-symbols-outlined text-botanical-green mb-4">campaign</span>
-                <h3 className="font-headline text-headline-md mb-2 text-ink-black">Marketing</h3>
+                <span className="material-symbols-outlined text-botanical-green mb-4">
+                  campaign
+                </span>
+                <h3 className="font-headline text-headline-md mb-2 text-ink-black">
+                  Marketing
+                </h3>
                 <p className="font-body text-body-md text-secondary text-sm">
                   Performance driven strategies for modern digital brands.
                 </p>
               </div>
               <div className="text-botanical-green font-bold text-sm flex items-center gap-1">
-                Explore <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                Explore{" "}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </div>
-              <Link to="/marketing" className="absolute inset-0 z-35" aria-label="Go to Marketing page" />
+              <Link
+                to="/marketing"
+                className="absolute inset-0 z-35"
+                aria-label="Go to Marketing page"
+              />
             </div>
 
             {/* Creative */}
@@ -195,14 +290,20 @@ const Home = () => {
               <div className="flex gap-6 h-full">
                 <div className="flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="material-symbols-outlined text-botanical-green mb-4">draw</span>
-                    <h3 className="font-headline text-headline-md mb-2 text-ink-black">Creative</h3>
+                    <span className="material-symbols-outlined text-botanical-green mb-4">
+                      draw
+                    </span>
+                    <h3 className="font-headline text-headline-md mb-2 text-ink-black">
+                      Creative
+                    </h3>
                     <p className="font-body text-body-md text-secondary text-sm">
-                      Brand identity systems, logos, typography, and premium web design aesthetics.
+                      Brand identity systems, logos, typography, and premium web
+                      design aesthetics.
                     </p>
                   </div>
                   <div className="text-botanical-green font-bold text-sm flex items-center gap-1">
-                    Explore <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Explore{" "}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
                 <div className="w-32 h-32 hidden sm:block">
@@ -213,16 +314,25 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <Link to="/creative" className="absolute inset-0 z-35" aria-label="Go to Creative page" />
+              <Link
+                to="/creative"
+                className="absolute inset-0 z-35"
+                aria-label="Go to Creative page"
+              />
             </div>
 
             {/* Video */}
             <div className="md:col-span-6 md:row-span-1 bento-card bg-ink-black text-surface p-8 flex flex-col justify-between border border-ink-black rounded-xl relative group text-left">
               <div>
-                <span className="material-symbols-outlined text-botanical-green mb-4">movie</span>
-                <h3 className="font-headline text-headline-md mb-2 text-surface">Video</h3>
+                <span className="material-symbols-outlined text-botanical-green mb-4">
+                  movie
+                </span>
+                <h3 className="font-headline text-headline-md mb-2 text-surface">
+                  Video
+                </h3>
                 <p className="font-body text-body-md text-surface-container opacity-70 text-sm">
-                  Intelligent AI media assets and high-end video production for storytelling.
+                  Intelligent AI media assets and high-end video production for
+                  storytelling.
                 </p>
               </div>
               <div className="flex items-center gap-4">
@@ -230,7 +340,11 @@ const Home = () => {
                   Watch Showreel
                 </button>
               </div>
-              <Link to="/video" className="absolute inset-0 z-35" aria-label="Go to Video page" />
+              <Link
+                to="/video"
+                className="absolute inset-0 z-35"
+                aria-label="Go to Video page"
+              />
             </div>
           </div>
         </div>
@@ -247,15 +361,22 @@ const Home = () => {
           <div className="project-row group grid md:grid-cols-2 gap-16 mb-32 items-center text-left cursor-pointer">
             <div className="order-2 md:order-1 transition-transform duration-500 ease-out group-hover:translate-x-6">
               <div className="flex items-center gap-4 mb-6">
-                <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">01</span>
+                <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
+                  01
+                </span>
                 <div className="h-[1px] flex-1 bg-border-muted"></div>
               </div>
-              <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">Velora Property Care</h3>
+              <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
+                Velora Property Care
+              </h3>
               <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
                 PROPERTY CARE & MAINTENANCE
               </p>
               <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
-                Built a professional lead-generation website for a Canadian property care company focused on trust, credibility, and conversions. We implemented a custom scheduling engine that reduced admin overhead by 40%.
+                Built a professional lead-generation website for a Canadian
+                property care company focused on trust, credibility, and
+                conversions. We implemented a custom scheduling engine that
+                reduced admin overhead by 40%.
               </p>
               <div className="flex gap-3 mb-8">
                 <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
@@ -296,15 +417,21 @@ const Home = () => {
             </div>
             <div className="order-2 transition-transform duration-500 ease-out group-hover:translate-x-6">
               <div className="flex items-center gap-4 mb-6">
-                <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">02</span>
+                <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
+                  02
+                </span>
                 <div className="h-[1px] flex-1 bg-border-muted"></div>
               </div>
-              <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">Reddy Made Cakes</h3>
+              <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
+                Reddy Made Cakes
+              </h3>
               <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
                 BAKERY & CUSTOM CAKES
               </p>
               <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
-                Created an online cake ordering experience with a streamlined customer journey and product showcase. Integrated a complex tiered pricing model based on custom decorative requests.
+                Created an online cake ordering experience with a streamlined
+                customer journey and product showcase. Integrated a complex
+                tiered pricing model based on custom decorative requests.
               </p>
               <div className="flex gap-3 mb-8">
                 <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
@@ -326,19 +453,27 @@ const Home = () => {
       <section className="cta-section bg-surface-container-high py-20 px-mobile-margin border-y border-border-muted overflow-hidden">
         <div className="max-w-container-max mx-auto relative text-center">
           <div className="relative z-10">
-            <h2 className="font-headline text-headline-xl mb-6 text-ink-black">LET'S BUILD TOGETHER.</h2>
+            <h2 className="font-headline text-headline-xl mb-6 text-ink-black">
+              LET'S BUILD TOGETHER.
+            </h2>
             <p className="font-body text-body-lg text-secondary mb-12 max-w-2xl mx-auto">
-              Have an idea, business, or project in mind? Let's turn it into something exceptional with AI, automation, and modern web experiences.
+              Have an idea, business, or project in mind? Let's turn it into
+              something exceptional with AI, automation, and modern web
+              experiences.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-left">
               {/* Card 1 */}
               <div className="cta-card bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4 border border-botanical-green/20">
-                  <span className="material-symbols-outlined text-botanical-green">link</span>
+                  <span className="material-symbols-outlined text-botanical-green">
+                    link
+                  </span>
                 </div>
                 <h4 className="font-bold text-ink-black mb-2">LinkedIn</h4>
-                <p className="text-sm text-secondary mb-6 font-body">Professional updates & networking</p>
+                <p className="text-sm text-secondary mb-6 font-body">
+                  Professional updates & networking
+                </p>
                 <button className="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors cursor-pointer text-ink-black">
                   Visit LinkedIn
                 </button>
@@ -346,10 +481,14 @@ const Home = () => {
               {/* Card 2 */}
               <div className="cta-card bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4 border border-botanical-green/20">
-                  <span className="material-symbols-outlined text-botanical-green">photo_camera</span>
+                  <span className="material-symbols-outlined text-botanical-green">
+                    photo_camera
+                  </span>
                 </div>
                 <h4 className="font-bold text-ink-black mb-2">Instagram</h4>
-                <p className="text-sm text-secondary mb-6 font-body">Creative process & portfolio</p>
+                <p className="text-sm text-secondary mb-6 font-body">
+                  Creative process & portfolio
+                </p>
                 <button className="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors cursor-pointer text-ink-black">
                   Visit Instagram
                 </button>
@@ -357,10 +496,14 @@ const Home = () => {
               {/* Card 3 */}
               <div className="cta-card bg-surface p-8 rounded-xl border border-border-muted flex flex-col items-center text-center">
                 <div className="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mb-4 border border-botanical-green/20">
-                  <span className="material-symbols-outlined text-botanical-green">mail</span>
+                  <span className="material-symbols-outlined text-botanical-green">
+                    mail
+                  </span>
                 </div>
                 <h4 className="font-bold text-ink-black mb-2">Email</h4>
-                <p className="text-sm text-secondary mb-6 font-body">Direct inquiries & partnerships</p>
+                <p className="text-sm text-secondary mb-6 font-body">
+                  Direct inquiries & partnerships
+                </p>
                 <button className="w-full py-3 bg-surface-container rounded-lg font-bold text-sm hover:bg-botanical-green hover:text-surface transition-colors cursor-pointer text-ink-black">
                   Send Email
                 </button>
@@ -368,9 +511,12 @@ const Home = () => {
             </div>
 
             <div className="bg-surface p-12 rounded-2xl border-2 border-botanical-green relative max-w-3xl mx-auto shadow-sm">
-              <h3 className="font-headline text-headline-lg mb-4 text-ink-black">Ready To Build Something Amazing?</h3>
+              <h3 className="font-headline text-headline-lg mb-4 text-ink-black">
+                Ready To Build Something Amazing?
+              </h3>
               <p className="font-body text-body-md text-secondary mb-8">
-                From websites and branding to AI-powered solutions, DM us on Instagram to start your next project.
+                From websites and branding to AI-powered solutions, DM us on
+                Instagram to start your next project.
               </p>
               <button className="bg-botanical-green text-surface px-12 py-4 font-bold rounded-lg text-lg hover:translate-y-[-2px] transition-transform cursor-pointer">
                 Start Your Project +
@@ -378,7 +524,12 @@ const Home = () => {
               {/* Floating Scribble */}
               <div className="absolute -bottom-8 -right-8 opacity-40">
                 <svg height="100" viewBox="0 0 100 100" width="100">
-                  <path d="M20,80 Q50,20 80,80" fill="none" stroke="#618F70" strokeWidth="2" />
+                  <path
+                    d="M20,80 Q50,20 80,80"
+                    fill="none"
+                    stroke="#618F70"
+                    strokeWidth="2"
+                  />
                   <circle cx="80" cy="80" fill="#618F70" r="4" />
                 </svg>
               </div>
@@ -387,6 +538,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

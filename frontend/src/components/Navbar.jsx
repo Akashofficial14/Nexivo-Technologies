@@ -7,25 +7,62 @@ import Input from "./Input";
 /* ─── Mobile bottom-tab icon SVGs ─────────────────────────────────────── */
 
 const TechIcon = ({ active }) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={active ? 2.2 : 1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <polyline points="16 18 22 12 16 6" />
     <polyline points="8 6 2 12 8 18" />
   </svg>
 );
 const EcomIcon = ({ active }) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" />
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={active ? 2.2 : 1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="9" cy="21" r="1" />
+    <circle cx="20" cy="21" r="1" />
     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
   </svg>
 );
 const MarketingIcon = ({ active }) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={active ? 2.2 : 1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
     <polyline points="16 7 22 7 22 13" />
   </svg>
 );
 const CreativeIcon = ({ active }) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={active ? 2.2 : 1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <circle cx="12" cy="12" r="10" />
     <path d="M8 14s1.5 2 4 2 4-2 4-2" />
     <line x1="9" y1="9" x2="9.01" y2="9" />
@@ -33,7 +70,16 @@ const CreativeIcon = ({ active }) => (
   </svg>
 );
 const VideoIcon = ({ active }) => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={active ? 2.2 : 1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <polygon points="23 7 16 12 23 17 23 7" />
     <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
   </svg>
@@ -50,10 +96,30 @@ const Navbar = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const navLinks = [
-    { label: "Technology", mobileLabel: "Tech", path: "/technology", Icon: TechIcon },
-    { label: "E-commerce", mobileLabel: "E-comm", path: "/ecommerce", Icon: EcomIcon },
-    { label: "Marketing", mobileLabel: "Marketing", path: "/marketing", Icon: MarketingIcon },
-    { label: "Creative", mobileLabel: "Creative", path: "/creative", Icon: CreativeIcon },
+    {
+      label: "Technology",
+      mobileLabel: "Tech",
+      path: "/technology",
+      Icon: TechIcon,
+    },
+    {
+      label: "E-commerce",
+      mobileLabel: "E-comm",
+      path: "/ecommerce",
+      Icon: EcomIcon,
+    },
+    {
+      label: "Marketing",
+      mobileLabel: "Marketing",
+      path: "/marketing",
+      Icon: MarketingIcon,
+    },
+    {
+      label: "Creative",
+      mobileLabel: "Creative",
+      path: "/creative",
+      Icon: CreativeIcon,
+    },
     { label: "Video", mobileLabel: "Video", path: "/video", Icon: VideoIcon },
   ];
 
@@ -81,13 +147,13 @@ const Navbar = () => {
           style={{ boxShadow: "0 2px 16px rgba(26,26,26,0.08)" }}
         >
           <div className="flex justify-between items-center px-5 md:px-8 h-full">
-
             {/* Logo */}
             <Link
               to="/"
-              className="font-headline text-[15px] md:text-headline-md font-bold text-ink-black hover:opacity-80 transition-opacity shrink-0"
+              className=" flex gap-1 justify-center items-center font-headline text-[15px] md:text-headline-md font-bold text-ink-black hover:opacity-80 transition-opacity shrink-0"
             >
-              Nexivo Solutions
+              <img width={"50px"} src="public/nexigo-logo.jpeg" alt="" />
+              
             </Link>
 
             {/* Desktop nav links */}
@@ -97,9 +163,10 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   className={({ isActive }) =>
-                    `font-body text-body-md tracking-wide transition-all py-1 ${isActive
-                      ? "text-botanical-green font-bold border-b-2 border-botanical-green pb-1"
-                      : "text-secondary hover:text-ink-black"
+                    `font-body text-body-md tracking-wide transition-all py-1 ${
+                      isActive
+                        ? "text-botanical-green font-bold border-b-2 border-botanical-green pb-1"
+                        : "text-secondary hover:text-ink-black"
                     }`
                   }
                 >
@@ -122,7 +189,6 @@ const Navbar = () => {
             >
               Get Started
             </button>
-
           </div>
         </header>
       </div>
@@ -142,9 +208,10 @@ const Navbar = () => {
               to={path}
               end={path === "/"}
               className={({ isActive }) =>
-                `flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[44px] ${isActive
-                  ? "text-botanical-green"
-                  : "text-secondary hover:text-ink-black"
+                `flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[44px] ${
+                  isActive
+                    ? "text-botanical-green"
+                    : "text-secondary hover:text-ink-black"
                 }`
               }
             >
@@ -152,16 +219,18 @@ const Navbar = () => {
                 <>
                   {/* Active tab gets a green pill background */}
                   <span
-                    className={`flex items-center justify-center w-10 h-8 rounded-xl transition-all duration-200 ${isActive
-                      ? "bg-botanical-green text-white shadow-sm"
-                      : "text-secondary"
-                      }`}
+                    className={`flex items-center justify-center w-10 h-8 rounded-xl transition-all duration-200 ${
+                      isActive
+                        ? "bg-botanical-green text-white shadow-sm"
+                        : "text-secondary"
+                    }`}
                   >
                     <Icon active={isActive} />
                   </span>
                   <span
-                    className={`text-[10px] font-headline font-semibold tracking-wide transition-colors duration-200 ${isActive ? "text-botanical-green" : "text-secondary"
-                      }`}
+                    className={`text-[10px] font-headline font-semibold tracking-wide transition-colors duration-200 ${
+                      isActive ? "text-botanical-green" : "text-secondary"
+                    }`}
                   >
                     {mobileLabel}
                   </span>
@@ -191,14 +260,19 @@ const Navbar = () => {
               Start Your Project
             </h3>
             <p className="font-body text-secondary text-sm mb-8 max-w-md mx-auto">
-              Tell us about your objectives and let's turn it into something exceptional with modern, organic design.
+              Tell us about your objectives and let's turn it into something
+              exceptional with modern, organic design.
             </p>
 
             {submitted ? (
               <div className="py-8 space-y-3">
                 <div className="text-botanical-green text-5xl font-bold">✓</div>
-                <h4 className="text-lg font-bold text-ink-black">Inquiry Sent!</h4>
-                <p className="text-sm text-secondary">Our specialists will contact you shortly.</p>
+                <h4 className="text-lg font-bold text-ink-black">
+                  Inquiry Sent!
+                </h4>
+                <p className="text-sm text-secondary">
+                  Our specialists will contact you shortly.
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -207,7 +281,9 @@ const Navbar = () => {
                   id="modal-name"
                   placeholder="John Doe"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   required
                 />
 
@@ -217,7 +293,9 @@ const Navbar = () => {
                   type="email"
                   placeholder="john@example.com"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   required
                 />
 
@@ -227,14 +305,22 @@ const Navbar = () => {
                   </label>
                   <select
                     value={formData.vertical}
-                    onChange={(e) => setFormData({ ...formData, vertical: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, vertical: e.target.value })
+                    }
                     className="w-full bg-transparent border-b border-ink-black/20 text-ink-black py-3 px-1 font-body text-body-md focus:outline-none focus:border-botanical-green transition-colors duration-300"
                   >
                     <option value="technology">Technology &amp; SaaS</option>
                     <option value="ecommerce">E-commerce Marketplace</option>
-                    <option value="marketing">Digital Marketing &amp; Growth</option>
-                    <option value="creative">Graphic Design &amp; Creative</option>
-                    <option value="video">Video Editing &amp; Production</option>
+                    <option value="marketing">
+                      Digital Marketing &amp; Growth
+                    </option>
+                    <option value="creative">
+                      Graphic Design &amp; Creative
+                    </option>
+                    <option value="video">
+                      Video Editing &amp; Production
+                    </option>
                   </select>
                 </div>
 
@@ -245,11 +331,17 @@ const Navbar = () => {
                   rows={2}
                   placeholder="Project details..."
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                 />
 
                 <div className="pt-2">
-                  <Button type="submit" variant="primary" className="w-full py-4">
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="w-full py-4"
+                  >
                     Send Project Inquiry
                   </Button>
                 </div>
