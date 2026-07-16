@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect, useRef } from "react";
-import { ArrowRight } from "lucide-react";
-import Button from "./Button";
-import Input from "./Input";
+import { ArrowRight, Sparkles } from "lucide-react";
+import Button from "../../../components/Button";
+import Input from "../../../components/Input";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -91,21 +91,41 @@ const Technology = () => {
   };
 
   return (
-    <div ref={containerRef} className="pt-20">
+    <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen text-left">
       {/* Hero Section */}
-      <header className="pt-20 pb-20 px-mobile-margin relative overflow-hidden text-left">
-        <div className="max-w-container-max mx-auto text-center relative z-10 hero-content">
-          <div className="inline-block mb-6 px-4 py-1 bg-ink-black/5 rounded-full border border-ink-black/10">
+      <header className="pt-24 pb-12 px-mobile-margin relative overflow-hidden text-center">
+        <div className="max-w-4xl mx-auto relative z-10 hero-content">
+          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
+            <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
             <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
-              Engineering Excellence
+              SERVICES
             </span>
           </div>
-          <h1 className="font-headline text-headline-xl md:text-7xl mb-6 max-w-4xl mx-auto text-ink-black font-extrabold">
-            Technology &amp; Software <span className="text-botanical-green italic">Development</span>
+
+          <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
+            Technology That
+            <br />
+            <span className="text-botanical-green relative inline-block mt-2">
+              Moves Your Business Forward.
+              <svg
+                className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 10"
+              >
+                <path
+                  d="M0,5 Q25,0 50,5 T100,5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+            </span>
           </h1>
-          <p className="font-body text-body-lg text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-            We build the digital foundations that power modern enterprises. From scalable SaaS architectures to intelligent AI integrations, we translate complex requirements into elegant code.
+
+          <p className="font-body text-body-2xl text-secondary max-w-3xl mx-auto leading-relaxed text-center mb-12">
+            We design and develop scalable digital solutions that help businesses automate operations, improve customer experiences, and create new opportunities for growth.
           </p>
+          
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">
             <div className="flex -space-x-3">
               <div
@@ -167,15 +187,15 @@ const Technology = () => {
                 </div>
                 <h3 className="font-headline text-headline-md mb-4 text-ink-black">Custom Software Development</h3>
                 <p className="text-secondary mb-6 max-w-lg font-body">
-                  Bespoke solutions engineered from the ground up to solve your unique business challenges. We don't believe in one-size-fits-all software.
+                  Bespoke solutions engineered from the ground up to solve your unique business challenges. We build robust, secure, and highly-leveraged enterprise tools.
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-ink-black/5 rounded font-headline text-[10px] font-bold uppercase tracking-widest text-secondary">
-                  C++ / PYTHON
+                  ENTERPRISE ARCHITECTURE
                 </span>
                 <span className="px-3 py-1 bg-ink-black/5 rounded font-headline text-[10px] font-bold uppercase tracking-widest text-secondary">
-                  ENTERPRISE ARCHITECTURE
+                  CUSTOM ENGINE
                 </span>
               </div>
             </div>
@@ -187,8 +207,8 @@ const Technology = () => {
                   <span className="material-symbols-outlined text-4xl text-botanical-green">cloud_done</span>
                   <span className="font-headline text-xs font-bold text-secondary">02</span>
                 </div>
-                <h3 className="font-headline text-headline-md mb-4 text-ink-black">SaaS Platforms</h3>
-                <p className="text-secondary mb-6 font-body">Scalable multi-tenant architectures built for the cloud.</p>
+                <h3 className="font-headline text-headline-md mb-4 text-ink-black">SaaS Product Development</h3>
+                <p className="text-secondary mb-6 font-body">Scalable multi-tenant cloud platforms built to expand customer value.</p>
               </div>
               <div
                 className="w-full h-32 rounded-lg bg-surface-container-high bg-cover bg-center border border-border-muted"
@@ -205,94 +225,94 @@ const Technology = () => {
                 <span className="material-symbols-outlined text-4xl text-botanical-green">web_asset</span>
                 <span className="font-headline text-xs font-bold text-secondary">03</span>
               </div>
-              <h3 className="font-headline text-headline-md mb-4 text-ink-black">UI/UX &amp; Web Design</h3>
-              <p className="text-secondary font-body">Interface designs that balance aesthetic beauty with conversion-focused UX.</p>
+              <h3 className="font-headline text-headline-md mb-4 text-ink-black">Web Design &amp; Development</h3>
+              <p className="text-secondary font-body">Cohesive, high-converting digital storefronts and marketing assets.</p>
             </div>
 
-            {/* 4. AI/ML Integration */}
+            {/* 4. Mobile Apps */}
+            <div className="md:col-span-4 group p-8 bg-surface border border-border-muted card-hover rounded-xl text-left flex flex-col justify-between">
+              <div className="flex justify-between items-start mb-12">
+                <span className="material-symbols-outlined text-4xl text-botanical-green">smartphone</span>
+                <span className="font-headline text-xs font-bold text-secondary">04</span>
+              </div>
+              <h3 className="font-headline text-headline-md mb-4 text-ink-black">Mobile App Development</h3>
+              <p className="text-secondary font-body">Cross-platform mobile apps targeting seamless iOS &amp; Android utility.</p>
+            </div>
+
+            {/* 5. AI/ML Integration */}
             <div className="md:col-span-4 group p-8 bg-primary text-surface border border-transparent card-hover rounded-xl text-left flex flex-col justify-between">
               <div className="flex justify-between items-start mb-12">
                 <span className="material-symbols-outlined text-4xl text-white">psychology</span>
-                <span className="font-headline text-xs font-bold text-white/60">04</span>
+                <span className="font-headline text-xs font-bold text-white/60">05</span>
               </div>
-              <h3 className="font-headline text-headline-md mb-4 text-white">AI &amp; Machine Learning</h3>
-              <p className="text-surface/80 font-body">Leveraging LLMs and predictive analytics to automate complex workflows.</p>
-            </div>
-
-            {/* 5. Cloud Infrastructure */}
-            <div className="md:col-span-4 group p-8 bg-surface border border-border-muted card-hover rounded-xl text-left flex flex-col justify-between">
-              <div className="flex justify-between items-start mb-12">
-                <span className="material-symbols-outlined text-4xl text-botanical-green">storage</span>
-                <span className="font-headline text-xs font-bold text-secondary">05</span>
-              </div>
-              <h3 className="font-headline text-headline-md mb-4 text-ink-black">Cloud &amp; DevOps</h3>
-              <p className="text-secondary font-body">AWS, GCP, and Azure management with automated CI/CD pipelines.</p>
+              <h3 className="font-headline text-headline-md mb-4 text-white">Artificial Intelligence &amp; ML</h3>
+              <p className="text-surface/80 font-body">Integrating machine learning to automate complex data processing.</p>
             </div>
 
             {/* Quick grid for 6-14 */}
             <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter mt-8">
-              {/* 6. API */}
+              {/* 6. Cloud */}
+              <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">storage</span>
+                <div>
+                  <h4 className="font-bold text-ink-black mb-1">Cloud &amp; DevOps Services</h4>
+                  <p className="text-sm text-secondary font-body">AWS &amp; GCP cloud automation pipelines.</p>
+                </div>
+              </div>
+              {/* 7. API */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
                 <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">api</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">API Development</h4>
-                  <p className="text-sm text-secondary font-body">Robust RESTful and GraphQL interfaces.</p>
+                  <h4 className="font-bold text-ink-black mb-1">API &amp; System Integration</h4>
+                  <p className="text-sm text-secondary font-body">Robust RESTful and GraphQL endpoints.</p>
                 </div>
               </div>
-              {/* 7. Mobile */}
+              {/* 8. UI/UX */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">smartphone</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">palette</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">Mobile Apps</h4>
-                  <p className="text-sm text-secondary font-body">Cross-platform React Native &amp; Flutter.</p>
+                  <h4 className="font-bold text-ink-black mb-1">UI/UX Design Services</h4>
+                  <p className="text-sm text-secondary font-body">Interface designs driven by user psychology.</p>
                 </div>
               </div>
-              {/* 8. QA */}
+              {/* 9. CMS */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">check_circle</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">shopping_cart</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">QA &amp; Testing</h4>
-                  <p className="text-sm text-secondary font-body">Automated and manual rigorous testing.</p>
+                  <h4 className="font-bold text-ink-black mb-1">CMS &amp; E-Commerce Solutions</h4>
+                  <p className="text-sm text-secondary font-body">Custom setup of high-conversion frameworks.</p>
                 </div>
               </div>
-              {/* 9. Security */}
+              {/* 10. Shopify */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">security</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">storefront</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">Cybersecurity</h4>
-                  <p className="text-sm text-secondary font-body">End-to-end encryption and compliance audits.</p>
+                  <h4 className="font-bold text-ink-black mb-1">Shopify Development</h4>
+                  <p className="text-sm text-secondary font-body">Tailored stores, logic flow, and checkout optimization.</p>
                 </div>
               </div>
-              {/* 10. Data */}
+              {/* 11. WordPress */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">database</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">language</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">Data Engineering</h4>
-                  <p className="text-sm text-secondary font-body">Pipelines and warehouse management.</p>
+                  <h4 className="font-bold text-ink-black mb-1">WordPress Development</h4>
+                  <p className="text-sm text-secondary font-body">Custom themes, plugins, and scalable setups.</p>
                 </div>
               </div>
-              {/* 11. Legacy */}
+              {/* 12. Consulting */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">history</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">question_answer</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">Modernization</h4>
-                  <p className="text-sm text-secondary font-body">Upgrading legacy platforms to modern setups.</p>
+                  <h4 className="font-bold text-ink-black mb-1">Digital Transformation</h4>
+                  <p className="text-sm text-secondary font-body">Modern technology audits and roadmap alignment.</p>
                 </div>
               </div>
-              {/* 12. IoT */}
+              {/* 13. Teams */}
               <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">router</span>
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">groups</span>
                 <div>
-                  <h4 className="font-bold text-ink-black mb-1">IoT Solutions</h4>
-                  <p className="text-sm text-secondary font-body">Hardware-software ecosystem syncs.</p>
-                </div>
-              </div>
-              {/* 13. Blockchain */}
-              <div className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface">
-                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">link</span>
-                <div>
-                  <h4 className="font-bold text-ink-black mb-1">Web3 &amp; Blockchain</h4>
-                  <p className="text-sm text-secondary font-body">Smart contracts and decentralized apps.</p>
+                  <h4 className="font-bold text-ink-black mb-1">Dedicated Development Teams</h4>
+                  <p className="text-sm text-secondary font-body">On-demand technical experts to boost velocity.</p>
                 </div>
               </div>
               {/* 14. Support */}
@@ -433,7 +453,7 @@ const Technology = () => {
                   </select>
                 </div>
                 <Button type="submit" variant="primary" className="w-full py-4 text-base">
-                  Send Project Inquiry
+                  Discuss Your Technology Project →
                 </Button>
               </form>
             )}

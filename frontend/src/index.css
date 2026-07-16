@@ -182,3 +182,23 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #c1c9c0;
 }
+
+/* Elegant color-shifting gradient animation for primary CTAs */
+@keyframes premium-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-shifting-overlay {
+  /* An elegant organic palette: botanical green, deeper forest green, subtle amber-gold, and soft sage */
+  background: linear-gradient(135deg, #618F70, #386549, #a88d52, #477c59, #618F70);
+  background-size: 300% 300%;
+  animation: premium-gradient-shift 8s ease infinite;
+}

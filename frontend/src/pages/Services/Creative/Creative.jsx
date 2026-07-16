@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { ArrowRight, Palette, PenTool, Layout, Layers, Sparkles } from "lucide-react";
-import Button from "./Button";
+import Button from "../../../components/Button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -59,32 +59,39 @@ const Creative = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="pt-20">
+    <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin text-center relative z-10 hero-content">
-          {/* Scribble SVG */}
-          <div className="scribble-accent top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl opacity-20 pointer-events-none">
-            <svg className="w-full animate-pulse" fill="none" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
-              <path className="scribble-animation" d="M10 80C50 20 150 20 200 80C250 140 350 140 450 80" stroke="#618F70" strokeWidth="2" />
-            </svg>
-          </div>
-          
-          <div className="mb-6 inline-flex items-center gap-2 px-4 py-1 bg-ink-black/5 rounded-full border border-ink-black/10">
+      <section className="relative py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10 hero-content">
+          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
-            <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-secondary">Brand Elevation</span>
+            <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
+              SERVICES
+            </span>
           </div>
-          
-          <h1 className="font-headline text-headline-xl-mobile md:text-headline-xl max-w-4xl mx-auto mb-8 font-extrabold text-ink-black leading-tight">
-            We craft <span className="relative">visual identities
-              <svg className="absolute -bottom-2 left-0 w-full h-2 text-botanical-green/30" preserveAspectRatio="none" viewBox="0 0 100 10">
-                <path d="M0 5 Q 25 0 50 5 T 100 5" fill="transparent" stroke="currentColor" strokeWidth="2" />
+
+          <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
+            Design That Makes Your Brand
+            <br />
+            <span className="text-botanical-green relative inline-block mt-2">
+              Impossible to Ignore.
+              <svg
+                className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 10"
+              >
+                <path
+                  d="M0,5 Q25,0 50,5 T100,5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
-            </span> that define industry leaders.
+            </span>
           </h1>
-          
-          <p className="font-body text-body-lg text-secondary max-w-2xl mx-auto mb-12 leading-relaxed">
-            Human-centric design meets technical precision. We build cohesive brand systems that resonate with your audience and scale with your ambition.
+
+          <p className="font-body text-body-2xl text-secondary max-w-3xl mx-auto leading-relaxed text-center">
+            We create professional visual experiences that strengthen brand identity, communicate value, and help businesses stand out across digital platforms.
           </p>
           
           <div className="flex flex-col md:flex-row justify-center gap-4">
@@ -105,7 +112,7 @@ const Creative = () => {
           <div className="mb-16">
             <h2 className="font-headline text-headline-lg font-bold text-ink-black mb-4">Our Creative Ecosystem</h2>
             <p className="text-secondary max-w-xl font-body">
-              From initial discovery to final launch, we provide a full spectrum of design services that unify your brand across every touchpoint.
+              A comprehensive suite of design disciplines structured to give your brand cohesive visual authority across every channel.
             </p>
           </div>
 
@@ -114,9 +121,9 @@ const Creative = () => {
             <div className="md:col-span-8 bg-surface border border-border-muted p-10 hover-lift flex flex-col justify-between group rounded-xl">
               <div>
                 <Palette className="w-10 h-10 text-botanical-green mb-6" />
-                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">Visual Identity &amp; Branding</h3>
+                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">Branding &amp; Visual Identity</h3>
                 <p className="text-secondary mb-8 max-w-md font-body leading-relaxed">
-                  Comprehensive brand systems including logo design, typography, color palettes, and extensive brand guidelines to ensure consistency everywhere.
+                  Comprehensive brand systems including logo design, color guidelines, typography structures, and extensive brand books to ensure visual integrity.
                 </p>
               </div>
               <ul className="flex flex-wrap gap-2 text-secondary font-headline">
@@ -131,21 +138,21 @@ const Creative = () => {
             <div className="md:col-span-4 bg-surface border border-border-muted p-10 hover-lift group rounded-xl flex flex-col justify-between">
               <div>
                 <PenTool className="w-10 h-10 text-botanical-green mb-6" />
-                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">Custom Illustrations</h3>
+                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">Graphic Design</h3>
               </div>
               <p className="text-secondary font-body leading-relaxed">
-                Bespoke digital artwork and icon sets that give your brand a unique, hand-crafted edge in a sea of stock assets.
+                Professional design solutions that give your brand a unique, high-end visual edge across digital and print mediums.
               </p>
             </div>
 
             {/* Service Card 3 */}
             <div className="md:col-span-4 bg-surface border border-border-muted p-10 hover-lift group rounded-xl flex flex-col justify-between">
               <div>
-                <Layout className="w-10 h-10 text-botanical-green mb-6" />
-                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">UI/UX Design</h3>
+                <Layers className="w-10 h-10 text-botanical-green mb-6" />
+                <h3 className="font-headline text-headline-md font-bold text-ink-black mb-4">Social Media Creatives</h3>
               </div>
               <p className="text-secondary font-body leading-relaxed">
-                Intuitive digital interfaces that prioritize user journey while maintaining high-end aesthetic standards.
+                Engaging platform-native social designs and assets to grow organic reach and capture customer attention.
               </p>
             </div>
 
@@ -153,13 +160,13 @@ const Creative = () => {
             <div className="md:col-span-8 bg-botanical-green p-10 hover-lift text-surface relative overflow-hidden rounded-xl">
               <div className="relative z-10 h-full flex flex-col justify-between">
                 <div>
-                  <h3 className="font-headline text-headline-md font-bold text-surface mb-4">Marketing Collateral</h3>
+                  <h3 className="font-headline text-headline-md font-bold text-surface mb-4">E-Commerce Storefront Design</h3>
                   <p className="text-on-primary-container/80 mb-8 max-w-md font-body leading-relaxed">
-                    High-impact pitch decks, annual reports, social media assets, and advertising materials designed to convert.
+                    Polished, conversion-focused design layouts for custom storefronts, Shopify pages, and digital product collections.
                   </p>
                 </div>
                 <button className="flex items-center gap-2 font-bold group self-start hover:opacity-90 cursor-pointer">
-                  Explore Collateral
+                  Explore Storefront Solutions
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -167,6 +174,24 @@ const Creative = () => {
               <div className="absolute right-[-10%] bottom-[-20%] opacity-10 rotate-12 scale-150 text-surface select-none pointer-events-none">
                 <span className="material-symbols-outlined text-[300px]">auto_graph</span>
               </div>
+            </div>
+
+            {/* Secondary Services Grid */}
+            <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-gutter mt-8">
+              {[
+                { title: "Product Images & Infographics", desc: "Studio-quality product layouts, catalog image enhancements, and graphic specs.", icon: "photo_library" },
+                { title: "Amazon A+ Content", desc: "Rich A+ page modules, descriptive content structures, and custom banner creatives.", icon: "featured_video" },
+                { title: "Website & Digital Banners", desc: "Eye-catching website hero headers, marketing campaign slides, and banners.", icon: "view_carousel" },
+                { title: "Advertising & Marketing Creatives", desc: "Data-optimized performance ad templates, PPC graphics, and outreach creatives.", icon: "ad_units" },
+              ].map((service, idx) => (
+                <div key={idx} className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface hover:shadow-sm transition-all duration-300">
+                  <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">{service.icon}</span>
+                  <div>
+                    <h4 className="font-bold text-ink-black mb-1">{service.title}</h4>
+                    <p className="text-sm text-secondary font-body leading-relaxed">{service.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -296,7 +321,7 @@ const Creative = () => {
           </p>
           <div className="inline-flex flex-col items-center">
             <button className="bg-botanical-green text-surface px-10 py-5 font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-xl mb-4 cursor-pointer text-lg">
-              Start Your Project
+              Start a Creative Project →
             </button>
             <div className="flex items-center gap-4 mt-8 opacity-60">
               <span className="font-headline text-[10px] font-bold tracking-widest uppercase text-surface">TRUSTED BY 50+ GLOBAL BRANDS</span>

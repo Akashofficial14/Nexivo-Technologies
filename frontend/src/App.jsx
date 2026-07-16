@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Technology from "./components/Technology";
-import Ecommerce from "./components/Ecommerce";
-import Marketing from "./components/Marketing";
-import Creative from "./components/Creative";
-import Video from "./components/Video";
 
 // ScrollToTop component ensures that routes render from top of page on change
 const ScrollToTop = () => {
@@ -22,7 +16,7 @@ const ScrollToTop = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
 
       {/* ── Transparent frosted-glass scroll blur ────────────────────────
@@ -51,18 +45,11 @@ const App = () => {
       <div className="min-h-screen flex flex-col bg-[#fbf9f2] text-[#1A1A1A] overflow-x-hidden font-body selection:bg-botanical-green/30">
         <Navbar />
         <main className="flex-grow pb-24 md:pb-0">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/ecommerce" element={<Ecommerce />} />
-            <Route path="/marketing" element={<Marketing />} />
-            <Route path="/creative" element={<Creative />} />
-            <Route path="/video" element={<Video />} />
-          </Routes>
+          <Outlet />
         </main>
         <Footer />
       </div>
-    </BrowserRouter>
+    </>
   );
 };
 

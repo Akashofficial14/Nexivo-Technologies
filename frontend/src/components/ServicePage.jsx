@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 import {
   ShoppingBag,
   TrendingUp,
@@ -177,9 +177,11 @@ const ServicePage = () => {
               {data.desc}
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button variant="primary" className="px-8 py-4">
-                Start Your Project
-              </Button>
+              <Link to="/contact">
+                <Button variant="primary" className="px-8 py-4">
+                  Start Your Project
+                </Button>
+              </Link>
               <a href="#competencies" className="inline-flex">
                 <Button variant="secondary" className="px-8 py-4">
                   View Competencies

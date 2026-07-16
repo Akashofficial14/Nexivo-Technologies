@@ -3,8 +3,8 @@ import { Link } from "react-router";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Loader from "../pages/LoaderPage/Loader";
-import Button from "./Button";
+import Loader from "../LoaderPage/Loader";
+import Button from "../../components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -114,7 +114,7 @@ const Home = () => {
             <h1 className="font-headline text-headline-xl md:text-[64px] mb-6 leading-tight tracking-tight text-ink-black">
               Turning Ideas Into
               <br />
-              <span className="relative">
+              <span className="text-botanical-green relative">
                 Digital Impact.
                 <svg
                   className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
@@ -135,9 +135,9 @@ const Home = () => {
               marketing, creative design, and video solutions — all under one root.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative">
-              <Link to="/services/technology" className="w-full sm:w-auto">
+              <Link to="/contact" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full sm:w-auto px-10 py-4 text-lg">
-                  [ Start Your Project ]
+                  Start Your Project
                 </Button>
               </Link>
               <a
@@ -401,103 +401,105 @@ const Home = () => {
         </section>
 
         {/* Previous Work Section (Asymmetric Editorial Layout) */}
-        {/* <section className="py-24 px-mobile-margin" id="work">
-          <div className="max-w-container-max mx-auto">
-            <h2 className="font-headline text-headline-xl text-center mb-20 uppercase tracking-[0.2em] opacity-80 text-ink-black">
-              Previous Work
-            </h2>
+        {false && (
+          <section className="py-24 px-mobile-margin" id="work">
+            <div className="max-w-container-max mx-auto">
+              <h2 className="font-headline text-headline-xl text-center mb-20 uppercase tracking-[0.2em] opacity-80 text-ink-black">
+                Previous Work
+              </h2>
 
-            {/* Project 01 */}
-        {/* <div className="project-row group grid md:grid-cols-2 gap-16 mb-32 items-center text-left cursor-pointer">
-              <div className="order-2 md:order-1 transition-transform duration-500 ease-out group-hover:translate-x-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
-                    01
-                  </span>
-                  <div className="h-[1px] flex-1 bg-border-muted"></div>
+              {/* Project 01 */}
+              <div className="project-row group grid md:grid-cols-2 gap-16 mb-32 items-center text-left cursor-pointer">
+                <div className="order-2 md:order-1 transition-transform duration-500 ease-out group-hover:translate-x-6">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
+                      01
+                    </span>
+                    <div className="h-[1px] flex-1 bg-border-muted"></div>
+                  </div>
+                  <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
+                    Velora Property Care
+                  </h3>
+                  <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
+                    PROPERTY CARE & MAINTENANCE
+                  </p>
+                  <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
+                    Built a professional lead-generation website for a Canadian
+                    property care company focused on trust, credibility, and
+                    conversions. We implemented a custom scheduling engine that
+                    reduced admin overhead by 40%.
+                  </p>
+                  <div className="flex gap-3 mb-8">
+                    <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
+                      WEBSITE DESIGN
+                    </span>
+                    <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
+                      BRANDING
+                    </span>
+                    <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
+                      SEO
+                    </span>
+                  </div>
+                  <button className="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all cursor-pointer">
+                    View Website <ExternalLink className="w-4 h-4" />
+                  </button>
                 </div>
-                <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
-                  Velora Property Care
-                </h3>
-                <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
-                  PROPERTY CARE & MAINTENANCE
-                </p>
-                <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
-                  Built a professional lead-generation website for a Canadian
-                  property care company focused on trust, credibility, and
-                  conversions. We implemented a custom scheduling engine that
-                  reduced admin overhead by 40%.
-                </p>
-                <div className="flex gap-3 mb-8">
-                  <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
-                    WEBSITE DESIGN
-                  </span>
-                  <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
-                    BRANDING
-                  </span>
-                  <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
-                    SEO
-                  </span>
+                <div className="order-1 md:order-2">
+                  <div className="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl border border-border-muted">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcmW54nnX3SRD66aGwFAaup2K__hEbTTvXpcaKf9qDbvUlmIuBqRVvagsY1uSgQz94Z0kaaCSR5ObouD_IRT2gfMJMU70jXhK7Zt7r2TnwKPx9yAUEymRuEU9hZuNx9q_Dbh3fy98W2eaHIlcYL-f4V5z49iVWAK3oVstVIzt2AemD5a5ikQm02i3jC3M6Pt_4ql3IapD3XNj-3m-ZhieVUyvmvwex7U0RejSvyUL7LATniZIPAM"
+                      alt="Velora Property Care mockup"
+                    />
+                  </div>
                 </div>
-                <button className="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all cursor-pointer">
-                  View Website <ExternalLink className="w-4 h-4" />
-                </button>
               </div>
-              <div className="order-1 md:order-2">
-                <div className="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl border border-border-muted">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcmW54nnX3SRD66aGwFAaup2K__hEbTTvXpcaKf9qDbvUlmIuBqRVvagsY1uSgQz94Z0kaaCSR5ObouD_IRT2gfMJMU70jXhK7Zt7r2TnwKPx9yAUEymRuEU9hZuNx9q_Dbh3fy98W2eaHIlcYL-f4V5z49iVWAK3oVstVIzt2AemD5a5ikQm02i3jC3M6Pt_4ql3IapD3XNj-3m-ZhieVUyvmvwex7U0RejSvyUL7LATniZIPAM"
-                    alt="Velora Property Care mockup"
-                  />
-                </div>
-              </div>
-            </div> */}
 
-        {/* Project 02 */}
-        {/* <div className="project-row group grid md:grid-cols-2 gap-16 mb-32 items-center text-left cursor-pointer">
-              <div className="order-1">
-                <div className="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl border border-border-muted">
-                  <img
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmgekBBud8xxj7AyLRSa1u8sIKRTS-uiIPS0RXlkzQkcTJwIPrpwt2zxvWXbA1xSuFE9rSl8kWQ6cs1Yne6hmGQ1nAWTeV14YG8G3zVxlvkeBDKcpwP9cOU5ENolC3Ise0LHKh5cuk8WT3PFaGLYQu1igHUMJa37tEURtjXjHUNv_rkyksNe4ZR0L0uuTkyLyj2IfXs5Cxsb5QlVFsKNAz2Fm9ToWRw_8ALoflQD77jsINoFzqyU"
-                    alt="Reddy Made Cakes mockup"
-                  />
+              {/* Project 02 */}
+              <div className="project-row group grid md:grid-cols-2 gap-16 mb-32 items-center text-left cursor-pointer">
+                <div className="order-1">
+                  <div className="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl border border-border-muted">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNmgekBBud8xxj7AyLRSa1u8sIKRTS-uiIPS0RXlkzQkcTJwIPrpwt2zxvWXbA1xSuFE9rSl8kWQ6cs1Yne6hmGQ1nAWTeV14YG8G3zVxlvkeBDKcpwP9cOU5ENolC3Ise0LHKh5cuk8WT3PFaGLYQu1igHUMJa37tEURtjXjHUNv_rkyksNe4ZR0L0uuTkyLyj2IfXs5Cxsb5QlVFsKNAz2Fm9ToWRw_8ALoflQD77jsINoFzqyU"
+                      alt="Reddy Made Cakes mockup"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="order-2 transition-transform duration-500 ease-out group-hover:translate-x-6">
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
-                    02
-                  </span>
-                  <div className="h-[1px] flex-1 bg-border-muted"></div>
+                <div className="order-2 transition-transform duration-500 ease-out group-hover:translate-x-6">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="font-headline text-headline-xl font-bold opacity-10 text-ink-black transition-colors group-hover:text-botanical-green/30">
+                      02
+                    </span>
+                    <div className="h-[1px] flex-1 bg-border-muted"></div>
+                  </div>
+                  <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
+                    Reddy Made Cakes
+                  </h3>
+                  <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
+                    BAKERY & CUSTOM CAKES
+                  </p>
+                  <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
+                    Created an online cake ordering experience with a streamlined
+                    customer journey and product showcase. Integrated a complex
+                    tiered pricing model based on custom decorative requests.
+                  </p>
+                  <div className="flex gap-3 mb-8">
+                    <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
+                      WEBSITE DESIGN
+                    </span>
+                    <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
+                      ONLINE ORDERING
+                    </span>
+                  </div>
+                  <button className="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all cursor-pointer">
+                    View Website <ExternalLink className="w-4 h-4" />
+                  </button>
                 </div>
-                <h3 className="font-headline text-headline-lg mb-4 text-ink-black transition-colors duration-300 group-hover:text-botanical-green">
-                  Reddy Made Cakes
-                </h3>
-                <p className="font-headline text-[12px] font-bold tracking-widest text-botanical-green mb-6 uppercase">
-                  BAKERY & CUSTOM CAKES
-                </p>
-                <p className="font-body text-body-lg text-secondary mb-8 leading-relaxed">
-                  Created an online cake ordering experience with a streamlined
-                  customer journey and product showcase. Integrated a complex
-                  tiered pricing model based on custom decorative requests.
-                </p>
-                <div className="flex gap-3 mb-8">
-                  <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
-                    WEBSITE DESIGN
-                  </span>
-                  <span className="px-4 py-2 border border-border-muted rounded-full text-xs font-bold text-secondary uppercase font-headline transition-all duration-300 group-hover:bg-ink-black group-hover:text-white group-hover:border-ink-black">
-                    ONLINE ORDERING
-                  </span>
-                </div>
-                <button className="flex items-center gap-2 font-bold border-b-2 border-ink-black pb-1 hover:border-botanical-green hover:text-botanical-green transition-all cursor-pointer">
-                  View Website <ExternalLink className="w-4 h-4" />
-                </button>
               </div>
             </div>
-          </div>
-        // </section> */} *
+          </section>
+        )}
 
         {/* Industries Section */}
         <section className="py-24 px-mobile-margin bg-surface border-t border-border-muted text-left" id="industries">

@@ -1,140 +1,166 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router";
-import { X, Calendar } from "lucide-react";
+import { Link, NavLink, useLocation } from "react-router";
+import { X, Calendar, ChevronDown, Home as HomeIcon, Briefcase, Users, FolderOpen, Mail, BookOpen } from "lucide-react";
+import { useForm } from "react-hook-form";
 import Button from "./Button";
 import Input from "./Input";
 
-/* ─── Mobile bottom-tab icon SVGs ─────────────────────────────────────── */
-
-const TechIcon = ({ active }) => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={active ? 2.2 : 1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="16 18 22 12 16 6" />
-    <polyline points="8 6 2 12 8 18" />
-  </svg>
-);
-const EcomIcon = ({ active }) => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={active ? 2.2 : 1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="9" cy="21" r="1" />
-    <circle cx="20" cy="21" r="1" />
-    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-  </svg>
-);
-const MarketingIcon = ({ active }) => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={active ? 2.2 : 1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-    <polyline points="16 7 22 7 22 13" />
-  </svg>
-);
-const CreativeIcon = ({ active }) => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={active ? 2.2 : 1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-    <line x1="9" y1="9" x2="9.01" y2="9" />
-    <line x1="15" y1="9" x2="15.01" y2="9" />
-  </svg>
-);
-const VideoIcon = ({ active }) => (
-  <svg
-    width="22"
-    height="22"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={active ? 2.2 : 1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <polygon points="23 7 16 12 23 17 23 7" />
-    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-  </svg>
-);
+const RollingNavLink = ({ to, children }) => {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `font-body text-body-md tracking-wide py-1 relative overflow-hidden inline-flex flex-col group h-[26px] ${
+          isActive
+            ? "text-botanical-green font-bold border-b-2 border-botanical-green pb-1"
+            : "text-secondary"
+        }`
+      }
+    >
+      <span className="relative inline-block transition-transform duration-500 ease-out group-hover:-translate-y-full">
+        {children}
+      </span>
+      <span className="absolute left-0 top-full inline-block transition-transform duration-500 ease-out group-hover:-translate-y-full text-botanical-green font-bold whitespace-nowrap">
+        {children}
+      </span>
+    </NavLink>
+  );
+};
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    vertical: "technology",
-    message: "",
+  const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const [showMobileServices, setShowMobileServices] = useState(false);
+  const location = useLocation();
+
+  const {
+    register,
+    handleSubmit: handleFormSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      vertical: "Technology & Software Development",
+      message: "",
+    }
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const navLinks = [
+  // 5 Main Services Categories with their Children as requested in the PDF structure
+  const servicesData = [
     {
-      label: "Technology",
-      mobileLabel: "Tech",
-      path: "/technology",
-      Icon: TechIcon,
+      title: "Technology & Software Development",
+      path: "/services/technology",
+      children: [
+        "Custom Software Development",
+        "SaaS Product Development",
+        "Web Design & Development",
+        "Mobile App Development",
+        "Artificial Intelligence & ML",
+        "Cloud & DevOps Services",
+        "API & System Integration",
+        "UI/UX Design Services",
+        "Shopify & WordPress Dev",
+        "Dedicated Development Teams"
+      ]
     },
     {
-      label: "E-commerce",
-      mobileLabel: "E-comm",
-      path: "/ecommerce",
-      Icon: EcomIcon,
+      title: "E-Commerce Marketplace Management",
+      path: "/services/ecommerce",
+      children: [
+        "Marketplace & Account Setup",
+        "Seller Account & Store Mgmt",
+        "Amazon, Flipkart & Shopify Mgmt",
+        "Product Listing & Catalog Mgmt",
+        "Inventory & Order Management",
+        "Account Health & Compliance",
+        "E-Commerce PPC & Sales Growth",
+        "Product Content Optimization",
+        "E-Commerce Business Consulting"
+      ]
     },
     {
-      label: "Marketing",
-      mobileLabel: "Marketing",
-      path: "/marketing",
-      Icon: MarketingIcon,
+      title: "Digital Marketing & Growth",
+      path: "/services/marketing",
+      children: [
+        "Digital Marketing Strategy",
+        "Social Media Management",
+        "Performance Marketing",
+        "Search Engine Optimization (SEO)",
+        "Paid Advertising & Campaigns",
+        "Lead Generation & Conversions",
+        "Content Marketing",
+        "Conversion Rate Optimization"
+      ]
     },
     {
-      label: "Creative",
-      mobileLabel: "Creative",
-      path: "/creative",
-      Icon: CreativeIcon,
+      title: "Graphic Design & Creative",
+      path: "/services/creative",
+      children: [
+        "Graphic Design & Art",
+        "Branding & Visual Identity",
+        "Social Media Creatives",
+        "Product Images & Infographics",
+        "Amazon A+ Content",
+        "E-Commerce Storefront Design",
+        "Website & Digital Banners",
+        "Advertising & Marketing Creatives"
+      ]
     },
-    { label: "Video", mobileLabel: "Video", path: "/video", Icon: VideoIcon },
+    {
+      title: "Video Editing & Production",
+      path: "/services/video",
+      children: [
+        "Professional Video Editing",
+        "Reels & Short-Form Content",
+        "Product & E-Commerce Videos",
+        "Promotional Videos",
+        "Advertisement Videos",
+        "Corporate Video Editing",
+        "Motion Graphics & Effects",
+        "Animated Content & Explainer",
+        "YouTube Video Editing"
+      ]
+    }
   ];
 
-  // Desktop nav = all service links (same as navLinks)
-  const desktopLinks = navLinks;
-  // Mobile bottom tab = same service links, logo handles Home
-  const mobileLinks = navLinks;
+  const mobileLinks = [
+    { label: "Home", mobileLabel: "Home", path: "/", Icon: HomeIcon },
+    { label: "Services", mobileLabel: "Services", path: "#services", Icon: Briefcase, isAction: true },
+    { label: "About", mobileLabel: "About", path: "/about", Icon: Users },
+    { label: "Blogs", mobileLabel: "Blogs", path: "/blogs", Icon: BookOpen },
+    { label: "Contact", mobileLabel: "Contact", path: "/contact", Icon: Mail },
+  ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onModalSubmit = (data) => {
+    const existing = JSON.parse(localStorage.getItem("nexivo_registrations") || "[]");
+    const newRecord = {
+      id: Date.now().toString(),
+      fullName: data.name,
+      companyName: "N/A (Modal Quick Inquiry)",
+      email: data.email,
+      phone: "N/A",
+      service: data.vertical,
+      budget: "Not Sure",
+      description: data.message || "No project message provided",
+      date: new Date().toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      }),
+      timestamp: Date.now(),
+    };
+    existing.push(newRecord);
+    localStorage.setItem("nexivo_registrations", JSON.stringify(existing));
+
     setSubmitted(true);
+    reset();
+
     setTimeout(() => {
       setShowModal(false);
       setSubmitted(false);
-      setFormData({ name: "", email: "", vertical: "technology", message: "" });
     }, 2000);
   };
 
@@ -143,52 +169,101 @@ const Navbar = () => {
       {/* ── Top floating pill (shared desktop + mobile) ──────────────────── */}
       <div className="fixed top-0 left-0 w-full z-45 px-4 md:px-6 pt-3 md:pt-4 pointer-events-none">
         <header
-          className="pointer-events-auto w-full max-w-container-max mx-auto bg-surface/90 backdrop-blur-md border border-border-muted rounded-xl shadow-sm h-14 md:h-16"
+          className="pointer-events-auto w-full max-w-container-max mx-auto bg-surface/90 backdrop-blur-md border border-border-muted rounded-xl shadow-sm h-14 md:h-16 relative"
           style={{ boxShadow: "0 2px 16px rgba(26,26,26,0.08)" }}
         >
           <div className="flex justify-between items-center px-5 md:px-8 h-full">
             {/* Logo */}
             <Link
               to="/"
-              className=" flex gap-1 justify-center items-center font-headline text-[15px] md:text-headline-md font-bold text-ink-black hover:opacity-80 transition-opacity shrink-0"
+              className="flex gap-1 justify-center items-center font-headline text-[15px] md:text-headline-md font-bold text-ink-black hover:opacity-80 transition-opacity shrink-0"
             >
-              <img width={"50px"} src="public/nexigo-logo.jpeg" alt="" />
-              
+              <img width="50px" src="/nexigo-logo.png" alt="Nexivo Logo" className="rounded-md" />
             </Link>
 
-            {/* Desktop nav links */}
-            <nav className="hidden md:flex items-center gap-8">
-              {desktopLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `font-body text-body-md tracking-wide transition-all py-1 ${
-                      isActive
-                        ? "text-botanical-green font-bold border-b-2 border-botanical-green pb-1"
-                        : "text-secondary hover:text-ink-black"
-                    }`
-                  }
+            {/* Desktop Nav Links */}
+            <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+              <RollingNavLink to="/">Home</RollingNavLink>
+
+              {/* Services Dropdown */}
+              <div
+                className="relative py-4"
+                onMouseEnter={() => setShowMegaMenu(true)}
+                onMouseLeave={() => setShowMegaMenu(false)}
+              >
+                <button
+                  className={`flex items-center gap-1 font-body text-body-md tracking-wide transition-all cursor-pointer py-1 relative overflow-hidden inline-flex flex-col group h-[26px] ${location.pathname.startsWith("/services")
+                      ? "text-botanical-green font-bold border-b-2 border-botanical-green pb-1"
+                      : "text-secondary hover:text-ink-black"
+                    }`}
                 >
-                  {link.label}
-                </NavLink>
-              ))}
+                  <span className="flex items-center gap-1 transition-transform duration-500 ease-out group-hover:-translate-y-full">
+                    Services
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showMegaMenu ? "rotate-180" : ""}`} />
+                  </span>
+                  <span className="absolute left-0 top-full flex items-center gap-1 transition-transform duration-500 ease-out group-hover:-translate-y-full text-botanical-green font-bold">
+                    Services
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showMegaMenu ? "rotate-180" : ""}`} />
+                  </span>
+                </button>
+
+                {/* Mega Menu Dropdown */}
+                <div
+                  className={`absolute top-full left-1/2 -translate-x-1/2 w-[90vw] max-w-5xl bg-surface/98 backdrop-blur-md border border-border-muted rounded-xl shadow-xl p-8 transition-all duration-300 z-50 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 ${showMegaMenu
+                      ? "opacity-100 translate-y-2 pointer-events-auto"
+                      : "opacity-0 translate-y-0 pointer-events-none"
+                    }`}
+                >
+                  <div className="grid grid-cols-5 gap-6">
+                    {servicesData.map((service, index) => (
+                      <div key={index} className="flex flex-col text-left">
+                        <Link
+                          to={service.path}
+                          onClick={() => setShowMegaMenu(false)}
+                          className="font-headline font-bold text-sm text-ink-black hover:text-botanical-green transition-colors mb-4 block leading-tight min-h-[40px]"
+                        >
+                          {service.title}
+                        </Link>
+                        <ul className="space-y-2 border-t border-border-muted/50 pt-3">
+                          {service.children.slice(0, 6).map((child, idx) => (
+                            <li key={idx} className="font-body text-xs text-secondary/80 hover:text-botanical-green transition-colors leading-relaxed">
+                              • {child}
+                            </li>
+                          ))}
+                          {service.children.length > 6 && (
+                            <li className="font-body text-[10px] text-botanical-green font-semibold mt-1">
+                              + {service.children.length - 6} more services
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <RollingNavLink to="/about">About Us</RollingNavLink>
+              <RollingNavLink to="/blogs">Blogs</RollingNavLink>
+              <RollingNavLink to="/contact">Contact Us</RollingNavLink>
             </nav>
 
             {/* Desktop CTA */}
             <div className="hidden md:block">
-              <Button variant="primary" onClick={() => setShowModal(true)}>
-                Start Your Project
-              </Button>
+              <Link to="/contact">
+                <Button variant="primary">
+                  Start Your Project
+                </Button>
+              </Link>
             </div>
 
-            {/* Mobile CTA — compact pill button */}
-            <button
-              onClick={() => setShowModal(true)}
-              className="md:hidden inline-flex items-center gap-1.5 bg-botanical-green text-white text-[12px] font-bold font-headline px-3.5 py-2 rounded-lg hover:opacity-90 active:scale-95 transition-all duration-200 cursor-pointer shrink-0"
-            >
-              Get Started
-            </button>
+            {/* Mobile CTA */}
+            <Link to="/contact" className="md:hidden">
+              <button
+                className="inline-flex items-center gap-1.5 bg-botanical-green text-white text-[12px] font-bold font-headline px-3.5 py-2 rounded-lg hover:opacity-90 active:scale-95 transition-all duration-200 cursor-pointer shrink-0"
+              >
+                Get Started
+              </button>
+            </Link>
           </div>
         </header>
       </div>
@@ -202,154 +277,105 @@ const Navbar = () => {
           className="bg-surface/95 backdrop-blur-xl border border-border-muted rounded-2xl shadow-xl flex items-center justify-around px-2 py-2"
           style={{ boxShadow: "0 8px 40px rgba(26,26,26,0.13)" }}
         >
-          {mobileLinks.map(({ label, mobileLabel, path, Icon }) => (
-            <NavLink
-              key={path}
-              to={path}
-              end={path === "/"}
-              className={({ isActive }) =>
-                `flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[44px] ${
-                  isActive
-                    ? "text-botanical-green"
-                    : "text-secondary hover:text-ink-black"
-                }`
-              }
-            >
-              {({ isActive }) => (
-                <>
-                  {/* Active tab gets a green pill background */}
+          {mobileLinks.map(({ label, mobileLabel, path, Icon, isAction }) => {
+            if (isAction) {
+              return (
+                <button
+                  key={label}
+                  onClick={() => setShowMobileServices(true)}
+                  className={`flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[44px] border-none bg-transparent cursor-pointer ${location.pathname.startsWith("/services")
+                      ? "text-botanical-green animate-pulse"
+                      : "text-secondary hover:text-ink-black"
+                    }`}
+                >
                   <span
-                    className={`flex items-center justify-center w-10 h-8 rounded-xl transition-all duration-200 ${
-                      isActive
+                    className={`flex items-center justify-center w-10 h-8 rounded-xl transition-all duration-200 ${location.pathname.startsWith("/services")
                         ? "bg-botanical-green text-white shadow-sm"
                         : "text-secondary"
-                    }`}
+                      }`}
                   >
-                    <Icon active={isActive} />
+                    <Icon className="w-5 h-5" />
                   </span>
-                  <span
-                    className={`text-[10px] font-headline font-semibold tracking-wide transition-colors duration-200 ${
-                      isActive ? "text-botanical-green" : "text-secondary"
-                    }`}
-                  >
+                  <span className="text-[10px] font-headline font-semibold tracking-wide">
                     {mobileLabel}
                   </span>
-                </>
-              )}
-            </NavLink>
-          ))}
+                </button>
+              );
+            }
+
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                end={path === "/"}
+                className={({ isActive }) =>
+                  `flex flex-col items-center gap-0.5 px-2 py-1.5 rounded-xl transition-all duration-200 min-w-[44px] ${isActive
+                    ? "text-botanical-green"
+                    : "text-secondary hover:text-ink-black"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    <span
+                      className={`flex items-center justify-center w-10 h-8 rounded-xl transition-all duration-200 ${isActive
+                          ? "bg-botanical-green text-white shadow-sm"
+                          : "text-secondary"
+                        }`}
+                    >
+                      <Icon className="w-5 h-5" />
+                    </span>
+                    <span
+                      className={`text-[10px] font-headline font-semibold tracking-wide transition-colors duration-200 ${isActive ? "text-botanical-green" : "text-secondary"
+                        }`}
+                    >
+                      {mobileLabel}
+                    </span>
+                  </>
+                )}
+              </NavLink>
+            );
+          })}
         </div>
       </nav>
 
-      {/* ── Booking / Consultation Modal ──────────────────────────────────── */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink-black/65 backdrop-blur-sm">
-          <div className="relative w-full max-w-lg bg-surface border border-border-muted p-8 shadow-2xl animate-float-slow text-center rounded-xl">
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-secondary hover:text-ink-black cursor-pointer"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
-            <div className="w-12 h-12 rounded-full bg-botanical-green/10 flex items-center justify-center mx-auto mb-6 border border-botanical-green/20">
-              <Calendar className="w-6 h-6 text-botanical-green" />
+      {/* ── Mobile Services Sheet/Drawer ─────────────────────────────────── */}
+      {showMobileServices && (
+        <div className="fixed inset-0 z-50 flex items-end justify-center bg-ink-black/60 backdrop-blur-sm md:hidden">
+          <div className="w-full bg-surface border-t border-border-muted rounded-t-2xl p-6 max-h-[80vh] overflow-y-auto shadow-2xl relative text-left">
+            <div className="flex justify-between items-center mb-6 border-b border-border-muted/50 pb-4">
+              <h3 className="font-headline text-lg font-bold text-ink-black">
+                Our Services
+              </h3>
+              <button
+                onClick={() => setShowMobileServices(false)}
+                className="text-secondary hover:text-ink-black cursor-pointer bg-transparent border-none p-1"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
 
-            <h3 className="font-headline text-2xl font-bold text-ink-black mb-2">
-              Start Your Project
-            </h3>
-            <p className="font-body text-secondary text-sm mb-8 max-w-md mx-auto">
-              Tell us about your objectives and let's turn it into something
-              exceptional with modern, organic design.
-            </p>
-
-            {submitted ? (
-              <div className="py-8 space-y-3">
-                <div className="text-botanical-green text-5xl font-bold">✓</div>
-                <h4 className="text-lg font-bold text-ink-black">
-                  Inquiry Sent!
-                </h4>
-                <p className="text-sm text-secondary">
-                  Our specialists will contact you shortly.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <Input
-                  label="Full Name"
-                  id="modal-name"
-                  placeholder="John Doe"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  required
-                />
-
-                <Input
-                  label="Email Address"
-                  id="modal-email"
-                  type="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  required
-                />
-
-                <div className="text-left">
-                  <label className="block text-[12px] font-bold uppercase tracking-wider text-secondary mb-2 font-headline">
-                    Service Interest
-                  </label>
-                  <select
-                    value={formData.vertical}
-                    onChange={(e) =>
-                      setFormData({ ...formData, vertical: e.target.value })
-                    }
-                    className="w-full bg-transparent border-b border-ink-black/20 text-ink-black py-3 px-1 font-body text-body-md focus:outline-none focus:border-botanical-green transition-colors duration-300"
+            <div className="space-y-6">
+              {servicesData.map((service, index) => (
+                <div key={index} className="text-left border-b border-border-muted/30 pb-4 last:border-none">
+                  <Link
+                    to={service.path}
+                    onClick={() => setShowMobileServices(false)}
+                    className="font-headline font-bold text-md text-ink-black hover:text-botanical-green transition-colors block mb-2"
                   >
-                    <option value="technology">Technology &amp; SaaS</option>
-                    <option value="ecommerce">E-commerce Marketplace</option>
-                    <option value="marketing">
-                      Digital Marketing &amp; Growth
-                    </option>
-                    <option value="creative">
-                      Graphic Design &amp; Creative
-                    </option>
-                    <option value="video">
-                      Video Editing &amp; Production
-                    </option>
-                  </select>
+                    {service.title}
+                  </Link>
+                  <p className="font-body text-xs text-secondary/70 leading-relaxed">
+                    {service.children.slice(0, 5).join("  •  ")} {service.children.length > 5 ? `• & ${service.children.length - 5} more` : ""}
+                  </p>
                 </div>
-
-                <Input
-                  label="Tell us about your project"
-                  id="modal-message"
-                  type="textarea"
-                  rows={2}
-                  placeholder="Project details..."
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                />
-
-                <div className="pt-2">
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    className="w-full py-4"
-                  >
-                    Send Project Inquiry
-                  </Button>
-                </div>
-              </form>
-            )}
+              ))}
+            </div>
           </div>
         </div>
       )}
+
+
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { ArrowRight, Play, Film, Smartphone, Sparkles, CheckCircle2 } from "lucide-react";
-import Button from "./Button";
+import Button from "../../../components/Button";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -75,42 +75,53 @@ const Video = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="pt-20">
+    <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen">
       {/* Hero Section */}
-      <section className="max-w-container-max mx-auto px-mobile-margin pt-32 pb-20 relative text-left">
-        <div className="md:w-3/4 mb-12 relative hero-content">
-          <span className="font-headline text-[12px] font-bold text-botanical-green mb-4 block uppercase tracking-widest">
-            SERVICES
-          </span>
-          <h1 className="font-headline text-headline-xl-mobile md:text-headline-xl mb-6 leading-tight font-extrabold text-ink-black">
-            Cinematic Video Editing <br /> &amp; Production for{" "}
-            <span className="underline decoration-botanical-green/30">Digital-First Brands.</span>
-          </h1>
-          <p className="font-body text-body-lg text-secondary max-w-2xl leading-relaxed">
-            We transform raw footage into high-impact visual stories. From dynamic highlight reels to bespoke motion graphics, we help modern brands dominate the social landscape.
-          </p>
-          
-          {/* Hand-drawn Scribble Accent */}
-          <div className="hidden md:block absolute -right-20 top-0 text-botanical-green pointer-events-none select-none">
-            <svg className="fill-none stroke-current stroke-2" height="120" viewBox="0 0 120 120" width="120">
-              <path d="M10,50 Q30,10 70,30 T 110,50" strokeDasharray="4 4" />
-              <path d="M90,30 L110,50 L90,70" />
-            </svg>
-            <span className="font-headline text-[10px] font-bold tracking-wider absolute top-14 left-10 uppercase text-botanical-green">
-              THE MAGIC HAPPENS HERE
+      <section className="relative py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto relative z-10 hero-content">
+          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
+            <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
+            <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
+              SERVICES
             </span>
           </div>
-        </div>
 
-        {/* Bento Grid of Services */}
+          <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
+            Visual Stories
+            <br />
+            <span className="text-botanical-green relative inline-block mt-2">
+              Designed to Engage.
+              <svg
+                className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
+                preserveAspectRatio="none"
+                viewBox="0 0 100 10"
+              >
+                <path
+                  d="M0,5 Q25,0 50,5 T100,5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+            </span>
+          </h1>
+
+          <p className="font-body text-body-2xl text-secondary max-w-3xl mx-auto leading-relaxed text-center">
+            We transform ideas and raw footage into polished video content built for social media, e-commerce, advertising, and business communication.
+          </p>
+        </div>
+      </section>
+
+      {/* Bento Grid of Services */}
+      <section className="max-w-container-max mx-auto px-mobile-margin pb-24 relative text-left">
         <div id="video-services" className="grid grid-cols-1 md:grid-cols-12 gap-gutter pt-8">
           {/* Highlight Reels */}
           <div className="md:col-span-8 bg-surface-container-low border border-border-muted p-8 flex flex-col justify-between group transition-all duration-300 hover:border-botanical-green rounded-xl bento-card">
             <div className="mb-12">
               <span className="material-symbols-outlined text-4xl text-botanical-green mb-4">movie_edit</span>
-              <h3 className="font-headline text-headline-lg font-bold text-ink-black mb-4">Highlight Reels</h3>
+              <h3 className="font-headline text-headline-lg font-bold text-ink-black mb-4">Professional Video Editing</h3>
               <p className="text-secondary max-w-md font-body text-sm leading-relaxed">
-                Distilling long-form content into punchy, high-energy summaries that capture the essence of your events or brand milestones.
+                Distilling raw footage into clean, structured, and high-impact visual narratives with perfect pacing, grading, and sound design.
               </p>
             </div>
             <div className="relative overflow-hidden aspect-video w-full rounded-lg border border-border-muted">
@@ -126,9 +137,9 @@ const Video = () => {
           <div className="md:col-span-4 space-y-gutter flex flex-col">
             <div className="bg-surface-container border border-border-muted p-8 transition-all duration-300 hover:border-botanical-green rounded-xl flex-1 flex flex-col justify-center">
               <span className="material-symbols-outlined text-4xl text-botanical-green mb-4">smartphone</span>
-              <h3 className="font-headline text-headline-md font-bold text-ink-black mb-2">Social-First Content</h3>
+              <h3 className="font-headline text-headline-md font-bold text-ink-black mb-2">Reels &amp; Short-Form Content</h3>
               <p className="text-secondary font-body text-sm leading-relaxed">
-                9:16 optimized edits for TikTok, Reels, and Shorts designed for maximum retention.
+                9:16 optimized edits for TikTok, Instagram Reels, and YouTube Shorts designed for maximum retention.
               </p>
             </div>
             <div className="bg-surface-container border border-border-muted p-8 transition-all duration-300 hover:border-botanical-green rounded-xl flex-1 flex flex-col justify-center">
@@ -138,6 +149,26 @@ const Video = () => {
                 Bespoke 2D/3D typography and visual accents that bring your data and brand to life.
               </p>
             </div>
+          </div>
+
+          {/* Secondary Services Grid */}
+          <div className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter mt-8">
+            {[
+              { title: "Product & E-Commerce Videos", desc: "Studio-quality product showcases, catalog video updates, and dynamic specs.", icon: "shopping_bag" },
+              { title: "Promotional Videos", desc: "Attention-grabbing campaign videos, teaser releases, and event summaries.", icon: "campaign" },
+              { title: "Advertisement Videos", desc: "PPC ad placements, performance media templates, and conversion video ads.", icon: "ad_units" },
+              { title: "Corporate Video Editing", desc: "Internal communications, executive updates, and agency overview guides.", icon: "business" },
+              { title: "Animated Content", desc: "High-end 2D explainer graphics, system walk-throughs, and animated assets.", icon: "animation" },
+              { title: "YouTube Video Editing", desc: "Engaging long-form cuts, thumbnail overlays, sound design, and retention checks.", icon: "play_circle" },
+            ].map((service, idx) => (
+              <div key={idx} className="p-6 border border-border-muted rounded-xl flex gap-4 items-start card-hover bg-surface hover:shadow-sm transition-all duration-300">
+                <span className="material-symbols-outlined text-botanical-green text-2xl mt-1">{service.icon}</span>
+                <div>
+                  <h4 className="font-bold text-ink-black mb-1">{service.title}</h4>
+                  <p className="text-sm text-secondary font-body leading-relaxed">{service.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -300,7 +331,7 @@ const Video = () => {
               </h2>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
                 <button className="bg-surface text-botanical-green px-10 py-4 font-bold rounded-lg text-lg hover:scale-105 transition-transform cursor-pointer">
-                  Start Your Project
+                  Create Your Next Video →
                 </button>
                 <button className="border border-surface/30 text-surface px-10 py-4 font-bold rounded-lg text-lg hover:bg-surface/10 transition-colors cursor-pointer bg-transparent">
                   Book a Consultation
