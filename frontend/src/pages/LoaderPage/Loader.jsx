@@ -9,21 +9,61 @@ const Loader = ({ onComplete }) => {
   const progressBarRef = useRef(null);
 
   useEffect(() => {
-    // Increment progress counter from 0 to 100
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        // Increment by a dynamic step to simulate organic loading
-        const step = Math.floor(Math.random() * 4) + 1;
-        const next = prev + step;
-        return next > 100 ? 100 : next;
-      });
-    }, 25);
+    let currentProgress = 0;
+    let timerId = null;
 
-    return () => clearInterval(interval);
+    // Generate random pause points on mount (e.g. 3 to 4 random percentages between 15 and 90)
+    const pausePoints = [];
+    const numPauses = Math.floor(Math.random() * 2) + 3; // 3 or 4 random pauses
+    while (pausePoints.length < numPauses) {
+      const point = Math.floor(Math.random() * 75) + 15;
+      if (!pausePoints.includes(point)) {
+        pausePoints.push(point);
+      }
+    }
+    // Sort pause points ascending
+    pausePoints.sort((a, b) => a - b);
+    // Add a classic high-percent stall right before completion (e.g. 98% or 99%)
+    pausePoints.push(Math.random() > 0.5 ? 98 : 99);
+
+    const tick = () => {
+      if (currentProgress >= 100) {
+        setProgress(100);
+        return;
+      }
+
+      // Check if we hit one of our dynamic pause points
+      if (pausePoints.includes(currentProgress)) {
+        // Remove the pause point so we don't hit it again
+        const index = pausePoints.indexOf(currentProgress);
+        if (index > -1) {
+          pausePoints.splice(index, 1);
+        }
+
+        // Stall/pause at this point for a random duration (e.g. 400ms to 900ms)
+        const pauseDuration = Math.random() * 500 + 400;
+        timerId = setTimeout(() => {
+          currentProgress++;
+          setProgress(currentProgress);
+          tick();
+        }, pauseDuration);
+      } else {
+        // Smoothly increment by 1
+        // Random tick speed to keep it organic (e.g., 8ms to 25ms)
+        const tickSpeed = Math.random() * 17 + 8;
+        timerId = setTimeout(() => {
+          currentProgress++;
+          setProgress(currentProgress);
+          tick();
+        }, tickSpeed);
+      }
+    };
+
+    tick();
+
+    return () => {
+      if (timerId) clearTimeout(timerId);
+    };
   }, []);
 
   useEffect(() => {
@@ -62,7 +102,7 @@ const Loader = ({ onComplete }) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#fbf9f2] select-none overflow-hidden"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#1a0f0a] select-none overflow-hidden"
       style={{
         width: "100vw",
         height: "100vh",
@@ -91,7 +131,7 @@ const Loader = ({ onComplete }) => {
         {/* Elegant Thin Progress Bar */}
         <div
           ref={progressBarRef}
-          className="w-48 h-[2px] bg-amber-900/10 rounded-full overflow-hidden mb-3 relative"
+          className="w-48 h-[2px] bg-white/10 rounded-full overflow-hidden mb-3 relative"
         >
           <div
             className="h-full bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] transition-all duration-75 ease-out rounded-full"
