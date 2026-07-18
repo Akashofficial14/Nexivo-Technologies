@@ -45,7 +45,7 @@ const Work = () => {
   return (
     <div ref={containerRef} className="pt-20 min-h-screen bg-warm-bg text-left">
       {/* Portfolio Header */}
-      <section className="work-header pt-24 pb-12 px-mobile-margin max-w-container-max mx-auto text-center">
+      <section className="work-header pt-10 pb-16 md:pt-24 md:pb-12 px-mobile-margin max-w-container-max mx-auto text-center">
         <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
           <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
           <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
@@ -53,7 +53,7 @@ const Work = () => {
           </span>
         </div>
 
-        <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-3xl mx-auto font-extrabold">
+        <h1 className="font-headline mb-8 leading-[1.05] tracking-tight text-ink-black max-w-3xl mx-auto font-extrabold" style={{ fontSize: "clamp(2.6rem, 9.5vw, 4.25rem)" }}>
           Ideas We've Turned Into
           <br />
           <span className="text-botanical-green relative inline-block mt-2">

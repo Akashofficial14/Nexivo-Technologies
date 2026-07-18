@@ -15,12 +15,12 @@
   --color-inverse-on-surface: #f3f1ea;
   --color-outline: #717972;
   --color-outline-variant: #c1c9c0;
-  --color-surface-tint: #3b684b;
-  --color-primary: #386549;
+  --color-surface-tint: #C9922A;
+  --color-primary: #C9922A;
   --color-on-primary: #ffffff;
-  --color-primary-container: #517e60;
-  --color-on-primary-container: #f6fff5;
-  --color-inverse-primary: #a1d2af;
+  --color-primary-container: #D4A84B;
+  --color-on-primary-container: #3D2600;
+  --color-inverse-primary: #E8C97A;
   --color-secondary: #5f5e5e;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #e2dfde;
@@ -33,10 +33,10 @@
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #93000a;
-  --color-primary-fixed: #bdeeca;
-  --color-primary-fixed-dim: #a1d2af;
-  --color-on-primary-fixed: #002110;
-  --color-on-primary-fixed-variant: #234f35;
+  --color-primary-fixed: #F5DCA0;
+  --color-primary-fixed-dim: #E8C97A;
+  --color-on-primary-fixed: #3D2600;
+  --color-on-primary-fixed-variant: #8A5E10;
   --color-secondary-fixed: #e5e2e1;
   --color-secondary-fixed-dim: #c8c6c5;
   --color-on-secondary-fixed: #1c1b1b;
@@ -50,7 +50,7 @@
   --color-surface-variant: #e4e2dc;
   --color-warm-bg: #F7F5EE;
   --color-ink-black: #1A1A1A;
-  --color-botanical-green: #618F70;
+  --color-botanical-green: #C9922A;
   --color-border-muted: rgba(26, 26, 26, 0.1);
 
   /* Border radius */
@@ -111,7 +111,7 @@ body {
 }
 
 .scribble-underline {
-  background-image: url("data:image/svg+xml,%3Csvg width='164' height='12' viewBox='0 0 164 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10C30 4 134 -2 162 6' stroke='%23618F70' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='164' height='12' viewBox='0 0 164 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 10C30 4 134 -2 162 6' stroke='%23C9922A' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: bottom;
   padding-bottom: 8px;
@@ -125,7 +125,7 @@ body {
 
 .bento-card:hover {
   transform: translateY(-4px);
-  border-color: #618F70;
+  border-color: #C9922A;
 }
 
 /* Editorial input layout */
@@ -136,7 +136,7 @@ body {
 }
 
 .editorial-input:focus {
-  border-bottom-color: #618F70;
+  border-bottom-color: #C9922A;
   outline: none;
 }
 
@@ -156,7 +156,7 @@ body {
 .custom-cursor {
   width: 20px;
   height: 20px;
-  background: #618F70;
+  background: #C9922A;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -175,12 +175,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dcdad3;
+  background: #E8C97A;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c1c9c0;
+  background: #C9922A;
 }
 
 /* Elegant color-shifting gradient animation for primary CTAs */
@@ -197,8 +197,48 @@ body {
 }
 
 .gradient-shifting-overlay {
-  /* An elegant organic palette: botanical green, deeper forest green, subtle amber-gold, and soft sage */
-  background: linear-gradient(135deg, #618F70, #386549, #a88d52, #477c59, #618F70);
+  /* An elegant gold palette: rich gold, deep bronze, amber, warm gold */
+  background: linear-gradient(135deg, #C9922A, #8A5E10, #E8B84B, #A0711E, #C9922A);
   background-size: 300% 300%;
   animation: premium-gradient-shift 8s ease infinite;
+}
+
+/* Secondary bar ticker marquee */
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Premium global button hover slide-up gold gradient */
+.premium-btn-anim {
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.premium-btn-anim::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background: linear-gradient(135deg, #C9922A, #8A5E10, #E8B84B, #A0711E, #C9922A);
+  background-size: 300% 300%;
+  animation: premium-gradient-shift 8s ease infinite;
+  z-index: -1;
+  transition: height 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-btn-anim:hover::before {
+  height: 100%;
+}
+
+.premium-btn-anim:hover {
+  color: #fbf9f2 !important;
 }

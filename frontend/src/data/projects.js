@@ -33,7 +33,7 @@ export const majorProjects = [
     liveLink: "#",
     github: "#",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
-    bgColor: "#618F70"
+    bgColor: "#C9922A"
   },
   {
     projectName: "Aumya Luxury Branding",

@@ -93,16 +93,16 @@ const Technology = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen text-left">
       {/* Hero Section */}
-      <header className="pt-24 pb-12 px-mobile-margin relative overflow-hidden text-center">
+      <header className="pt-10 pb-16 md:py-24 px-mobile-margin relative overflow-hidden text-center">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
-          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
-            <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
-            <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
+          <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
+            <Sparkles className="w-4 h-4 text-botanical-green" />
+            <span className="font-headline text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-botanical-green">
               SERVICES
             </span>
           </div>
 
-          <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
+          <h1 className="font-headline mb-8 leading-[1.05] tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold" style={{ fontSize: "clamp(2.6rem, 9.5vw, 4.25rem)" }}>
             Technology That
             <br />
             <span className="text-botanical-green relative inline-block mt-2">
@@ -156,7 +156,7 @@ const Technology = () => {
         {/* Abstract Scribble Accent */}
         <div className="absolute top-1/2 left-1/4 scribble-accent opacity-20 pointer-events-none">
           <svg fill="none" height="200" viewBox="0 0 200 200" width="200" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 100C30 80 50 120 70 100C90 80 110 120 130 100C150 80 170 120 190 100" stroke="#618F70" strokeLinecap="round" strokeWidth="2" />
+            <path d="M10 100C30 80 50 120 70 100C90 80 110 120 130 100C150 80 170 120 190 100" stroke="#C9922A" strokeLinecap="round" strokeWidth="2" />
           </svg>
         </div>
       </header>
@@ -410,7 +410,7 @@ const Technology = () => {
           <div className="max-w-xl mx-auto bg-surface p-12 relative border border-border-muted rounded-xl shadow-sm booking-panel">
             <div className="absolute -top-6 -right-6 scribble-accent">
               <svg fill="none" height="80" viewBox="0 0 80 80" width="80">
-                <path d="M10,70 C20,40 60,40 70,10" stroke="#618F70" strokeDasharray="4 4" strokeWidth="2" />
+                <path d="M10,70 C20,40 60,40 70,10" stroke="#C9922A" strokeDasharray="4 4" strokeWidth="2" />
               </svg>
             </div>
 

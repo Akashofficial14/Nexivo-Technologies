@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Loader = ({ onComplete }) => {
+const Loader = ({ onComplete, onExitStart }) => {
   const [progress, setProgress] = useState(0);
   const containerRef = useRef(null);
   const logoRef = useRef(null);
@@ -104,6 +104,10 @@ const Loader = ({ onComplete }) => {
 
   useEffect(() => {
     if (progress === 100) {
+      if (onExitStart) {
+        onExitStart();
+      }
+
       const tl = gsap.timeline({
         onComplete: () => {
           if (onComplete) {
@@ -142,12 +146,12 @@ const Loader = ({ onComplete }) => {
         "-=0.2"
       );
     }
-  }, [progress, onComplete]);
+  }, [progress, onComplete, onExitStart]);
 
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0E1310] select-none overflow-hidden"
+      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-gradient-to-br from-[#060814] via-[#0B0F1C] to-[#030407] select-none overflow-hidden"
       style={{
         width: "100vw",
         height: "100vh",
@@ -185,7 +189,7 @@ const Loader = ({ onComplete }) => {
           ref={logoRef}
           className="font-headline text-5xl md:text-[60px] font-extrabold tracking-[0.25em] mb-3 translate-x-[0.125em] flex justify-center overflow-hidden"
           style={{
-            filter: "drop-shadow(0px 2px 4px rgba(0,0,0,0.06))",
+            filter: "drop-shadow(0px 2px 4px rgba(0,0,0,0.4))",
           }}
         >
           {letters.map((char, index) => (

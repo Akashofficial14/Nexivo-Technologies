@@ -128,9 +128,9 @@ const Navbar = () => {
 
   const mobileLinks = [
     { label: "Home", mobileLabel: "Home", path: "/", Icon: HomeIcon },
-    { label: "Services", mobileLabel: "Services", path: "#services", Icon: Briefcase, isAction: true },
     { label: "About", mobileLabel: "About", path: "/about", Icon: Users },
     { label: "Blogs", mobileLabel: "Blogs", path: "/blogs", Icon: BookOpen },
+    { label: "Services", mobileLabel: "Services", path: "#services", Icon: Briefcase, isAction: true },
     { label: "Contact", mobileLabel: "Contact", path: "/contact", Icon: Mail },
   ];
 
@@ -184,6 +184,10 @@ const Navbar = () => {
             {/* Desktop Nav Links */}
             <nav className="hidden md:flex items-center gap-6 lg:gap-8">
               <RollingNavLink to="/">Home</RollingNavLink>
+
+              <RollingNavLink to="/about">About Us</RollingNavLink>
+
+              <RollingNavLink to="/blogs">Blogs</RollingNavLink>
 
               {/* Services Dropdown */}
               <div
@@ -242,8 +246,6 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <RollingNavLink to="/about">About Us</RollingNavLink>
-              <RollingNavLink to="/blogs">Blogs</RollingNavLink>
               <RollingNavLink to="/contact">Contact Us</RollingNavLink>
             </nav>
 

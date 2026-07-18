@@ -33,22 +33,22 @@ const serviceData = {
     themeColor: "blue",
     competencies: [
       {
-        icon: <Globe className="w-8 h-8 text-electric-blue" />,
+        icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Account Management",
         desc: "Full operational oversight for Amazon Vendor & Seller central, Walmart Marketplace, and premium retail vendor networks.",
       },
       {
-        icon: <ShoppingBag className="w-8 h-8 text-electric-blue" />,
+        icon: <ShoppingBag className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Shopify Development",
         desc: "Custom headless storefronts, subscription logic setups, custom application extensions, and speed optimization audits.",
       },
       {
-        icon: <Settings className="w-8 h-8 text-electric-blue" />,
+        icon: <Settings className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Operations Automation",
         desc: "Automated warehouse links, ERP integrations, inventory sync triggers, and custom product information database (PIM) setups.",
       },
       {
-        icon: <Megaphone className="w-8 h-8 text-electric-blue" />,
+        icon: <Megaphone className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Retail Ad Campaigns",
         desc: "PPC search ads, sponsored brands setup, catalog display ads, and custom demand side platform (DSP) targeting strategies.",
       },
@@ -64,22 +64,22 @@ const serviceData = {
     themeColor: "teal",
     competencies: [
       {
-        icon: <TrendingUp className="w-8 h-8 text-cyber-teal" />,
+        icon: <TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Search Optimization",
         desc: "Highly-targeted Google Ads search groups, shopping setups, negative keyword filters, and performance max campaign tuning.",
       },
       {
-        icon: <BarChart className="w-8 h-8 text-cyber-teal" />,
+        icon: <BarChart className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Social Advertising",
         desc: "Scaling paid social setups on Meta (Facebook/Instagram), TikTok, and LinkedIn with dynamic custom-targeted assets.",
       },
       {
-        icon: <Layers className="w-8 h-8 text-cyber-teal" />,
+        icon: <Layers className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "CRO & Funnels",
         desc: "Designing conversion-optimized landing pages, conducting user click-heatmap analysis, and creating programmatic email sequences.",
       },
       {
-        icon: <Globe className="w-8 h-8 text-cyber-teal" />,
+        icon: <Globe className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Analytics Setup",
         desc: "Deploying server-side tracking, GTM container configurations, custom GA4 events, and real-time visualization dashboards.",
       },
@@ -95,22 +95,22 @@ const serviceData = {
     themeColor: "teal",
     competencies: [
       {
-        icon: <PenTool className="w-8 h-8 text-cyber-teal" />,
+        icon: <PenTool className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Brand Identity Systems",
         desc: "Bespoke logos, strict color guidelines, typography rules, brand statements, and vector asset packages.",
       },
       {
-        icon: <Palette className="w-8 h-8 text-cyber-teal" />,
+        icon: <Palette className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Premium UI/UX Design",
         desc: "High-fidelity Figma wireframes, active interaction prototypes, modular component layouts, and detailed developer handoff files.",
       },
       {
-        icon: <Layers className="w-8 h-8 text-cyber-teal" />,
+        icon: <Layers className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "Production Art",
         desc: "Stunning product packages, print layouts, trade show assets, and high-resolution merchandise layouts.",
       },
       {
-        icon: <Sparkles className="w-8 h-8 text-cyber-teal" />,
+        icon: <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-cyber-teal" />,
         title: "3D Asset Renderings",
         desc: "High-end 3D product modeling, abstract environment visualization, spatial structures, and dynamic visual layouts.",
       },
@@ -126,22 +126,22 @@ const serviceData = {
     themeColor: "blue",
     competencies: [
       {
-        icon: <Film className="w-8 h-8 text-electric-blue" />,
+        icon: <Film className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Corporate Brand Films",
         desc: "Cinematic company narratives, user profile documentations, software explainers, and founding stories.",
       },
       {
-        icon: <Play className="w-8 h-8 text-electric-blue" />,
+        icon: <Play className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Paid Social Creatives",
         desc: "High-retention social hooks, vertical reels, product demo templates, and performance-minded ad creatives.",
       },
       {
-        icon: <Layers className="w-8 h-8 text-electric-blue" />,
+        icon: <Layers className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Motion Graphics",
         desc: "Custom title cards, 3D animated components, diagram flow sequences, and kinetic type layouts.",
       },
       {
-        icon: <VideoIcon className="w-8 h-8 text-electric-blue" />,
+        icon: <VideoIcon className="w-6 h-6 md:w-8 md:h-8 text-electric-blue" />,
         title: "Premium Post Production",
         desc: "Advanced visual grading setups, dynamic audio mixes, noise filters, and seamless cinematic transitions.",
       },
@@ -156,13 +156,13 @@ const ServicePage = () => {
   const data = serviceData[path] || serviceData.ecommerce;
 
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden hero-mesh py-20 lg:py-32">
-        <div className="max-w-container-max mx-auto px-gutter relative z-10">
-          <div className="max-w-3xl space-y-6">
+    <div className="pt-16 md:pt-20">
+      {/* ── Hero Section ──────────────────────────────────────── */}
+      <section className="relative overflow-hidden hero-mesh py-14 md:py-20 lg:py-32 px-5 md:px-10">
+        <div className="max-w-container-max mx-auto relative z-10">
+          <div className="max-w-3xl space-y-4 md:space-y-6">
             <span
-              className={`inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border ${
+              className={`inline-block px-3 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-wider uppercase border ${
                 data.themeColor === "teal"
                   ? "bg-cyber-teal/10 text-cyber-teal border-cyber-teal/20"
                   : "bg-electric-blue/10 text-electric-blue border-electric-blue/20"
@@ -170,20 +170,20 @@ const ServicePage = () => {
             >
               {data.badge}
             </span>
-            <h1 className="font-headline text-headline-xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+            <h1 className="font-headline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1]">
               {data.title}
             </h1>
-            <p className="font-body text-body-lg text-text-muted leading-relaxed max-w-2xl">
+            <p className="font-body text-sm md:text-base lg:text-lg text-text-muted leading-relaxed max-w-2xl">
               {data.desc}
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 pt-2 md:pt-4">
               <Link to="/contact">
-                <Button variant="primary" className="px-8 py-4">
+                <Button variant="primary" className="px-6 md:px-8 py-3 md:py-4 w-full sm:w-auto">
                   Start Your Project
                 </Button>
               </Link>
-              <a href="#competencies" className="inline-flex">
-                <Button variant="secondary" className="px-8 py-4">
+              <a href="#competencies" className="inline-flex w-full sm:w-auto">
+                <Button variant="secondary" className="px-6 md:px-8 py-3 md:py-4 w-full">
                   View Competencies
                 </Button>
               </a>
@@ -192,59 +192,60 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Competencies Section */}
-      <section id="competencies" className="py-24 px-gutter max-w-container-max mx-auto border-t border-white/5">
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3">
-            <h2 className="font-headline text-headline-lg font-bold text-white">Vertical Expertise</h2>
-            <p className="font-body text-body-md text-text-muted">
+      {/* ── Competencies Section ──────────────────────────────── */}
+      <section id="competencies" className="py-14 md:py-24 px-5 md:px-10 max-w-container-max mx-auto border-t border-white/5">
+        <div className="mb-10 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
+          <div className="space-y-2 md:space-y-3">
+            <h2 className="font-headline text-xl md:text-2xl lg:text-3xl font-bold text-white">Vertical Expertise</h2>
+            <p className="font-body text-sm md:text-base text-text-muted">
               Deep, focused execution to solve core operations and achieve revenue growth.
             </p>
           </div>
           <div className="flex gap-2">
-            <span className={`w-12 h-1 rounded-full ${data.themeColor === "teal" ? "bg-cyber-teal" : "bg-electric-blue"}`} />
+            <span className={`w-10 md:w-12 h-1 rounded-full ${data.themeColor === "teal" ? "bg-cyber-teal" : "bg-electric-blue"}`} />
             <span className="w-4 h-1 bg-white/10 rounded-full" />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* 1-col mobile → 2-col desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {data.competencies.map((comp, idx) => (
-            <GlassCard key={idx} hoverColor={data.themeColor} className="flex flex-col md:flex-row gap-6 p-8 items-start">
+            <GlassCard key={idx} hoverColor={data.themeColor} className="flex flex-col sm:flex-row gap-4 md:gap-6 p-6 md:p-8 items-start">
               <div className="shrink-0">{comp.icon}</div>
-              <div className="space-y-2">
-                <h3 className="font-headline text-xl font-bold text-white">{comp.title}</h3>
-                <p className="font-body text-sm text-text-muted leading-relaxed">{comp.desc}</p>
+              <div className="space-y-1 md:space-y-2">
+                <h3 className="font-headline text-base md:text-xl font-bold text-white">{comp.title}</h3>
+                <p className="font-body text-xs md:text-sm text-text-muted leading-relaxed">{comp.desc}</p>
               </div>
             </GlassCard>
           ))}
         </div>
       </section>
 
-      {/* Showcase / Process Segment */}
-      <section className="py-24 bg-midnight-surface/30 border-t border-white/5 overflow-hidden">
-        <div className="max-w-container-max mx-auto px-gutter flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1 space-y-6">
-            <h2 className="font-headline text-3xl font-bold text-white leading-tight">
+      {/* ── Showcase / Process Segment ────────────────────────── */}
+      <section className="py-14 md:py-24 bg-midnight-surface/30 border-t border-white/5 overflow-hidden px-5 md:px-10">
+        <div className="max-w-container-max mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
+          <div className="flex-1 space-y-4 md:space-y-6">
+            <h2 className="font-headline text-xl md:text-2xl lg:text-3xl font-bold text-white leading-tight">
               A premium framework optimized for digital speed.
             </h2>
-            <p className="font-body text-body-md text-text-muted leading-relaxed">
+            <p className="font-body text-sm md:text-base text-text-muted leading-relaxed">
               We design every flow using pre-packaged UI frameworks, automated code integration schedules, and clean metrics tracking, bypassing standard operational issues to go live weeks faster.
             </p>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               {data.features.map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-2 font-body text-sm text-white">
-                  <CheckCircle className={`w-5 h-5 ${data.themeColor === "teal" ? "text-cyber-teal" : "text-electric-blue"}`} />
+                <div key={idx} className="flex items-center gap-2 font-body text-xs md:text-sm text-white">
+                  <CheckCircle className={`w-4 h-4 md:w-5 md:h-5 shrink-0 ${data.themeColor === "teal" ? "text-cyber-teal" : "text-electric-blue"}`} />
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex-1 w-full max-w-lg aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 relative">
+          <div className="flex-1 w-full max-w-lg aspect-[16/10] rounded-xl md:rounded-2xl overflow-hidden border border-white/10 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-[#050608] via-transparent to-transparent z-10" />
             <img
               src={data.image}
               alt={data.title}
-              className="w-full h-full object-cover animate-float-slow"
+              className="w-full h-full object-cover"
               style={{ animation: "float 8s ease-in-out infinite" }}
             />
           </div>

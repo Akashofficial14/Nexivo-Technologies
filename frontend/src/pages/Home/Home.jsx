@@ -13,6 +13,9 @@ const Home = () => {
   const [isLoaderComplete, setIsLoaderComplete] = useState(() => {
     return !!sessionStorage.getItem("nexivo_initial_loaded");
   });
+  const [startReveal, setStartReveal] = useState(() => {
+    return !!sessionStorage.getItem("nexivo_initial_loaded");
+  });
 
   // Disable scroll when preloader is active
   useEffect(() => {
@@ -27,7 +30,7 @@ const Home = () => {
   }, [isLoaderComplete]);
 
   useLayoutEffect(() => {
-    if (!isLoaderComplete) return;
+    if (!startReveal) return;
 
     const ctx = gsap.context(() => {
       // ── Hero entrance (immediate, no scroll) ───────────────────────
@@ -92,26 +95,29 @@ const Home = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, [isLoaderComplete]);
+  }, [startReveal]);
 
   return (
     <>
       {!isLoaderComplete && (
         <Loader
+          onExitStart={() => {
+            setStartReveal(true);
+          }}
           onComplete={() => {
             sessionStorage.setItem("nexivo_initial_loaded", "true");
             setIsLoaderComplete(true);
           }}
         />
       )}
-      <div ref={containerRef} className="pt-10">
+      <div ref={containerRef} className="pt-10" style={{ opacity: startReveal ? 1 : 0, transition: "opacity 0.3s ease" }}>
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-mobile-margin py-section-padding overflow-hidden">
           <div className="max-w-4xl relative z-10 hero-content">
             <span className="inline-block px-4 py-1.5 mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-headline text-[16px] font-bold uppercase tracking-widest">
               Future-Ready Solutions
             </span>
-            <h1 className="font-headline text-headline-xl md:text-[64px] mb-6 leading-tight tracking-tight text-ink-black">
+            <h1 className="font-headline mb-6 leading-[1.05] tracking-tight text-ink-black font-extrabold" style={{ fontSize: "clamp(2.8rem, 10vw, 4.5rem)" }}>
               Turning Ideas Into
               <br />
               <span className="text-botanical-green relative">
@@ -152,7 +158,7 @@ const Home = () => {
                 <svg
                   fill="none"
                   height="60"
-                  stroke="#618F70"
+                  stroke="#C9922A"
                   strokeWidth="2"
                   viewBox="0 0 120 60"
                   width="120"

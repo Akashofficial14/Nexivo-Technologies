@@ -61,16 +61,16 @@ const Creative = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+      <section className="relative pt-10 pb-16 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
-          <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
-            <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
-            <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
+          <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
+            <Sparkles className="w-4 h-4 text-botanical-green" />
+            <span className="font-headline text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-botanical-green">
               SERVICES
             </span>
           </div>
 
-          <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
+          <h1 className="font-headline mb-8 leading-[1.05] tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold" style={{ fontSize: "clamp(2.6rem, 9.5vw, 4.25rem)" }}>
             Design That Makes Your Brand
             <br />
             <span className="text-botanical-green relative inline-block mt-2">

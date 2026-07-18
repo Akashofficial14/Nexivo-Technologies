@@ -5,7 +5,7 @@ const AdminPortal = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [passcode, setPasscode] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
-  
+
   // Registration data hooks
   const [records, setRecords] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -96,13 +96,13 @@ const AdminPortal = () => {
 
   // Filter logic
   const filteredRecords = records.filter(r => {
-    const matchesSearch = 
+    const matchesSearch =
       (r.fullName || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
       (r.email || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
       (r.companyName || "").toLowerCase().includes(searchQuery.toLowerCase());
-    
+
     const matchesFilter = serviceFilter === "All" || (r.service || "") === serviceFilter;
-    
+
     return matchesSearch && matchesFilter;
   });
 
@@ -155,6 +155,11 @@ const AdminPortal = () => {
             </button>
           </form>
 
+          {/* <div className="text-center">
+            <span className="text-[10px] text-secondary/60 font-body block">
+              Default passcode: <span className="font-semibold text-botanical-green">nexivo2026</span>
+            </span>
+          </div> */}
         </div>
       </div>
     );
@@ -163,7 +168,7 @@ const AdminPortal = () => {
   return (
     <div className="min-h-screen bg-warm-bg pt-32 pb-24 text-left font-body">
       <div className="max-w-container-max mx-auto px-mobile-margin space-y-10">
-        
+
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 bg-surface border border-border-muted p-8 rounded-2xl">
           <div className="space-y-1">
@@ -188,7 +193,7 @@ const AdminPortal = () => {
 
         {/* Metrics Overview Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          
+
           <div className="bg-surface border border-border-muted p-6 rounded-xl flex items-center justify-between">
             <div className="space-y-1">
               <span className="text-secondary text-xs uppercase tracking-wider font-headline font-bold">Total Inquiries</span>
@@ -233,10 +238,10 @@ const AdminPortal = () => {
 
         {/* Database List Block */}
         <div className="bg-surface border border-border-muted rounded-2xl overflow-hidden shadow-sm">
-          
+
           {/* Filters Banner */}
           <div className="p-6 border-b border-border-muted flex flex-col md:flex-row md:items-center justify-between gap-4">
-            
+
             <div className="flex flex-col sm:flex-row gap-4 w-full md:max-w-2xl">
               {/* Search */}
               <div className="relative flex-1">
@@ -295,8 +300,8 @@ const AdminPortal = () => {
                 <FileText className="w-12 h-12 text-secondary/40 mx-auto" />
                 <h3 className="font-headline text-lg font-bold text-ink-black">No submissions found</h3>
                 <p className="text-secondary text-sm max-w-sm mx-auto">
-                  {records.length === 0 
-                    ? "New registrations submitted via contact flows will populate here dynamically." 
+                  {records.length === 0
+                    ? "New registrations submitted via contact flows will populate here dynamically."
                     : "No records match your search criteria or service filter."}
                 </p>
               </div>

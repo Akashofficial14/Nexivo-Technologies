@@ -94,18 +94,18 @@ const Contact = () => {
   return (
     <div ref={containerRef} className="pt-20 min-h-screen bg-warm-bg text-left">
       {/* Hero Header */}
-      <section className="contact-hero pt-24 pb-12 px-mobile-margin max-w-container-max mx-auto text-center">
-        <div className="mb-8 inline-flex items-center gap-2 px-4 py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
-          <Sparkles className="w-4.5 h-4.5 text-botanical-green" />
-          <span className="font-headline text-[12px] font-bold uppercase tracking-widest text-botanical-green">
+      <section className="contact-hero pt-10 md:pt-24 pb-8 md:pb-12 px-5 md:px-10 max-w-container-max mx-auto text-center">
+        <div className="mb-5 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
+          <Sparkles className="w-4 h-4 text-botanical-green" />
+          <span className="font-headline text-[11px] md:text-[12px] font-bold uppercase tracking-widest text-botanical-green">
             GET IN TOUCH
           </span>
         </div>
 
-        <h1 className="font-headline text-headline-xl md:text-[64px] mb-8 leading-tight tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold">
-          Let’s Build Something That
+        <h1 className="font-headline mb-5 md:mb-8 leading-[1.05] tracking-tight text-ink-black max-w-4xl mx-auto font-extrabold" style={{ fontSize: "clamp(2.6rem, 9.5vw, 4.25rem)" }}>
+          Let's Build Something That
           <br />
-          <span className="text-botanical-green relative inline-block mt-2">
+          <span className="text-botanical-green relative inline-block mt-1 md:mt-2">
             Creates Impact.
             <svg
               className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
@@ -122,13 +122,13 @@ const Contact = () => {
           </span>
         </h1>
 
-        <p className="font-body text-body-2xl text-secondary max-w-3xl mx-auto leading-relaxed text-center">
+        <p className="font-body text-sm md:text-base lg:text-lg text-secondary max-w-3xl mx-auto leading-relaxed text-center px-2 md:px-0">
           Tell us about your idea, challenge, or business goal. Our team will understand your requirements and help identify the right solution.
         </p>
       </section>
 
       {/* Main Grid: Form & Info */}
-      <section className="max-w-container-max mx-auto px-mobile-margin pb-24">
+      <section className="max-w-container-max mx-auto px-5 md:px-10 pb-16 md:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Direct channels and Brand Note */}
@@ -167,7 +167,7 @@ const Contact = () => {
                 <div>
                   <span className="block font-headline text-[10px] font-bold text-secondary uppercase tracking-wider">Location</span>
                   <span className="font-body text-sm font-semibold text-ink-black leading-relaxed">
-                    Pune, Maharashtra, India
+                    Indore, Madhya Pradesh, India
                   </span>
                 </div>
               </div>
@@ -195,7 +195,7 @@ const Contact = () => {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="border border-botanical-green text-botanical-green px-6 py-2.5 rounded font-bold hover:bg-botanical-green hover:text-surface transition-colors cursor-pointer"
+                  className="border border-botanical-green text-botanical-green px-6 py-2.5 rounded font-bold hover:bg-botanical-green hover:text-surface transition-colors cursor-pointer premium-btn-anim"
                 >
                   Send Another Inquiry
                 </button>
@@ -371,7 +371,7 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-botanical-green text-surface py-4 font-bold rounded hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer text-base shadow-sm"
+                  className="w-full bg-botanical-green text-surface py-4 font-bold rounded hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer text-base shadow-sm premium-btn-anim"
                 >
                   Submit Your Requirement →
                 </button>
