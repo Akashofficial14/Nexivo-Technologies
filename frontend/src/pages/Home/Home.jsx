@@ -30,7 +30,7 @@ const Home = () => {
   }, [isLoaderComplete]);
 
   useLayoutEffect(() => {
-    if (!startReveal) return;
+    if (!startReveal || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
       // ── Hero entrance (immediate, no scroll) ───────────────────────
@@ -120,7 +120,7 @@ const Home = () => {
       )}
       <div ref={containerRef} className="pt-0" style={{ opacity: startReveal ? 1 : 0, transition: "opacity 0.3s ease" }}>
         {/* Hero Section */}
-        <section className="relative min-h-[100vh] flex flex-col items-center justify-center text-center px-mobile-margin pt-28 pb-20 overflow-hidden bg-[#060814]">
+        <section className="relative min-h-[auto] md:min-h-[100vh] flex flex-col items-center justify-center text-center px-mobile-margin pt-24 md:pt-28 pb-16 md:pb-20 overflow-hidden bg-[#060814]">
           {/* Background Video */}
           <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-[#060814]">
             <video
@@ -136,10 +136,10 @@ const Home = () => {
           </div>
 
           <div className="max-w-5xl relative z-10 hero-content">
-            <span className="inline-block px-4 py-1.5 mb-8 md:mb-10 rounded-full bg-white/5 border border-white/10 text-[#FCF6BA] font-headline text-[13px] md:text-[15px] font-bold uppercase tracking-widest backdrop-blur-sm">
+            <span className="inline-block px-4 py-1.5 sm:px-5 sm:py-2 mb-6 md:mb-10 rounded-full bg-white/5 border border-white/10 text-[#FCF6BA] font-headline text-[14px] sm:text-[16px] md:text-[18px] font-bold uppercase tracking-widest backdrop-blur-sm">
               Future-Ready Solutions
             </span>
-            <h1 className="font-headline mb-6 md:mb-8 leading-[1.05] tracking-tight text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl animate-fade-in" style={{ fontSize: "clamp(2.2rem, 8vw, 5.2rem)" }}>
+            <h1 className="font-headline mb-6 md:mb-8 leading-[1.05] tracking-tight text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl animate-fade-in" style={{ fontSize: "clamp(2.6rem, 9vw, 5.5rem)" }}>
               Turning Ideas Into
               <br />
               <span className="text-botanical-green relative">

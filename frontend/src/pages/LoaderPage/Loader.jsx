@@ -85,7 +85,7 @@ const Loader = ({ onComplete, onExitStart }) => {
       className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#060814] select-none overflow-hidden"
       style={{
         width: "100vw",
-        height: "100vh",
+        height: "100dvh",
         top: 0,
         left: 0,
         right: 0,
