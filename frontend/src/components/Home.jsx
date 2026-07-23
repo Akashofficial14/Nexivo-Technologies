@@ -39,6 +39,14 @@ const Home = () => {
         delay: 0.1,
       });
 
+      // ── Hero background video fade in ─────────────────────────────
+      gsap.from(".hero-bg-video", {
+        opacity: 0,
+        duration: 2.0,
+        ease: "power2.out",
+        delay: 0.2,
+      });
+
       // ── Bento cards — each element is its own trigger ───────────────
       containerRef.current.querySelectorAll(".bento-card").forEach((card) => {
         gsap.from(card, {
@@ -86,23 +94,37 @@ const Home = () => {
           }}
         />
       )}
-      <div ref={containerRef} className="pt-10">
-        {/* ── Hero Section ─────────────────────────────────────────── */}
-        <section className="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-5 md:px-10 py-16 md:py-24 overflow-hidden">
-          <div className="max-w-4xl relative z-10 hero-content">
+      <div ref={containerRef} className="pt-0">
+        {/* Hero Section */}
+        <section className="relative min-h-[100vh] flex flex-col items-center justify-center text-center px-5 md:px-10 pt-28 pb-20 overflow-hidden bg-[#060814]">
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-[#060814]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-bg-video w-full h-full object-cover opacity-35"
+              src="/hero-section.mp4"
+            />
+            {/* Smooth transition gradients: dark top to blend header/navbar, transparent middle, cream bottom to merge with page */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#060814]/90 via-transparent to-[#fbf9f2]" />
+          </div>
+
+          <div className="max-w-5xl relative z-10 hero-content">
             {/* Badge */}
-            <span className="inline-block px-3 md:px-4 py-1 md:py-1.5 mb-6 md:mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-headline text-[11px] md:text-[14px] font-bold uppercase tracking-widest">
+            <span className="inline-block px-4 py-1.5 mb-8 md:mb-10 rounded-full bg-white/5 border border-white/10 text-[#FCF6BA] font-headline text-[13px] md:text-[15px] font-bold uppercase tracking-widest backdrop-blur-sm">
               Future-Ready Solutions
             </span>
 
             {/* H1 */}
-            <h1 className="font-headline mb-5 md:mb-6 leading-[1.05] tracking-tight text-ink-black font-extrabold" style={{ fontSize: "clamp(2.8rem, 10vw, 4.5rem)" }}>
+            <h1 className="font-headline mb-6 md:mb-8 leading-[1.05] tracking-tight text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl animate-fade-in" style={{ fontSize: "clamp(2.2rem, 8vw, 5.2rem)" }}>
               Turning Ideas Into
               <br />
-              <span className="relative">
+              <span className="text-botanical-green relative">
                 Digital Impact.
                 <svg
-                  className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
+                  className="absolute -bottom-3 left-0 w-full h-3.5 text-botanical-green/45"
                   preserveAspectRatio="none"
                   viewBox="0 0 100 10"
                 >
@@ -117,7 +139,7 @@ const Home = () => {
             </h1>
 
             {/* Paragraph */}
-            <p className="font-body text-base md:text-lg lg:text-xl text-secondary mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-2 md:px-0">
+            <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/85 mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
               We help businesses build, grow, and scale through technology, e-commerce, digital
               marketing, creative design, and video solutions — all under one roof.
             </p>
@@ -129,13 +151,16 @@ const Home = () => {
                   [ Start Your Project ]
                 </button>
               </Link>
-              <a
-                href="#services"
-                className="group flex items-center gap-2 font-bold text-ink-black hover:text-botanical-green transition-colors text-sm md:text-base"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent("open-services-modal"));
+                }}
+                className="group w-full sm:w-auto inline-flex items-center justify-center font-body font-bold rounded-lg border border-white/30 text-white px-8 md:px-10 py-3.5 md:py-4 text-base md:text-lg hover:border-white hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden"
               >
                 Explore Our Services
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
-              </a>
+                <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+              </button>
               {/* Hero Scribble Annotation */}
               <div className="hidden lg:block absolute -right-24 top-0 scribble-accent">
                 <svg
@@ -159,6 +184,8 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </section>
+
         </section>
 
         {/* ── Services Bento Grid ────────────────────────────────────── */}

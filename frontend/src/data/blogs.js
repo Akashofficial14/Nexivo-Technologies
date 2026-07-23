@@ -101,7 +101,7 @@ export const blogs = [
     excerpt: "Establishing a cohesive visual layout creates instant credibility for early-stage companies. Let's explore how clean palettes, consistent typography, and modern UI tokens earn consumer trust.",
     date: "July 10, 2026",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1542744094-3a31f103e35f?q=80&w=600",
+    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=600",
     author: "Nexivo Design Lead",
     content: `
       <p class="mb-6 leading-relaxed text-secondary text-body-lg">

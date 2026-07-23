@@ -43,6 +43,14 @@ const Home = () => {
         delay: 0.1,
       });
 
+      // ── Hero background video fade in ─────────────────────────────
+      gsap.from(".hero-bg-video", {
+        opacity: 0,
+        duration: 2.0,
+        ease: "power2.out",
+        delay: 0.2,
+      });
+
       // ── Bento cards — each element is its own trigger ───────────────
       containerRef.current.querySelectorAll(".bento-card").forEach((card) => {
         gsap.from(card, {
@@ -110,20 +118,34 @@ const Home = () => {
           }}
         />
       )}
-      <div ref={containerRef} className="pt-10" style={{ opacity: startReveal ? 1 : 0, transition: "opacity 0.3s ease" }}>
+      <div ref={containerRef} className="pt-0" style={{ opacity: startReveal ? 1 : 0, transition: "opacity 0.3s ease" }}>
         {/* Hero Section */}
-        <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center px-mobile-margin py-section-padding overflow-hidden">
-          <div className="max-w-4xl relative z-10 hero-content">
-            <span className="inline-block px-4 py-1.5 mb-8 rounded-full bg-botanical-green/5 border border-botanical-green/10 text-botanical-green font-headline text-[16px] font-bold uppercase tracking-widest">
+        <section className="relative min-h-[100vh] flex flex-col items-center justify-center text-center px-mobile-margin pt-28 pb-20 overflow-hidden bg-[#060814]">
+          {/* Background Video */}
+          <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0 bg-[#060814]">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-bg-video w-full h-full object-cover opacity-35"
+              src="/hero-section.mp4"
+            />
+            {/* Smooth transition gradients: dark top to blend header/navbar, transparent middle, cream bottom to merge with page */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#060814]/90 via-transparent to-[#fbf9f2]" />
+          </div>
+
+          <div className="max-w-5xl relative z-10 hero-content">
+            <span className="inline-block px-4 py-1.5 mb-8 md:mb-10 rounded-full bg-white/5 border border-white/10 text-[#FCF6BA] font-headline text-[13px] md:text-[15px] font-bold uppercase tracking-widest backdrop-blur-sm">
               Future-Ready Solutions
             </span>
-            <h1 className="font-headline mb-6 leading-[1.05] tracking-tight text-ink-black font-extrabold" style={{ fontSize: "clamp(2.8rem, 10vw, 4.5rem)" }}>
+            <h1 className="font-headline mb-6 md:mb-8 leading-[1.05] tracking-tight text-white font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl animate-fade-in" style={{ fontSize: "clamp(2.2rem, 8vw, 5.2rem)" }}>
               Turning Ideas Into
               <br />
               <span className="text-botanical-green relative">
                 Digital Impact.
                 <svg
-                  className="absolute -bottom-2 left-0 w-full h-3 text-botanical-green/30"
+                  className="absolute -bottom-3 left-0 w-full h-3.5 text-botanical-green/45"
                   preserveAspectRatio="none"
                   viewBox="0 0 100 10"
                 >
@@ -136,23 +158,26 @@ const Home = () => {
                 </svg>
               </span>
             </h1>
-            <p className="font-body text-body-2xl text-secondary mb-10 max-w-2xl mx-auto">
+            <p className="font-body text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/85 mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
               We helps businesses build, grow, and scale through technology, e-commerce, digital
               marketing, creative design, and video solutions — all under one root.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 relative">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 relative">
               <Link to="/contact" className="w-full sm:w-auto">
                 <Button variant="primary" className="w-full sm:w-auto px-10 py-4 text-lg">
                   Start Your Project
                 </Button>
               </Link>
-              <a
-                href="#services"
-                className="group flex items-center gap-2 font-bold text-ink-black hover:text-botanical-green transition-colors"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new CustomEvent("open-services-modal"));
+                }}
+                className="group w-full sm:w-auto inline-flex items-center justify-center font-body font-bold rounded-lg border border-white/30 text-white px-10 py-4 text-lg hover:border-white hover:bg-white/10 active:scale-95 transition-all duration-300 cursor-pointer overflow-hidden"
               >
-                Explore Our Service
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
+                Explore Our Services
+                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </button>
               {/* Hero Scribble Annotation */}
               <div className="hidden lg:block absolute -right-24 top-0 scribble-accent">
                 <svg

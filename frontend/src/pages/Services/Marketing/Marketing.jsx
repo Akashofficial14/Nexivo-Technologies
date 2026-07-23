@@ -60,7 +60,7 @@ const Marketing = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen text-left">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-16 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+      <section className="relative pt-10 pb-10 md:py-20 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4 h-4 text-botanical-green" />
@@ -96,7 +96,7 @@ const Marketing = () => {
       </section>
 
       {/* Bento Grid Services */}
-      <section id="marketing-services" className="max-w-container-max mx-auto px-mobile-margin mb-24 text-left">
+      <section id="marketing-services" className="max-w-container-max mx-auto px-mobile-margin mb-12 md:mb-24 text-left">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           {/* SEO Strategy */}
           <div className="md:col-span-8 bento-card bg-surface p-10 rounded-xl border border-border-muted flex flex-col justify-between group hover:shadow-md transition-shadow">
@@ -168,18 +168,18 @@ const Marketing = () => {
           </div>
 
           {/* Lead Gen & Campaign Management */}
-          <div className="md:col-span-8 bento-card bg-ink-black text-surface p-10 rounded-xl flex flex-col md:flex-row gap-10 hover:shadow-md transition-shadow">
+          <div className="md:col-span-8 bento-card bg-botanical-green text-surface p-10 rounded-xl flex flex-col md:flex-row gap-10 hover:shadow-md transition-shadow">
             <div className="md:w-1/2 flex flex-col justify-between">
               <div>
-                <span className="material-symbols-outlined text-4xl text-botanical-green mb-6">hub</span>
+                <span className="material-symbols-outlined text-4xl text-white mb-6">hub</span>
                 <h3 className="font-headline text-headline-lg mb-4 text-surface font-bold">Lead Generation &amp; Campaigns</h3>
-                <p className="font-body text-sm text-surface-dim mb-6 leading-relaxed">
+                <p className="font-body text-sm text-surface/85 mb-6 leading-relaxed">
                   CRM integrations, email automation sequences, and multi-channel campaign architectures designed to scale client acquisition.
                 </p>
               </div>
               <button
                 onClick={() => { window.location.href = "/contact"; }}
-                className="border border-white/30 text-white px-6 py-2.5 rounded hover:bg-white hover:text-ink-black transition-all cursor-pointer font-bold text-sm self-start bg-transparent"
+                className="border border-white/30 text-white px-6 py-2.5 rounded hover:bg-white hover:text-botanical-green transition-all cursor-pointer font-bold text-sm self-start bg-transparent"
               >
                 Let's Discuss →
               </button>
@@ -215,47 +215,11 @@ const Marketing = () => {
         </div>
       </section>
 
-      {/* Previous Work Sub-Section */}
-      <section className="max-w-container-max mx-auto px-mobile-margin mb-24 text-left border-t border-border-muted pt-24 story-panel">
-        <h2 className="font-headline text-headline-lg mb-12 text-center text-ink-black font-bold">Featured Growth Stories</h2>
-        <div className="space-y-24">
-          {/* Case Study 01 */}
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-1/2 space-y-6">
-              <div className="text-[100px] font-bold text-border-muted leading-none font-headline">01</div>
-              <h4 className="font-headline text-headline-md mb-2 text-ink-black font-bold">Nexflow Dynamics</h4>
-              <p className="font-headline text-[12px] font-bold tracking-widest text-secondary uppercase">SaaS GROWTH • SEO • PPC</p>
-              
-              <div className="grid grid-cols-2 gap-8 border-y border-border-muted py-8">
-                <div>
-                  <span className="block text-4xl font-headline font-bold text-botanical-green">+240%</span>
-                  <span className="text-sm text-secondary font-body">Organic Traffic Increase</span>
-                </div>
-                <div>
-                  <span className="block text-4xl font-headline font-bold text-botanical-green">-45%</span>
-                  <span className="text-sm text-secondary font-body">CPA Reduction Rate</span>
-                </div>
-              </div>
-              
-              <p className="text-secondary font-body text-sm leading-relaxed">
-                Strategic overhaul of their inbound funnel, focusing on high-intent search terms and performance retargeting.
-              </p>
-            </div>
-            
-            <div className="w-full md:w-1/2 border border-border-muted p-4 bg-surface rounded-xl shadow-sm">
-              <img
-                className="w-full h-[380px] object-cover rounded-lg grayscale hover:grayscale-0 transition-all duration-700"
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
-                alt="Growth details mockup brochure"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Contact CTA */}
-      <section className="max-w-container-max mx-auto px-mobile-margin mb-24">
-        <div className="bg-botanical-green rounded-2xl p-12 md:p-20 relative overflow-hidden text-center border border-white/10 shadow-lg text-white">
+      <section className="max-w-container-max mx-auto px-mobile-margin mb-12 md:mb-24">
+        <div className="bg-botanical-green rounded-2xl p-8 md:p-20 relative overflow-hidden text-center border border-white/10 shadow-lg text-white">
           <div className="absolute -bottom-10 -right-10 scribble-accent opacity-10 pointer-events-none text-white">
             <span className="material-symbols-outlined text-[200px]">motion_photos_on</span>
           </div>

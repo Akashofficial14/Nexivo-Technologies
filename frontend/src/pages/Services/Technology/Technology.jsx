@@ -93,7 +93,7 @@ const Technology = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen text-left">
       {/* Hero Section */}
-      <header className="pt-10 pb-16 md:py-24 px-mobile-margin relative overflow-hidden text-center">
+      <header className="pt-10 pb-10 md:py-20 px-mobile-margin relative overflow-hidden text-center">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4 h-4 text-botanical-green" />
@@ -162,7 +162,7 @@ const Technology = () => {
       </header>
 
       {/* Core Services Grid */}
-      <section id="tech-services" className="py-20 bg-white/50 border-t border-border-muted text-left">
+      <section id="tech-services" className="py-10 md:py-20 bg-white/50 border-t border-border-muted text-left">
         <div className="max-w-container-max mx-auto px-mobile-margin">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div className="max-w-xl">
@@ -328,86 +328,16 @@ const Technology = () => {
         </div>
       </section>
 
-      {/* Case Study Preview (Editorial Layout) */}
-      <section className="py-24 bg-surface text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin">
-          <h2 className="font-headline text-headline-lg text-center mb-16 text-ink-black">Selected Technical Work</h2>
-          <div className="space-y-32">
-            {/* Case 01 */}
-            <div className="case-row group flex flex-col md:flex-row gap-12 items-center cursor-pointer group-hover:bg-red-400">
-              <div className="w-full md:w-1/2 order-2 md:order-1 transition-transform duration-500 ease-out group-hover:translate-x-6">
-                <span className="font-headline text-headline-xl text-ink-black/10 block mb-2 font-bold transition-colors group-hover:text-botanical-green/20">01</span>
-                <h3 className="font-headline text-headline-md mb-4 text-ink-black font-bold group-hover:text-botanical-green transition-colors duration-300">FinTech Neo-Bank Infrastructure</h3>
-                <p className="text-secondary font-body text-body-lg mb-8">
-                  Building a secure, low-latency transaction engine capable of processing 10,000+ operations per second with zero downtime.
-                </p>
-                <div className="grid grid-cols-2 gap-6 mb-8 border-t border-border-muted pt-8">
-                  <div>
-                    <h4 className="font-headline text-[12px] font-bold text-secondary mb-2 uppercase tracking-widest">Challenge</h4>
-                    <p className="text-sm text-secondary">High-frequency trading with stringent security.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-headline text-[12px] font-bold text-secondary mb-2 uppercase tracking-widest">Outcome</h4>
-                    <p className="text-sm text-secondary">99.999% uptime and SOC2 compliance.</p>
-                  </div>
-                </div>
-                <button className="flex items-center gap-2 font-bold hover:text-botanical-green transition-colors cursor-pointer">
-                  View Case Study
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                </button>
-              </div>
-              <div className="w-full md:w-1/2 order-1 md:order-2 bg-surface-container h-[400px] overflow-hidden rounded-xl border border-border-muted shadow-sm">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAOSDXUv9h6M-oQljweW50oB0I23jsQzprp0ofTrUGW1iQn2gLlU1-5jxzss88D1SFXsOgE_S1xAvAqYfiVBcDFX7ySURIFBOhs42SsuN64t73FlallD7FiExa94u6JC-0Pe3Q7Itrdsl0GAnq7wmtIhUXNNTG570QOkuQTlB_EacuGevmV3ZmYidEcVV5VZOaVHKr0QyO_dEbMRW1PL2jwAzQBCkyuzQCnz2Ac7DcD9Kyf1sf-Zg"
-                  alt="FinTech Neo-Bank Infrastructure Mockup"
-                />
-              </div>
-            </div>
 
-            {/* Case 02 */}
-            <div className="case-row group flex flex-col md:flex-row gap-12 items-center cursor-pointer group-hover:bg-red-400">
-              <div className="w-full md:w-1/2 bg-surface-container h-[400px] overflow-hidden rounded-xl border border-border-muted shadow-sm">
-                <img
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRyeW7gvID2kfH9Ed1iY0Lo93Yn6xuDvAot-AavVq3COxDTV5qZPdyodxw6NrhlSjsEnRbyutKdUT5uv9BaiSv1uRdnUMuwrAucAyG_g45aTpAAxUtcPCxJs9J6hgKXoxY8z1xWnrBvk7hmZdfR-E3gnFsV1VSKUJCwbv0qOS6CKlm4e6ap8PxICPr-XxJtY2agMALgrR7Dx8CRGCjHivwgclg8REAec1UMJtREOmUDOzQe6KBI8"
-                  alt="HealthTech AI Diagnostic Tool Mockup"
-                />
-              </div>
-              <div className="w-full md:w-1/2 transition-transform duration-500 ease-out group-hover:translate-x-6">
-                <span className="font-headline text-headline-xl text-ink-black/10 block mb-2 font-bold transition-colors group-hover:text-botanical-green/20">02</span>
-                <h3 className="font-headline text-headline-md mb-4 text-ink-black font-bold group-hover:text-botanical-green transition-colors duration-300">HealthTech AI Diagnostic Tool</h3>
-                <p className="text-secondary font-body text-body-lg mb-8">
-                  An intelligent imaging platform using computer vision to assist radiologists in early-stage detection.
-                </p>
-                <div className="grid grid-cols-2 gap-6 mb-8 border-t border-border-muted pt-8">
-                  <div>
-                    <h4 className="font-headline text-[12px] font-bold text-secondary mb-2 uppercase tracking-widest">Challenge</h4>
-                    <p className="text-sm text-secondary">Processing massive DICOM datasets in real-time.</p>
-                  </div>
-                  <div>
-                    <h4 className="font-headline text-[12px] font-bold text-secondary mb-2 uppercase tracking-widest">Outcome</h4>
-                    <p className="text-sm text-secondary">35% increase in diagnostic accuracy.</p>
-                  </div>
-                </div>
-                <button className="flex items-center gap-2 font-bold hover:text-botanical-green transition-colors cursor-pointer">
-                  View Case Study
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Consultation Section */}
-      <section className="py-20 bg-surface-container">
+      <section className="py-10 md:py-20 bg-surface-container">
         <div className="max-w-container-max mx-auto px-mobile-margin text-center">
           <h2 className="font-headline text-headline-lg mb-6 text-ink-black font-bold">Ready to Build Something Amazing?</h2>
           <p className="text-secondary font-body text-body-lg max-w-2xl mx-auto mb-12">
             From websites and branding to AI-powered solutions, DM us on Instagram to start your next project.
           </p>
-          <div className="max-w-xl mx-auto bg-surface p-12 relative border border-border-muted rounded-xl shadow-sm booking-panel">
+          <div className="max-w-xl mx-auto bg-surface p-6 md:p-12 relative border border-border-muted rounded-xl shadow-sm booking-panel">
             <div className="absolute -top-6 -right-6 scribble-accent">
               <svg fill="none" height="80" viewBox="0 0 80 80" width="80">
                 <path d="M10,70 C20,40 60,40 70,10" stroke="#C9922A" strokeDasharray="4 4" strokeWidth="2" />

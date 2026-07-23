@@ -61,7 +61,7 @@ const Creative = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-16 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+      <section className="relative pt-10 pb-10 md:py-20 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4 h-4 text-botanical-green" />
@@ -107,7 +107,7 @@ const Creative = () => {
       </section>
 
       {/* Services Bento Grid */}
-      <section id="creative-services" className="py-24 bg-surface-container-low text-left border-y border-border-muted">
+      <section id="creative-services" className="py-12 md:py-24 bg-surface-container-low text-left border-y border-border-muted">
         <div className="max-w-container-max mx-auto px-mobile-margin">
           <div className="mb-16">
             <h2 className="font-headline text-headline-lg font-bold text-ink-black mb-4">Our Creative Ecosystem</h2>
@@ -197,130 +197,19 @@ const Creative = () => {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="py-24 text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin">
-          <div className="flex justify-between items-end mb-20">
-            <div>
-              <span className="font-headline text-xs font-bold text-botanical-green tracking-widest uppercase mb-4 block">PREVIOUS WORK</span>
-              <h2 className="font-headline text-headline-lg font-bold text-ink-black">Selected Projects</h2>
-            </div>
-            <p className="text-secondary max-w-xs text-right hidden md:block font-body text-sm leading-relaxed">
-              A curated look at how we've helped brands find their voice through strategic design.
-            </p>
-          </div>
 
-          {/* Project 04 (Aumya) */}
-          <div className="project-row grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
-            <div className="md:col-span-5 order-2 md:order-1">
-              <span className="font-headline text-headline-xl font-bold text-ink-black/10 block mb-4">04</span>
-              <h3 className="font-headline text-headline-lg font-bold text-ink-black mb-2">AUMYA</h3>
-              <p className="font-headline text-[12px] font-bold tracking-widest text-secondary mb-6 uppercase">LUXURY SPIRITUAL JEWELRY</p>
-              <p className="text-secondary mb-8 font-body leading-relaxed">
-                A premium identity system that blends luxury and spirituality into a refined brand presence. Our approach focused on timeless elegance and tactile sophistication.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="border-l border-ink-black/20 pl-4">
-                  <span className="font-headline text-[10px] font-bold text-ink-black/40 block mb-1 uppercase">CHALLENGE</span>
-                  <p className="text-body-md font-medium text-ink-black">Luxury and spirituality parity.</p>
-                </div>
-                <div className="border-l border-ink-black/20 pl-4">
-                  <span className="font-headline text-[10px] font-bold text-ink-black/40 block mb-1 uppercase">OUTCOME</span>
-                  <p className="text-body-md font-medium text-ink-black">Elevated market positioning.</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <span className="border border-ink-black/10 px-3 py-1 text-[11px] font-headline font-bold uppercase rounded text-secondary bg-ink-black/5">Logo Design</span>
-                <span className="border border-ink-black/10 px-3 py-1 text-[11px] font-headline font-bold uppercase rounded text-secondary bg-ink-black/5">Packaging</span>
-                <span className="border border-ink-black/10 px-3 py-1 text-[11px] font-headline font-bold uppercase rounded text-secondary bg-ink-black/5">Typography</span>
-              </div>
-            </div>
-            <div className="md:col-span-7 order-1 md:order-2 border border-border-muted rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-surface-container overflow-hidden group">
-                <img
-                  className="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-4lCfPDEklKVOQrw_ud4PotSMIjgBgpSd-yoEK_FqLNc95xwreXaaxBkXFD8cgVIAFvcjFFCqiCFROHocov_AyarZ9VqofDmOFTLWrN68soSLsogycZpRkqc4rsa_PitgqP07Hh2uedRQuwi9wVpepff0mbAK36vd1kWc8EtP1Ir856ZmyPtI2EMwD0KrfQG7mg-iT_WTuxBoLP_Bmyi9Cn3sfvY7J2cNS1VAmfRHGxrLn5waq8A"
-                  alt="Aumya Luxury branding mockups"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Project 05 (AI JUGAAD) */}
-          <div className="project-row grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
-            <div className="md:col-span-7 border border-border-muted rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-surface-container overflow-hidden group">
-                <img
-                  className="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH7TT2lRjM3xsJq2S4uWtVjI9G6NXH047jXl4A2PkFC8qMfCeHaWrgCz9pNTpjWt5QWKL2Qv7Bgcd9CPY5JcQ-ikGANP6o-UP1ENyVdNgatHzXVpPZ2cXC4JKZIzMa86ffwwDZiVH7iaBs4_VT7szKcoBnRZeORGwEpAwC2WHziWYqOJ_qHoqX1IiR1KqMghJVY256D91i-INOO4-ATxbsRD8D9xLYAIH5tn-tLoqDUpqP_IGkI-0"
-                  alt="AI Jugaad branding Board"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-5">
-              <span className="font-headline text-headline-xl font-bold text-ink-black/10 block mb-4">05</span>
-              <h3 className="font-headline text-headline-lg font-bold text-ink-black mb-2">AI JUGAAD</h3>
-              <p className="font-headline text-[12px] font-bold tracking-widest text-secondary mb-6 uppercase">AGENCY BRANDING</p>
-              <p className="text-secondary mb-8 font-body leading-relaxed">
-                A polished agency identity system designed to elevate AI Jugaad’s visual authority across digital and print touchpoints.
-              </p>
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="border-l border-ink-black/20 pl-4">
-                  <span className="font-headline text-[10px] font-bold text-ink-black/40 block mb-1 uppercase">STRATEGY</span>
-                  <p className="text-body-md font-medium text-ink-black">Flexible &amp; Scalable.</p>
-                </div>
-                <div className="border-l border-ink-black/20 pl-4">
-                  <span className="font-headline text-[10px] font-bold text-ink-black/40 block mb-1 uppercase">DELIVERABLES</span>
-                  <p className="text-body-md font-medium text-ink-black">Social Kit &amp; Identity.</p>
-                </div>
-              </div>
-              <button className="text-botanical-green font-bold flex items-center gap-2 group border-b-2 border-transparent hover:border-botanical-green pb-1 transition-all cursor-pointer">
-                View Case Study
-                <span className="material-symbols-outlined text-[18px]">open_in_new</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Project 06 (TASTY BITE) */}
-          <div className="project-row grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-            <div className="md:col-span-5 order-2 md:order-1">
-              <span className="font-headline text-headline-xl font-bold text-ink-black/10 block mb-4">06</span>
-              <h3 className="font-headline text-headline-lg font-bold text-ink-black mb-2">TASTY BITE</h3>
-              <p className="font-headline text-[12px] font-bold tracking-widest text-secondary mb-6 uppercase">RESTAURANT BRANDING</p>
-              <p className="text-secondary mb-8 font-body leading-relaxed">
-                A bold restaurant identity system crafted to bring flavor, warmth, and premium hospitality to every touchpoint.
-              </p>
-              <div className="p-6 bg-surface-container border border-border-muted mb-8 rounded-lg">
-                <p className="italic text-secondary font-body text-sm leading-relaxed">
-                  "Nexivo transformed our brand into something that truly represents our passion for food. The attention to detail in the packaging design was unmatched."
-                </p>
-                <span className="block mt-4 font-bold text-body-md text-ink-black">— Founder, Tasty Bite</span>
-              </div>
-            </div>
-            <div className="md:col-span-7 order-1 md:order-2 border border-border-muted rounded-xl overflow-hidden shadow-sm">
-              <div className="bg-surface-container overflow-hidden group">
-                <img
-                  className="w-full grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnGCMd0jly0e0cXZrKEaG7A9qf2Rkw3Zn3_9GahT-LkgbzwJATTfsYHum3WNkylTiqEAR27_I8vPe23-KOrffU05nTGbHzZakiwplqv4vTSqDclSvxTrKWy2Uq171IvsoHbvlPpulh5GmUVTwhav-bj0EMM6GFMFM1iRsHMFe2c1DrjfkO21YGUJas4UD9-4ZUOK9B22XDPUNztgkYwlZpUCyxZPVNW-Ooj_1r36VjLYrbtZ5UWDo"
-                  alt="Tasty Bite restaurant visual identity Board"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-ink-black text-surface relative overflow-hidden text-center">
+      <section className="py-12 md:py-24 bg-botanical-green text-surface relative overflow-hidden text-center">
         {/* Animated Scribble Circle */}
-        <div className="absolute -right-20 -bottom-20 w-80 h-80 opacity-20 border-4 border-botanical-green rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
+        <div className="absolute -right-20 -bottom-20 w-80 h-80 opacity-20 border-4 border-surface rounded-full border-dashed animate-[spin_20s_linear_infinite]"></div>
         <div className="max-w-container-max mx-auto px-mobile-margin text-center relative z-10">
           <h2 className="font-headline text-headline-xl-mobile md:text-headline-xl mb-6 text-surface font-extrabold">Ready to build something amazing?</h2>
-          <p className="text-surface/70 max-w-2xl mx-auto mb-10 text-body-lg font-body leading-relaxed">
+          <p className="text-surface/85 max-w-2xl mx-auto mb-10 text-body-lg font-body leading-relaxed">
             From visual identities to AI-powered digital experiences, let's turn your vision into a premium reality.
           </p>
           <div className="inline-flex flex-col items-center">
-            <button className="bg-botanical-green text-surface px-10 py-5 font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all shadow-xl mb-4 cursor-pointer text-lg">
+            <button className="bg-surface text-botanical-green px-10 py-5 font-bold rounded-lg hover:bg-white/95 active:scale-95 transition-all shadow-xl mb-4 cursor-pointer text-lg">
               Start a Creative Project →
             </button>
             <div className="flex items-center gap-4 mt-8 opacity-60">

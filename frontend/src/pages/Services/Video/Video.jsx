@@ -77,7 +77,7 @@ const Video = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-16 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
+      <section className="relative pt-10 pb-10 md:py-20 px-mobile-margin max-w-container-max mx-auto text-center overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4 h-4 text-botanical-green" />
@@ -113,7 +113,7 @@ const Video = () => {
       </section>
 
       {/* Bento Grid of Services */}
-      <section className="max-w-container-max mx-auto px-mobile-margin pb-24 relative text-left">
+      <section className="max-w-container-max mx-auto px-mobile-margin pb-12 md:pb-24 relative text-left">
         <div id="video-services" className="grid grid-cols-1 md:grid-cols-12 gap-gutter pt-8">
           {/* Highlight Reels */}
           <div className="md:col-span-8 bg-surface-container-low border border-border-muted p-8 flex flex-col justify-between group transition-all duration-300 hover:border-botanical-green rounded-xl bento-card">
@@ -173,100 +173,11 @@ const Video = () => {
         </div>
       </section>
 
-      {/* Previous Work Section */}
-      <section className="bg-surface-container-high py-24 border-y border-border-muted text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="font-headline text-headline-xl mb-4 text-ink-black font-extrabold">Selected Productions</h2>
-              <p className="text-secondary max-w-lg font-body leading-relaxed">
-                A showcase of recent visual storytelling projects for industry leaders and creative pioneers.
-              </p>
-            </div>
-            <button className="border border-ink-black/30 px-8 py-3 font-bold rounded-lg hover:bg-ink-black hover:text-surface active:scale-95 transition-all flex items-center gap-2 cursor-pointer text-ink-black bg-transparent">
-              View Showreel <Play className="w-4.5 h-4.5 fill-current" />
-            </button>
-          </div>
 
-          <div className="space-y-16">
-            {/* Case Study 01 */}
-            <div className="reveal-on-scroll flex flex-col md:flex-row gap-12 items-center">
-              <div className="w-full md:w-1/2">
-                <div className="relative overflow-hidden group rounded-xl border border-border-muted">
-                  <img
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB18kNc0UK0lafLCNm7SKhUZBmb1nUcuml7APRccCUHod13Ji3oEjakudWQLY84fULPtgca6LBy5bURgFBmzFAVx1ZE4HsqRvkhKO6mchiT_RMnjD-GB_8wIEHYjMznilAhsGRHH4MmU1kLyEu50pP-QhpCly44Mk8zK9xhFgIHCFqw6T6rUWQv0VUPa55ZzXEhPlq8zm6lCrSKE515xOis93LYIUOmtXNe7uO0VukWOtLxxBiFl-4"
-                    alt="Luxury architectural project screen grab"
-                  />
-                  <div className="absolute inset-0 bg-ink-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-surface rounded-full p-6 text-ink-black shadow-lg flex items-center justify-center">
-                      <Play className="w-6 h-6 fill-current text-botanical-green" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full md:w-1/2 space-y-4">
-                <span className="text-botanical-green font-headline text-headline-xl opacity-20 block mb-2 font-bold">01</span>
-                <h3 className="font-headline text-headline-lg font-bold text-ink-black">The Artisan Collection</h3>
-                <div className="flex gap-2">
-                  <span className="bg-ink-black/5 text-secondary px-3 py-1 font-label-caps text-[10px] font-bold uppercase tracking-widest rounded">
-                    DOCUMENTARY
-                  </span>
-                  <span className="bg-ink-black/5 text-secondary px-3 py-1 font-label-caps text-[10px] font-bold uppercase tracking-widest rounded">
-                    COLOR GRADING
-                  </span>
-                </div>
-                <p className="text-secondary mb-8 font-body text-body-lg leading-relaxed">
-                  A cinematic exploration of hand-crafted ceramics. We used slow, sweeping movements and tactile close-ups to emphasize the human touch behind the craft.
-                </p>
-                <a className="inline-flex items-center gap-2 border-b-2 border-botanical-green pb-1 font-bold hover:text-botanical-green transition-colors text-sm group" href="#">
-                  View Full Case Study <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
-
-            {/* Case Study 02 */}
-            <div className="reveal-on-scroll flex flex-col md:flex-row-reverse gap-12 items-center">
-              <div className="w-full md:w-1/2">
-                <div className="relative overflow-hidden group rounded-xl border border-border-muted">
-                  <img
-                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs_1kmP5NuIm3CaCoMTdQArDluA4ERbO7D_D7pBwwLne7HaDE7bRDBpECUAA5BXhfNvxKh-SZBRl_4GIv1C5ryuPkGfwtMW2Ei3Pc_649qelMvMfRDpWIj50M2zkuzFSiinNHYKdfiEL8UK690bvnHdLkMTVf3FCx-IS7yKGDrTNBK_zUD94X0MD3KSp3bkuN0ZMrw-y38NcFw7wZR42Sk-_VwccfUD5fDpCDSQDZYHh1JB7aaD7o"
-                    alt="Glitch tech visual projection"
-                  />
-                  <div className="absolute inset-0 bg-ink-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-surface rounded-full p-6 text-ink-black shadow-lg flex items-center justify-center">
-                      <Play className="w-6 h-6 fill-current text-botanical-green" />
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="w-full md:w-1/2 space-y-4">
-                <span className="text-botanical-green font-headline text-headline-xl opacity-20 block mb-2 font-bold">02</span>
-                <h3 className="font-headline text-headline-lg font-bold text-ink-black">TechPulse Global Summit</h3>
-                <div className="flex gap-2">
-                  <span className="bg-ink-black/5 text-secondary px-3 py-1 font-label-caps text-[10px] font-bold uppercase tracking-widest rounded">
-                    EVENT REEL
-                  </span>
-                  <span className="bg-ink-black/5 text-secondary px-3 py-1 font-label-caps text-[10px] font-bold uppercase tracking-widest rounded">
-                    MOTION GRAPHICS
-                  </span>
-                </div>
-                <p className="text-secondary mb-8 font-body text-body-lg leading-relaxed">
-                  High-energy highlight reel for an AI technology summit. Dynamic transitions and overlayed data visualizations were used to maintain an aggressive pace.
-                </p>
-                <a className="inline-flex items-center gap-2 border-b-2 border-botanical-green pb-1 font-bold hover:text-botanical-green transition-colors text-sm group" href="#">
-                  View Full Case Study <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Process Section */}
-      <section className="py-24 text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin text-center mb-20">
+      <section className="py-12 md:py-24 text-left">
+        <div className="max-w-container-max mx-auto px-mobile-margin text-center mb-12 md:mb-20">
           <h2 className="font-headline text-headline-xl font-bold text-ink-black mb-4">The Workflow</h2>
           <p className="text-secondary max-w-xl mx-auto font-body leading-relaxed">
             We follow a structured editorial process to ensure every frame aligns with your brand's strategic goals.
@@ -322,9 +233,9 @@ const Video = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 text-center">
+      <section className="py-12 md:py-24 text-center">
         <div className="max-w-[1000px] mx-auto px-mobile-margin">
-          <div className="bg-botanical-green text-surface p-12 md:p-20 text-center relative overflow-hidden group rounded-2xl shadow-md border border-botanical-green">
+          <div className="bg-botanical-green text-surface p-8 md:p-20 text-center relative overflow-hidden group rounded-2xl shadow-md border border-botanical-green">
             <div className="relative z-10 space-y-8">
               <h2 className="font-headline text-headline-xl-mobile md:text-headline-xl mb-8 text-surface font-extrabold">
                 Ready to bring your story <br className="hidden md:block" /> to life?

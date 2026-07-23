@@ -44,7 +44,7 @@ const Ecommerce = () => {
   return (
     <div ref={containerRef} className="pt-20 bg-warm-bg min-h-screen text-left">
       {/* Hero Section */}
-      <header className="ecom-hero pt-10 pb-16 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center relative overflow-hidden">
+      <header className="ecom-hero pt-10 pb-10 md:py-20 px-mobile-margin max-w-container-max mx-auto text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 hero-content">
           <div className="mb-6 md:mb-8 inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 bg-botanical-green/5 border border-botanical-green/10 rounded-full">
             <Sparkles className="w-4 h-4 text-botanical-green" />
@@ -87,7 +87,7 @@ const Ecommerce = () => {
       </header>
 
       {/* E-Commerce Solutions Bento Grid */}
-      <section id="ecom-services" className="py-20 px-mobile-margin max-w-container-max mx-auto border-t border-border-muted text-left">
+      <section id="ecom-services" className="py-10 md:py-20 px-mobile-margin max-w-container-max mx-auto border-t border-border-muted text-left">
         <div className="mb-16">
           <h2 className="font-headline text-headline-lg mb-4 text-ink-black font-bold">Core Marketplace Services</h2>
           <div className="w-20 h-1 bg-botanical-green"></div>
@@ -151,22 +151,22 @@ const Ecommerce = () => {
           </div>
 
           {/* Product Listing & Catalog Management */}
-          <div className="md:col-span-8 bg-ink-black text-surface p-10 bento-card flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-xl hover:shadow-md transition-shadow">
+          <div className="md:col-span-8 bg-botanical-green text-surface p-10 bento-card flex flex-col md:flex-row items-center justify-between overflow-hidden rounded-xl hover:shadow-md transition-shadow">
             <div className="md:w-1/2 space-y-4">
               <h3 className="font-headline text-headline-md text-surface font-bold">Product Listing &amp; Catalog Management</h3>
-              <p className="text-outline-variant font-body text-sm leading-relaxed">
+              <p className="text-surface/85 font-body text-sm leading-relaxed">
                 Organizing complex parent-child variations, creating clean item descriptions, mapping keywords, and optimizing catalog schemas for visibility.
               </p>
             </div>
             <div className="hidden md:block md:w-1/2 pl-10 w-full space-y-4">
-              <div className="h-2 w-full bg-botanical-green/20 rounded-full overflow-hidden">
-                <div className="h-full bg-botanical-green w-3/4"></div>
+              <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+                <div className="h-full bg-white w-3/4"></div>
               </div>
-              <div className="h-2 w-full bg-botanical-green/20 rounded-full overflow-hidden">
-                <div className="h-full bg-botanical-green w-1/2"></div>
+              <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+                <div className="h-full bg-white w-1/2"></div>
               </div>
-              <div className="h-2 w-full bg-botanical-green/20 rounded-full overflow-hidden">
-                <div className="h-full bg-botanical-green w-5/6"></div>
+              <div className="h-2 w-full bg-white/20 rounded-full overflow-hidden">
+                <div className="h-full bg-white w-5/6"></div>
               </div>
             </div>
           </div>
@@ -194,62 +194,11 @@ const Ecommerce = () => {
         </div>
       </section>
 
-      {/* Case Study Section */}
-      <section className="py-24 bg-surface border-y border-border-muted overflow-hidden text-left">
-        <div className="max-w-container-max mx-auto px-mobile-margin grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1 success-panel">
-            <div className="relative">
-              <img
-                className="w-full aspect-[4/5] object-cover border border-border-muted grayscale hover:grayscale-0 transition-all duration-700 rounded-lg shadow-sm"
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600"
-                alt="E-commerce Analytics dashboard mockup"
-              />
-              <div className="absolute -bottom-6 -right-6 bg-botanical-green p-8 text-surface rounded shadow-md hidden md:block">
-                <p className="font-headline text-3xl font-bold text-white">+145%</p>
-                <p className="text-[10px] font-headline font-bold uppercase tracking-widest text-white/90">
-                  Revenue Increase
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div className="order-1 md:order-2 space-y-6">
-            <span className="text-botanical-green font-bold text-xs uppercase tracking-[0.2em] font-headline">Success Story</span>
-            <h2 className="font-headline text-headline-lg text-ink-black font-bold">Aumya: From Local Craft to Global Marketplace</h2>
-            <div className="space-y-4 text-secondary font-body">
-              <p className="leading-relaxed">
-                We took Aumya's spiritual jewelry from a localized Shopify store to an international Amazon FBA leader within 6 months.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-botanical-green shrink-0 mt-0.5" />
-                  <span>Full Catalog SEO &amp; Keyword Mapping</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-botanical-green shrink-0 mt-0.5" />
-                  <span>High-Conversion A+ Content &amp; Video Ads</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-botanical-green shrink-0 mt-0.5" />
-                  <span>Inventory Logistics &amp; Forecasting Automation</span>
-                </li>
-              </ul>
-            </div>
-            <div className="mt-10 flex gap-4 flex-wrap">
-              <button className="bg-botanical-green text-surface px-8 py-4 font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all cursor-pointer">
-                Read Case Study
-              </button>
-              <button className="border border-ink-black/20 px-8 py-4 font-bold rounded-lg hover:bg-ink-black/5 active:scale-95 transition-all cursor-pointer text-ink-black">
-                View Brand Identity
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Strategy Section */}
-      <section className="py-24 px-mobile-margin max-w-container-max mx-auto text-center">
-        <h2 className="font-headline text-headline-lg mb-16 text-ink-black font-bold">The Nexivo Blueprint</h2>
+      <section className="py-12 md:py-24 px-mobile-margin max-w-container-max mx-auto text-center">
+        <h2 className="font-headline text-headline-lg mb-12 md:mb-16 text-ink-black font-bold">The Nexivo Blueprint</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative text-center">
           <div className="hidden md:block absolute top-10 left-1/4 w-1/2 h-px border-t border-dashed border-botanical-green/30 z-0"></div>
           
@@ -286,7 +235,7 @@ const Ecommerce = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-24 bg-botanical-green relative overflow-hidden text-center text-white">
+      <section className="py-12 md:py-24 bg-botanical-green relative overflow-hidden text-center text-white">
         <div className="max-w-container-max mx-auto px-mobile-margin text-center relative z-10">
           <h2 className="font-headline text-headline-xl mb-6 text-white font-extrabold">Ready to Build Something Amazing?</h2>
           <p className="font-body text-body-lg text-white/80 mb-10 max-w-xl mx-auto leading-relaxed">
